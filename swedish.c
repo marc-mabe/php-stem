@@ -111,7 +111,7 @@ static symbol s_2_0[2] = { 'i', 'g' };
 static symbol s_2_1[3] = { 'l', 'i', 'g' };
 static symbol s_2_2[3] = { 'e', 'l', 's' };
 static symbol s_2_3[5] = { 'f', 'u', 'l', 'l', 't' };
-static symbol s_2_4[4] = { 'l', 148, 's', 't' };
+static symbol s_2_4[4] = { 'l', 246, 's', 't' };
 
 static struct among a_2[5] =
 {
@@ -122,18 +122,18 @@ static struct among a_2[5] =
 /*  4 */ { 4, s_2_4, -1, 2, 0}
 };
 
-static unsigned char g_v[] = { 17, 65, 16, 1, 40, 0, 8 };
+static unsigned char g_v[] = { 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 32 };
 
 static unsigned char g_s_ending[] = { 119, 127, 149 };
 
-static symbol s_0[] = { 'l', 148, 's' };
+static symbol s_0[] = { 'l', 246, 's' };
 static symbol s_1[] = { 'f', 'u', 'l', 'l' };
 
 static int r_mark_regions(struct SN_env * z) {
     z->I[0] = z->l;
     while(1) { /* goto, line 30 */
         int c = z->c;
-        if (!(in_grouping(z, g_v, 97, 148))) goto lab0;
+        if (!(in_grouping(z, g_v, 97, 246))) goto lab0;
         z->c = c;
         break;
     lab0:
@@ -142,7 +142,7 @@ static int r_mark_regions(struct SN_env * z) {
         z->c++;
     }
     while(1) { /* gopast, line 30 */
-        if (!(out_grouping(z, g_v, 97, 148))) goto lab1;
+        if (!(out_grouping(z, g_v, 97, 246))) goto lab1;
         break;
     lab1:
         if (z->c >= z->l) return 0;

@@ -110,6 +110,10 @@ SOURCE=.\english.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\finnish.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\french.c
 # End Source File
 # Begin Source File
@@ -174,6 +178,10 @@ SOURCE=.\english.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\finnish.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\french.h
 # End Source File
 # Begin Source File
@@ -211,6 +219,10 @@ SOURCE=.\russian.h
 # Begin Source File
 
 SOURCE=.\spanish.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\stemconf.h
 # End Source File
 # Begin Source File
 

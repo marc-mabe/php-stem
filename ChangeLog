@@ -1,5 +1,13 @@
 ChangeLog:
 
+25 Nov 2002
+
+* Various stemming algorithms changed to match changes
+  found at Dr. Porter's site. TAKE NOTE: these may not be
+  100% backwardly compatible with older versions of
+  stem-php. You've been warned.
+
+
 22 Nov 2002
 
 * Finally did some more work. Added the ability to

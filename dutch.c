@@ -14,29 +14,29 @@ static int r_e_ending(struct SN_env * z);
 static int r_postlude(struct SN_env * z);
 static int r_prelude(struct SN_env * z);
 
-static symbol s_0_1[1] = { 129 };
-static symbol s_0_2[1] = { 130 };
-static symbol s_0_3[1] = { 132 };
-static symbol s_0_4[1] = { 137 };
-static symbol s_0_5[1] = { 139 };
-static symbol s_0_6[1] = { 148 };
-static symbol s_0_7[1] = { 160 };
-static symbol s_0_8[1] = { 161 };
-static symbol s_0_9[1] = { 162 };
-static symbol s_0_10[1] = { 163 };
+static symbol s_0_1[1] = { 225 };
+static symbol s_0_2[1] = { 228 };
+static symbol s_0_3[1] = { 233 };
+static symbol s_0_4[1] = { 235 };
+static symbol s_0_5[1] = { 237 };
+static symbol s_0_6[1] = { 239 };
+static symbol s_0_7[1] = { 243 };
+static symbol s_0_8[1] = { 246 };
+static symbol s_0_9[1] = { 250 };
+static symbol s_0_10[1] = { 252 };
 
 static struct among a_0[11] =
 {
 /*  0 */ { 0, 0, -1, 6, 0},
-/*  1 */ { 1, s_0_1, 0, 5, 0},
-/*  2 */ { 1, s_0_2, 0, 2, 0},
-/*  3 */ { 1, s_0_3, 0, 1, 0},
+/*  1 */ { 1, s_0_1, 0, 1, 0},
+/*  2 */ { 1, s_0_2, 0, 1, 0},
+/*  3 */ { 1, s_0_3, 0, 2, 0},
 /*  4 */ { 1, s_0_4, 0, 2, 0},
 /*  5 */ { 1, s_0_5, 0, 3, 0},
-/*  6 */ { 1, s_0_6, 0, 4, 0},
-/*  7 */ { 1, s_0_7, 0, 1, 0},
-/*  8 */ { 1, s_0_8, 0, 3, 0},
-/*  9 */ { 1, s_0_9, 0, 4, 0},
+/*  6 */ { 1, s_0_6, 0, 3, 0},
+/*  7 */ { 1, s_0_7, 0, 4, 0},
+/*  8 */ { 1, s_0_8, 0, 4, 0},
+/*  9 */ { 1, s_0_9, 0, 5, 0},
 /* 10 */ { 1, s_0_10, 0, 5, 0}
 };
 
@@ -106,11 +106,11 @@ static struct among a_5[4] =
 /*  3 */ { 2, s_5_3, -1, -1, 0}
 };
 
-static unsigned char g_v[] = { 17, 65, 16, 1, 0, 2 };
+static unsigned char g_v[] = { 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128 };
 
-static unsigned char g_v_I[] = { 1, 0, 0, 17, 65, 16, 1, 0, 2 };
+static unsigned char g_v_I[] = { 1, 0, 0, 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128 };
 
-static unsigned char g_v_j[] = { 17, 67, 16, 1, 0, 2 };
+static unsigned char g_v_j[] = { 17, 67, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128 };
 
 static symbol s_0[] = { 'a' };
 static symbol s_1[] = { 'e' };
@@ -185,12 +185,12 @@ static int r_prelude(struct SN_env * z) {
         int c = z->c;
         while(1) { /* goto, line 58 */
             int c = z->c;
-            if (!(in_grouping(z, g_v, 97, 138))) goto lab3;
+            if (!(in_grouping(z, g_v, 97, 232))) goto lab3;
             z->bra = z->c; /* [, line 59 */
             {   int c = z->c; /* or, line 59 */
                 if (!(eq_s(z, 1, s_7))) goto lab5;
                 z->ket = z->c; /* ], line 59 */
-                if (!(in_grouping(z, g_v, 97, 138))) goto lab5;
+                if (!(in_grouping(z, g_v, 97, 232))) goto lab5;
                 slice_from_s(z, 1, s_8); /* <-, line 59 */
                 goto lab4;
             lab5:
@@ -219,14 +219,14 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[0] = z->l;
     z->I[1] = z->l;
     while(1) { /* gopast, line 69 */
-        if (!(in_grouping(z, g_v, 97, 138))) goto lab0;
+        if (!(in_grouping(z, g_v, 97, 232))) goto lab0;
         break;
     lab0:
         if (z->c >= z->l) return 0;
         z->c++;
     }
     while(1) { /* gopast, line 69 */
-        if (!(out_grouping(z, g_v, 97, 138))) goto lab1;
+        if (!(out_grouping(z, g_v, 97, 232))) goto lab1;
         break;
     lab1:
         if (z->c >= z->l) return 0;
@@ -238,14 +238,14 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[0] = 3;
 lab2:
     while(1) { /* gopast, line 71 */
-        if (!(in_grouping(z, g_v, 97, 138))) goto lab3;
+        if (!(in_grouping(z, g_v, 97, 232))) goto lab3;
         break;
     lab3:
         if (z->c >= z->l) return 0;
         z->c++;
     }
     while(1) { /* gopast, line 71 */
-        if (!(out_grouping(z, g_v, 97, 138))) goto lab4;
+        if (!(out_grouping(z, g_v, 97, 232))) goto lab4;
         break;
     lab4:
         if (z->c >= z->l) return 0;
@@ -314,7 +314,7 @@ static int r_e_ending(struct SN_env * z) {
     z->bra = z->c; /* ], line 96 */
     if (!r_R1(z)) return 0; /* call R1, line 96 */
     {   int m_test = z->l - z->c; /* test, line 96 */
-        if (!(out_grouping_b(z, g_v, 97, 138))) return 0;
+        if (!(out_grouping_b(z, g_v, 97, 232))) return 0;
         z->c = z->l - m_test;
     }
     slice_del(z); /* delete, line 96 */
@@ -326,7 +326,7 @@ static int r_e_ending(struct SN_env * z) {
 static int r_en_ending(struct SN_env * z) {
     if (!r_R1(z)) return 0; /* call R1, line 102 */
     {   int m = z->l - z->c; /* and, line 102 */
-        if (!(out_grouping_b(z, g_v, 97, 138))) return 0;
+        if (!(out_grouping_b(z, g_v, 97, 232))) return 0;
         z->c = z->l - m;
         {   int m = z->l - z->c; /* not, line 102 */
             if (!(eq_s_b(z, 3, s_14))) goto lab0;
@@ -358,7 +358,7 @@ static int r_standard_suffix(struct SN_env * z) {
                 break;
             case 3:
                 if (!r_R1(z)) goto lab0; /* call R1, line 116 */
-                if (!(out_grouping_b(z, g_v_j, 97, 138))) goto lab0;
+                if (!(out_grouping_b(z, g_v_j, 97, 232))) goto lab0;
                 slice_del(z); /* delete, line 116 */
                 break;
         }
@@ -447,10 +447,10 @@ static int r_standard_suffix(struct SN_env * z) {
         z->c = z->l - m;
     }
     {   int m = z->l - z->c; /* do, line 146 */
-        if (!(out_grouping_b(z, g_v_I, 73, 138))) goto lab9;
+        if (!(out_grouping_b(z, g_v_I, 73, 232))) goto lab9;
         {   int m_test = z->l - z->c; /* test, line 148 */
             if (!(find_among_b(z, a_5, 4))) goto lab9; /* among, line 149 */
-            if (!(out_grouping_b(z, g_v, 97, 138))) goto lab9;
+            if (!(out_grouping_b(z, g_v, 97, 232))) goto lab9;
             z->c = z->l - m_test;
         }
         z->ket = z->c; /* [, line 152 */

@@ -96,7 +96,7 @@ static symbol s_2_0[2] = { 'i', 'g' };
 static symbol s_2_1[3] = { 'l', 'i', 'g' };
 static symbol s_2_2[4] = { 'e', 'l', 'i', 'g' };
 static symbol s_2_3[3] = { 'e', 'l', 's' };
-static symbol s_2_4[4] = { 'l', 155, 's', 't' };
+static symbol s_2_4[4] = { 'l', 248, 's', 't' };
 
 static struct among a_2[5] =
 {
@@ -107,19 +107,19 @@ static struct among a_2[5] =
 /*  4 */ { 4, s_2_4, -1, 2, 0}
 };
 
-static unsigned char g_v[] = { 17, 65, 16, 1, 32, 0, 1, 4 };
+static unsigned char g_v[] = { 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 128 };
 
-static unsigned char g_s_ending[] = { 239, 254, 42, 3, 32 };
+static unsigned char g_s_ending[] = { 239, 254, 42, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16 };
 
 static symbol s_0[] = { 's', 't' };
 static symbol s_1[] = { 'i', 'g' };
-static symbol s_2[] = { 'l', 155, 's' };
+static symbol s_2[] = { 'l', 248, 's' };
 
 static int r_mark_regions(struct SN_env * z) {
     z->I[0] = z->l;
     while(1) { /* goto, line 33 */
         int c = z->c;
-        if (!(in_grouping(z, g_v, 97, 155))) goto lab0;
+        if (!(in_grouping(z, g_v, 97, 248))) goto lab0;
         z->c = c;
         break;
     lab0:
@@ -128,7 +128,7 @@ static int r_mark_regions(struct SN_env * z) {
         z->c++;
     }
     while(1) { /* gopast, line 33 */
-        if (!(out_grouping(z, g_v, 97, 155))) goto lab1;
+        if (!(out_grouping(z, g_v, 97, 248))) goto lab1;
         break;
     lab1:
         if (z->c >= z->l) return 0;
@@ -162,7 +162,7 @@ static int r_main_suffix(struct SN_env * z) {
             slice_del(z); /* delete, line 47 */
             break;
         case 2:
-            if (!(in_grouping_b(z, g_s_ending, 97, 134))) return 0;
+            if (!(in_grouping_b(z, g_s_ending, 97, 229))) return 0;
             slice_del(z); /* delete, line 49 */
             break;
     }
@@ -239,7 +239,7 @@ static int r_undouble(struct SN_env * z) {
         m3 = z->lb; z->lb = z->c;
         z->c = z->l - m;
         z->ket = z->c; /* [, line 75 */
-        if (!(out_grouping_b(z, g_v, 97, 155))) { z->lb = m3; return 0; }
+        if (!(out_grouping_b(z, g_v, 97, 248))) { z->lb = m3; return 0; }
         z->bra = z->c; /* ], line 75 */
         z->S[0] = slice_to(z, z->S[0]); /* -> ch, line 75 */
         z->lb = m3;

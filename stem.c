@@ -103,60 +103,23 @@ ZEND_GET_MODULE(stem)
  */
 PHP_MINIT_FUNCTION(stem)
 {
-	/* Just set up our constants for the PHP function stem().
-	*/
+	// Just set up our constants for the PHP function stem().
 
 	REGISTER_LONG_CONSTANT("STEM_PORTER",		STEM_PORTER,		CONST_CS | CONST_PERSISTENT);
-
-	#if ENABLE_DANISH
 	REGISTER_LONG_CONSTANT("STEM_DANISH",		STEM_DANISH,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_DUTCH
 	REGISTER_LONG_CONSTANT("STEM_DUTCH",		STEM_DUTCH,			CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_ENGLISH
 	REGISTER_LONG_CONSTANT("STEM_ENGLISH",		STEM_ENGLISH,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_FINNISH
 	REGISTER_LONG_CONSTANT("STEM_FINNISH",		STEM_FINNISH,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_FRENCH
 	REGISTER_LONG_CONSTANT("STEM_FRENCH",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_FRANCAIS",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_GERMAN
 	REGISTER_LONG_CONSTANT("STEM_GERMAN",		STEM_GERMAN,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_ITALIAN
 	REGISTER_LONG_CONSTANT("STEM_ITALIAN",		STEM_ITALIAN,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_NORWEGIAN
 	REGISTER_LONG_CONSTANT("STEM_NORWEGIAN",	STEM_NORWEGIAN,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_PORTUGUESE
 	REGISTER_LONG_CONSTANT("STEM_PORTUGUESE",	STEM_PORTUGUESE,	CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_RUSSIAN
 	REGISTER_LONG_CONSTANT("STEM_RUSSIAN",		STEM_RUSSIAN,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_SPANISH
 	REGISTER_LONG_CONSTANT("STEM_SPANISH",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_ESPANOL",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
-	#endif
-
-	#if ENABLE_SWEDISH
 	REGISTER_LONG_CONSTANT("STEM_SWEDISH",		STEM_SWEDISH,		CONST_CS | CONST_PERSISTENT);
-	#endif
 
 	return SUCCESS;
 }
@@ -176,6 +139,14 @@ PHP_MINFO_FUNCTION(stem)
 {
 	php_info_print_table_start();
 	php_info_print_table_header(2, "stem support", "enabled");
+	php_info_print_table_header(2, "version", stem_module_entry.version);
+	php_info_print_table_colspan_header(2,
+	#ifdef COMPILE_DL_STEM
+	"compiled as dynamic module"
+	#else
+	"compiled as static module"
+	#endif
+	);
 	php_info_print_table_colspan_header(2, "Languages Supported");
 	php_info_print_table_row(2, "Original Porter", 	"enabled (default)");
 	php_info_print_table_row(2, "Danish", 			(ENABLE_DANISH ? "enabled" : "disabled"));
@@ -204,8 +175,8 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 {
 	struct SN_env* z;
 	struct SN_env* (*create_env)(void);
-	void (*close_env)(void*);
-	int (*stem)(void*);
+	void (*close_env)(struct SN_env*);
+	int (*stem)(struct SN_env*);
 
 	char* incoming;
 	int len = -1;
@@ -229,103 +200,103 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	{
 		case STEM_DEFAULT:
 		case STEM_PORTER:
-			create_env = (void*) porter_create_env;
-			stem = (void*) porter_stem;
+			create_env = (struct SN_env*) porter_create_env;
+			stem = (int*) porter_stem;
 			close_env = (void*) porter_close_env;
 		break;
 
 		#if ENABLE_DANISH
 		case STEM_DANISH:
-			create_env = (void*) danish_create_env;
-			stem = (void*) danish_stem;
+			create_env = (struct SN_env*) danish_create_env;
+			stem = (int*) danish_stem;
 			close_env = (void*) danish_close_env;
 		break;
 		#endif
 
 		#if ENABLE_DUTCH
 		case STEM_DUTCH:
-			create_env = (void*) dutch_create_env;
-			stem = (void*) dutch_stem;
+			create_env = (struct SN_env*) dutch_create_env;
+			stem = (int*) dutch_stem;
 			close_env = (void*) dutch_close_env;
 		break;
 		#endif
 
 		#if ENABLE_ENGLISH
 		case STEM_ENGLISH:
-			create_env = (void*) english_create_env;
-			stem = (void*) english_stem;
+			create_env = (struct SN_env*) english_create_env;
+			stem = (int*) english_stem;
 			close_env = (void*) english_close_env;
 		break;
 		#endif
 
 		#if ENABLE_FINNISH
 		case STEM_FINNISH:
-			create_env = (void*) finnish_create_env;
-			stem = (void*) finnish_stem;
+			create_env = (struct SN_env*) finnish_create_env;
+			stem = (int*) finnish_stem;
 			close_env = (void*) finnish_close_env;
 		break;
 		#endif
 
 		#if ENABLE_FRENCH
 		case STEM_FRENCH:
-			create_env = (void*) french_create_env;
-			stem = (void*) french_stem;
+			create_env = (struct SN_env*) french_create_env;
+			stem = (int*) french_stem;
 			close_env = (void*) french_close_env;
 		break;
 		#endif
 
 		#if ENABLE_GERMAN
 		case STEM_GERMAN:
-			create_env = (void*) german_create_env;
-			stem = (void*) german_stem;
+			create_env = (struct SN_env*) german_create_env;
+			stem = (int*) german_stem;
 			close_env = (void*) german_close_env;
 		break;
 		#endif
 
 		#if ENABLE_ITALIAN
 		case STEM_ITALIAN:
-			create_env = (void*) italian_create_env;
-			stem = (void*) italian_stem;
+			create_env = (struct SN_env*) italian_create_env;
+			stem = (int*) italian_stem;
 			close_env = (void*) italian_close_env;
 		break;
 		#endif
 
 		#if ENABLE_NORWEGIAN
 		case STEM_NORWEGIAN:
-			create_env = (void*) dutch_create_env;
-			stem = (void*) dutch_stem;
+			create_env = (struct SN_env*) dutch_create_env;
+			stem = (int*) dutch_stem;
 			close_env = (void*) dutch_close_env;
 		break;
 		#endif
 
 		#if ENABLE_PORTUGUESE
 		case STEM_PORTUGUESE:
-			create_env = (void*) portuguese_create_env;
-			stem = (void*) portuguese_stem;
+			create_env = (struct SN_env*) portuguese_create_env;
+			stem = (int*) portuguese_stem;
 			close_env = (void*) portuguese_close_env;
 		break;
 		#endif
 
 		#if ENABLE_RUSSIAN
 		case STEM_RUSSIAN:
-			create_env = (void*) russian_create_env;
-			stem = (void*) russian_stem;
+			create_env = (struct SN_env*) russian_create_env;
+			stem = (int*) russian_stem;
 			close_env = (void*) russian_close_env;
 		break;
 		#endif
 
 		#if ENABLE_SPANISH
 		case STEM_SPANISH:
-			create_env = (void*) spanish_create_env;
-			stem = (void*) spanish_stem;
+			create_env = (struct SN_env*) spanish_create_env;
+			stem = (int*) spanish_stem;
 			close_env = (void*) spanish_close_env;
 		break;
 		#endif
 
 		#if ENABLE_SWEDISH
 		case STEM_SWEDISH:
-			create_env = (void*) swedish_create_env;
-			stem = (void*) swedish_stem;
+			create_env = (struct SN_env*) swedish_create_env;
+			stem = (int*) swedish_stem;
 			close_env = (void*) swedish_close_env;
 		break;
 		#endif
@@ -345,7 +316,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 
 	z->p[z->l]= '\0';
 	len = z->l;
-	incoming = z->p;
+	strncpy(incoming, z->p, z->l);
 	close_env(z);
 
 	RETVAL_STRINGL(incoming, len, 1);

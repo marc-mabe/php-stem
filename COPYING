@@ -3,6 +3,7 @@ The following files are covered under a BSD-like license, copyright
 
 php_stem.h
 stem.c
+stemconf.h
 
 The exact license is as follows:
 
@@ -41,37 +42,23 @@ You've been warned.
 The following files are licensed under a BSD-like license, copyright
 2001 Dr. Martin Porter:
 
-api.c
-api.h
-danish.c
-danish.h
-dutch.c
-dutch.h
-english.c
-english.h
-french.c
-french.h
-german.c
-german.h
+api.c/h
+danish.c/h
+dutch.c/h
+english.c/h
+finnish.c/h
+french.c/h
+german.c/h
 header.h
-italian.c
-italian.h
-norwegian.c
-norwegian.h
-porter.c
-porter.h
-portuguese.c
-portuguese.h
-russian.c
-russian.h
-spanish.c
-spanish.h
-swedish.c
-swedish.h
+italian.c/h
+norwegian.c/h
+porter.c/h
+portuguese.c/h
+russian.c/h
+spanish.c/h
+swedish.c/h
 utilities.c
 
 For the exact terms of Dr. Porter's license, check out
 
-   http://snowball.sourceforge.net/license.php
-
-
+   http://snowball.tartarus.org/license.php

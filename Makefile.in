@@ -2,7 +2,7 @@
 
 LTLIBRARY_NAME        = libstem.la
 LTLIBRARY_SOURCES     = stem.c api.c utilities.c porter.c french.c spanish.c danish.c dutch.c english.c \
-						german.c italian.c  norwegian.c portuguese.c russian.c swedish.c
+						german.c italian.c  norwegian.c portuguese.c russian.c swedish.c finnish.c
 LTLIBRARY_SHARED_NAME = stem.la
 LTLIBRARY_SHARED_LIBADD  = $(STEM_SHARED_LIBADD)
 

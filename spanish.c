@@ -15,17 +15,17 @@ static int r_RV(struct SN_env * z);
 static int r_mark_regions(struct SN_env * z);
 static int r_postlude(struct SN_env * z);
 
-static symbol s_0_1[1] = { 130 };
-static symbol s_0_2[1] = { 160 };
-static symbol s_0_3[1] = { 161 };
-static symbol s_0_4[1] = { 162 };
-static symbol s_0_5[1] = { 163 };
+static symbol s_0_1[1] = { 225 };
+static symbol s_0_2[1] = { 233 };
+static symbol s_0_3[1] = { 237 };
+static symbol s_0_4[1] = { 243 };
+static symbol s_0_5[1] = { 250 };
 
 static struct among a_0[6] =
 {
 /*  0 */ { 0, 0, -1, 6, 0},
-/*  1 */ { 1, s_0_1, 0, 2, 0},
-/*  2 */ { 1, s_0_2, 0, 1, 0},
+/*  1 */ { 1, s_0_1, 0, 1, 0},
+/*  2 */ { 1, s_0_2, 0, 2, 0},
 /*  3 */ { 1, s_0_3, 0, 3, 0},
 /*  4 */ { 1, s_0_4, 0, 4, 0},
 /*  5 */ { 1, s_0_5, 0, 5, 0}
@@ -65,27 +65,27 @@ static struct among a_1[13] =
 static symbol s_2_0[4] = { 'a', 'n', 'd', 'o' };
 static symbol s_2_1[5] = { 'i', 'e', 'n', 'd', 'o' };
 static symbol s_2_2[5] = { 'y', 'e', 'n', 'd', 'o' };
-static symbol s_2_3[5] = { 'i', 130, 'n', 'd', 'o' };
-static symbol s_2_4[4] = { 160, 'n', 'd', 'o' };
+static symbol s_2_3[4] = { 225, 'n', 'd', 'o' };
+static symbol s_2_4[5] = { 'i', 233, 'n', 'd', 'o' };
 static symbol s_2_5[2] = { 'a', 'r' };
 static symbol s_2_6[2] = { 'e', 'r' };
 static symbol s_2_7[2] = { 'i', 'r' };
-static symbol s_2_8[2] = { 130, 'r' };
-static symbol s_2_9[2] = { 160, 'r' };
-static symbol s_2_10[2] = { 161, 'r' };
+static symbol s_2_8[2] = { 225, 'r' };
+static symbol s_2_9[2] = { 233, 'r' };
+static symbol s_2_10[2] = { 237, 'r' };
 
 static struct among a_2[11] =
 {
 /*  0 */ { 4, s_2_0, -1, 6, 0},
 /*  1 */ { 5, s_2_1, -1, 6, 0},
 /*  2 */ { 5, s_2_2, -1, 7, 0},
-/*  3 */ { 5, s_2_3, -1, 1, 0},
-/*  4 */ { 4, s_2_4, -1, 2, 0},
+/*  3 */ { 4, s_2_3, -1, 2, 0},
+/*  4 */ { 5, s_2_4, -1, 1, 0},
 /*  5 */ { 2, s_2_5, -1, 6, 0},
 /*  6 */ { 2, s_2_6, -1, 6, 0},
 /*  7 */ { 2, s_2_7, -1, 6, 0},
-/*  8 */ { 2, s_2_8, -1, 4, 0},
-/*  9 */ { 2, s_2_9, -1, 3, 0},
+/*  8 */ { 2, s_2_8, -1, 3, 0},
+/*  9 */ { 2, s_2_9, -1, 4, 0},
 /* 10 */ { 2, s_2_10, -1, 5, 0}
 };
 
@@ -129,14 +129,14 @@ static symbol s_6_3[3] = { 'o', 's', 'a' };
 static symbol s_6_4[4] = { 'i', 's', 't', 'a' };
 static symbol s_6_5[3] = { 'i', 'v', 'a' };
 static symbol s_6_6[4] = { 'a', 'n', 'z', 'a' };
-static symbol s_6_7[5] = { 'l', 'o', 'g', 161, 'a' };
+static symbol s_6_7[5] = { 'l', 'o', 'g', 237, 'a' };
 static symbol s_6_8[4] = { 'i', 'd', 'a', 'd' };
 static symbol s_6_9[4] = { 'a', 'b', 'l', 'e' };
 static symbol s_6_10[4] = { 'i', 'b', 'l', 'e' };
 static symbol s_6_11[5] = { 'm', 'e', 'n', 't', 'e' };
 static symbol s_6_12[6] = { 'a', 'm', 'e', 'n', 't', 'e' };
-static symbol s_6_13[5] = { 'a', 'c', 'i', 162, 'n' };
-static symbol s_6_14[5] = { 'u', 'c', 'i', 162, 'n' };
+static symbol s_6_13[5] = { 'a', 'c', 'i', 243, 'n' };
+static symbol s_6_14[5] = { 'u', 'c', 'i', 243, 'n' };
 static symbol s_6_15[3] = { 'i', 'c', 'o' };
 static symbol s_6_16[4] = { 'i', 's', 'm', 'o' };
 static symbol s_6_17[3] = { 'o', 's', 'o' };
@@ -151,7 +151,7 @@ static symbol s_6_25[4] = { 'o', 's', 'a', 's' };
 static symbol s_6_26[5] = { 'i', 's', 't', 'a', 's' };
 static symbol s_6_27[4] = { 'i', 'v', 'a', 's' };
 static symbol s_6_28[5] = { 'a', 'n', 'z', 'a', 's' };
-static symbol s_6_29[6] = { 'l', 'o', 'g', 161, 'a', 's' };
+static symbol s_6_29[6] = { 'l', 'o', 'g', 237, 'a', 's' };
 static symbol s_6_30[6] = { 'i', 'd', 'a', 'd', 'e', 's' };
 static symbol s_6_31[5] = { 'a', 'b', 'l', 'e', 's' };
 static symbol s_6_32[5] = { 'i', 'b', 'l', 'e', 's' };
@@ -222,7 +222,7 @@ static symbol s_7_7[3] = { 'y', 'a', 's' };
 static symbol s_7_8[3] = { 'y', 'e', 's' };
 static symbol s_7_9[4] = { 'y', 'a', 'i', 's' };
 static symbol s_7_10[5] = { 'y', 'a', 'm', 'o', 's' };
-static symbol s_7_11[2] = { 'y', 162 };
+static symbol s_7_11[2] = { 'y', 243 };
 
 static struct among a_7[12] =
 {
@@ -245,10 +245,10 @@ static symbol s_8_1[3] = { 'a', 'd', 'a' };
 static symbol s_8_2[3] = { 'i', 'd', 'a' };
 static symbol s_8_3[3] = { 'a', 'r', 'a' };
 static symbol s_8_4[4] = { 'i', 'e', 'r', 'a' };
-static symbol s_8_5[2] = { 161, 'a' };
-static symbol s_8_6[4] = { 'a', 'r', 161, 'a' };
-static symbol s_8_7[4] = { 'e', 'r', 161, 'a' };
-static symbol s_8_8[4] = { 'i', 'r', 161, 'a' };
+static symbol s_8_5[2] = { 237, 'a' };
+static symbol s_8_6[4] = { 'a', 'r', 237, 'a' };
+static symbol s_8_7[4] = { 'e', 'r', 237, 'a' };
+static symbol s_8_8[4] = { 'i', 'r', 237, 'a' };
 static symbol s_8_9[2] = { 'a', 'd' };
 static symbol s_8_10[2] = { 'e', 'd' };
 static symbol s_8_11[2] = { 'i', 'd' };
@@ -260,18 +260,18 @@ static symbol s_8_16[2] = { 'a', 'n' };
 static symbol s_8_17[4] = { 'a', 'b', 'a', 'n' };
 static symbol s_8_18[4] = { 'a', 'r', 'a', 'n' };
 static symbol s_8_19[5] = { 'i', 'e', 'r', 'a', 'n' };
-static symbol s_8_20[3] = { 161, 'a', 'n' };
-static symbol s_8_21[5] = { 'a', 'r', 161, 'a', 'n' };
-static symbol s_8_22[5] = { 'e', 'r', 161, 'a', 'n' };
-static symbol s_8_23[5] = { 'i', 'r', 161, 'a', 'n' };
+static symbol s_8_20[3] = { 237, 'a', 'n' };
+static symbol s_8_21[5] = { 'a', 'r', 237, 'a', 'n' };
+static symbol s_8_22[5] = { 'e', 'r', 237, 'a', 'n' };
+static symbol s_8_23[5] = { 'i', 'r', 237, 'a', 'n' };
 static symbol s_8_24[2] = { 'e', 'n' };
 static symbol s_8_25[4] = { 'a', 's', 'e', 'n' };
 static symbol s_8_26[5] = { 'i', 'e', 's', 'e', 'n' };
 static symbol s_8_27[4] = { 'a', 'r', 'o', 'n' };
 static symbol s_8_28[5] = { 'i', 'e', 'r', 'o', 'n' };
-static symbol s_8_29[4] = { 'a', 'r', 160, 'n' };
-static symbol s_8_30[4] = { 'e', 'r', 160, 'n' };
-static symbol s_8_31[4] = { 'i', 'r', 160, 'n' };
+static symbol s_8_29[4] = { 'a', 'r', 225, 'n' };
+static symbol s_8_30[4] = { 'e', 'r', 225, 'n' };
+static symbol s_8_31[4] = { 'i', 'r', 225, 'n' };
 static symbol s_8_32[3] = { 'a', 'd', 'o' };
 static symbol s_8_33[3] = { 'i', 'd', 'o' };
 static symbol s_8_34[4] = { 'a', 'n', 'd', 'o' };
@@ -285,57 +285,57 @@ static symbol s_8_41[4] = { 'a', 'd', 'a', 's' };
 static symbol s_8_42[4] = { 'i', 'd', 'a', 's' };
 static symbol s_8_43[4] = { 'a', 'r', 'a', 's' };
 static symbol s_8_44[5] = { 'i', 'e', 'r', 'a', 's' };
-static symbol s_8_45[3] = { 161, 'a', 's' };
-static symbol s_8_46[5] = { 'a', 'r', 161, 'a', 's' };
-static symbol s_8_47[5] = { 'e', 'r', 161, 'a', 's' };
-static symbol s_8_48[5] = { 'i', 'r', 161, 'a', 's' };
+static symbol s_8_45[3] = { 237, 'a', 's' };
+static symbol s_8_46[5] = { 'a', 'r', 237, 'a', 's' };
+static symbol s_8_47[5] = { 'e', 'r', 237, 'a', 's' };
+static symbol s_8_48[5] = { 'i', 'r', 237, 'a', 's' };
 static symbol s_8_49[2] = { 'e', 's' };
 static symbol s_8_50[4] = { 'a', 's', 'e', 's' };
 static symbol s_8_51[5] = { 'i', 'e', 's', 'e', 's' };
 static symbol s_8_52[5] = { 'a', 'b', 'a', 'i', 's' };
 static symbol s_8_53[5] = { 'a', 'r', 'a', 'i', 's' };
 static symbol s_8_54[6] = { 'i', 'e', 'r', 'a', 'i', 's' };
-static symbol s_8_55[4] = { 161, 'a', 'i', 's' };
-static symbol s_8_56[6] = { 'a', 'r', 161, 'a', 'i', 's' };
-static symbol s_8_57[6] = { 'e', 'r', 161, 'a', 'i', 's' };
-static symbol s_8_58[6] = { 'i', 'r', 161, 'a', 'i', 's' };
+static symbol s_8_55[4] = { 237, 'a', 'i', 's' };
+static symbol s_8_56[6] = { 'a', 'r', 237, 'a', 'i', 's' };
+static symbol s_8_57[6] = { 'e', 'r', 237, 'a', 'i', 's' };
+static symbol s_8_58[6] = { 'i', 'r', 237, 'a', 'i', 's' };
 static symbol s_8_59[5] = { 'a', 's', 'e', 'i', 's' };
 static symbol s_8_60[6] = { 'i', 'e', 's', 'e', 'i', 's' };
 static symbol s_8_61[6] = { 'a', 's', 't', 'e', 'i', 's' };
 static symbol s_8_62[6] = { 'i', 's', 't', 'e', 'i', 's' };
-static symbol s_8_63[3] = { 130, 'i', 's' };
-static symbol s_8_64[5] = { 'a', 'r', 130, 'i', 's' };
-static symbol s_8_65[5] = { 'e', 'r', 130, 'i', 's' };
-static symbol s_8_66[5] = { 'i', 'r', 130, 'i', 's' };
-static symbol s_8_67[3] = { 160, 'i', 's' };
+static symbol s_8_63[3] = { 225, 'i', 's' };
+static symbol s_8_64[3] = { 233, 'i', 's' };
+static symbol s_8_65[5] = { 'a', 'r', 233, 'i', 's' };
+static symbol s_8_66[5] = { 'e', 'r', 233, 'i', 's' };
+static symbol s_8_67[5] = { 'i', 'r', 233, 'i', 's' };
 static symbol s_8_68[4] = { 'a', 'd', 'o', 's' };
 static symbol s_8_69[4] = { 'i', 'd', 'o', 's' };
 static symbol s_8_70[4] = { 'a', 'm', 'o', 's' };
-static symbol s_8_71[6] = { 160, 'b', 'a', 'm', 'o', 's' };
-static symbol s_8_72[7] = { 'i', 130, 'r', 'a', 'm', 'o', 's' };
-static symbol s_8_73[6] = { 160, 'r', 'a', 'm', 'o', 's' };
-static symbol s_8_74[5] = { 161, 'a', 'm', 'o', 's' };
-static symbol s_8_75[7] = { 'a', 'r', 161, 'a', 'm', 'o', 's' };
-static symbol s_8_76[7] = { 'e', 'r', 161, 'a', 'm', 'o', 's' };
-static symbol s_8_77[7] = { 'i', 'r', 161, 'a', 'm', 'o', 's' };
+static symbol s_8_71[6] = { 225, 'b', 'a', 'm', 'o', 's' };
+static symbol s_8_72[6] = { 225, 'r', 'a', 'm', 'o', 's' };
+static symbol s_8_73[7] = { 'i', 233, 'r', 'a', 'm', 'o', 's' };
+static symbol s_8_74[5] = { 237, 'a', 'm', 'o', 's' };
+static symbol s_8_75[7] = { 'a', 'r', 237, 'a', 'm', 'o', 's' };
+static symbol s_8_76[7] = { 'e', 'r', 237, 'a', 'm', 'o', 's' };
+static symbol s_8_77[7] = { 'i', 'r', 237, 'a', 'm', 'o', 's' };
 static symbol s_8_78[4] = { 'e', 'm', 'o', 's' };
 static symbol s_8_79[6] = { 'a', 'r', 'e', 'm', 'o', 's' };
 static symbol s_8_80[6] = { 'e', 'r', 'e', 'm', 'o', 's' };
 static symbol s_8_81[6] = { 'i', 'r', 'e', 'm', 'o', 's' };
-static symbol s_8_82[7] = { 'i', 130, 's', 'e', 'm', 'o', 's' };
-static symbol s_8_83[6] = { 160, 's', 'e', 'm', 'o', 's' };
+static symbol s_8_82[6] = { 225, 's', 'e', 'm', 'o', 's' };
+static symbol s_8_83[7] = { 'i', 233, 's', 'e', 'm', 'o', 's' };
 static symbol s_8_84[4] = { 'i', 'm', 'o', 's' };
-static symbol s_8_85[4] = { 'a', 'r', 160, 's' };
-static symbol s_8_86[4] = { 'e', 'r', 160, 's' };
-static symbol s_8_87[4] = { 'i', 'r', 160, 's' };
-static symbol s_8_88[2] = { 161, 's' };
-static symbol s_8_89[3] = { 'a', 'r', 130 };
-static symbol s_8_90[3] = { 'e', 'r', 130 };
-static symbol s_8_91[3] = { 'i', 'r', 130 };
-static symbol s_8_92[3] = { 'a', 'r', 160 };
-static symbol s_8_93[3] = { 'e', 'r', 160 };
-static symbol s_8_94[3] = { 'i', 'r', 160 };
-static symbol s_8_95[2] = { 'i', 162 };
+static symbol s_8_85[4] = { 'a', 'r', 225, 's' };
+static symbol s_8_86[4] = { 'e', 'r', 225, 's' };
+static symbol s_8_87[4] = { 'i', 'r', 225, 's' };
+static symbol s_8_88[2] = { 237, 's' };
+static symbol s_8_89[3] = { 'a', 'r', 225 };
+static symbol s_8_90[3] = { 'e', 'r', 225 };
+static symbol s_8_91[3] = { 'i', 'r', 225 };
+static symbol s_8_92[3] = { 'a', 'r', 233 };
+static symbol s_8_93[3] = { 'e', 'r', 233 };
+static symbol s_8_94[3] = { 'i', 'r', 233 };
+static symbol s_8_95[2] = { 'i', 243 };
 
 static struct among a_8[96] =
 {
@@ -402,17 +402,17 @@ static struct among a_8[96] =
 /* 60 */ { 6, s_8_60, -1, 2, 0},
 /* 61 */ { 6, s_8_61, -1, 2, 0},
 /* 62 */ { 6, s_8_62, -1, 2, 0},
-/* 63 */ { 3, s_8_63, -1, 1, 0},
-/* 64 */ { 5, s_8_64, 63, 2, 0},
-/* 65 */ { 5, s_8_65, 63, 2, 0},
-/* 66 */ { 5, s_8_66, 63, 2, 0},
-/* 67 */ { 3, s_8_67, -1, 2, 0},
+/* 63 */ { 3, s_8_63, -1, 2, 0},
+/* 64 */ { 3, s_8_64, -1, 1, 0},
+/* 65 */ { 5, s_8_65, 64, 2, 0},
+/* 66 */ { 5, s_8_66, 64, 2, 0},
+/* 67 */ { 5, s_8_67, 64, 2, 0},
 /* 68 */ { 4, s_8_68, -1, 2, 0},
 /* 69 */ { 4, s_8_69, -1, 2, 0},
 /* 70 */ { 4, s_8_70, -1, 2, 0},
 /* 71 */ { 6, s_8_71, 70, 2, 0},
-/* 72 */ { 7, s_8_72, 70, 2, 0},
-/* 73 */ { 6, s_8_73, 70, 2, 0},
+/* 72 */ { 6, s_8_72, 70, 2, 0},
+/* 73 */ { 7, s_8_73, 70, 2, 0},
 /* 74 */ { 5, s_8_74, 70, 2, 0},
 /* 75 */ { 7, s_8_75, 74, 2, 0},
 /* 76 */ { 7, s_8_76, 74, 2, 0},
@@ -421,8 +421,8 @@ static struct among a_8[96] =
 /* 79 */ { 6, s_8_79, 78, 2, 0},
 /* 80 */ { 6, s_8_80, 78, 2, 0},
 /* 81 */ { 6, s_8_81, 78, 2, 0},
-/* 82 */ { 7, s_8_82, 78, 2, 0},
-/* 83 */ { 6, s_8_83, 78, 2, 0},
+/* 82 */ { 6, s_8_82, 78, 2, 0},
+/* 83 */ { 7, s_8_83, 78, 2, 0},
 /* 84 */ { 4, s_8_84, -1, 2, 0},
 /* 85 */ { 4, s_8_85, -1, 2, 0},
 /* 86 */ { 4, s_8_86, -1, 2, 0},
@@ -441,10 +441,10 @@ static symbol s_9_0[1] = { 'a' };
 static symbol s_9_1[1] = { 'e' };
 static symbol s_9_2[1] = { 'o' };
 static symbol s_9_3[2] = { 'o', 's' };
-static symbol s_9_4[1] = { 130 };
-static symbol s_9_5[1] = { 160 };
-static symbol s_9_6[1] = { 161 };
-static symbol s_9_7[1] = { 162 };
+static symbol s_9_4[1] = { 225 };
+static symbol s_9_5[1] = { 233 };
+static symbol s_9_6[1] = { 237 };
+static symbol s_9_7[1] = { 243 };
 
 static struct among a_9[8] =
 {
@@ -452,13 +452,13 @@ static struct among a_9[8] =
 /*  1 */ { 1, s_9_1, -1, 2, 0},
 /*  2 */ { 1, s_9_2, -1, 1, 0},
 /*  3 */ { 2, s_9_3, -1, 1, 0},
-/*  4 */ { 1, s_9_4, -1, 2, 0},
-/*  5 */ { 1, s_9_5, -1, 1, 0},
+/*  4 */ { 1, s_9_4, -1, 1, 0},
+/*  5 */ { 1, s_9_5, -1, 2, 0},
 /*  6 */ { 1, s_9_6, -1, 1, 0},
 /*  7 */ { 1, s_9_7, -1, 1, 0}
 };
 
-static unsigned char g_v[] = { 17, 65, 16, 0, 3, 0, 0, 128, 7 };
+static unsigned char g_v[] = { 17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 17, 4, 10 };
 
 static symbol s_0[] = { 'a' };
 static symbol s_1[] = { 'e' };
@@ -489,11 +489,11 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[2] = z->l;
     {   int c = z->c; /* do, line 37 */
         {   int c = z->c; /* or, line 39 */
-            if (!(in_grouping(z, g_v, 97, 163))) goto lab2;
+            if (!(in_grouping(z, g_v, 97, 252))) goto lab2;
             {   int c = z->c; /* or, line 38 */
-                if (!(out_grouping(z, g_v, 97, 163))) goto lab4;
+                if (!(out_grouping(z, g_v, 97, 252))) goto lab4;
                 while(1) { /* gopast, line 38 */
-                    if (!(in_grouping(z, g_v, 97, 163))) goto lab5;
+                    if (!(in_grouping(z, g_v, 97, 252))) goto lab5;
                     break;
                 lab5:
                     if (z->c >= z->l) goto lab4;
@@ -502,9 +502,9 @@ static int r_mark_regions(struct SN_env * z) {
                 goto lab3;
             lab4:
                 z->c = c;
-                if (!(in_grouping(z, g_v, 97, 163))) goto lab2;
+                if (!(in_grouping(z, g_v, 97, 252))) goto lab2;
                 while(1) { /* gopast, line 38 */
-                    if (!(out_grouping(z, g_v, 97, 163))) goto lab6;
+                    if (!(out_grouping(z, g_v, 97, 252))) goto lab6;
                     break;
                 lab6:
                     if (z->c >= z->l) goto lab2;
@@ -515,11 +515,11 @@ static int r_mark_regions(struct SN_env * z) {
             goto lab1;
         lab2:
             z->c = c;
-            if (!(out_grouping(z, g_v, 97, 163))) goto lab0;
+            if (!(out_grouping(z, g_v, 97, 252))) goto lab0;
             {   int c = z->c; /* or, line 40 */
-                if (!(out_grouping(z, g_v, 97, 163))) goto lab8;
+                if (!(out_grouping(z, g_v, 97, 252))) goto lab8;
                 while(1) { /* gopast, line 40 */
-                    if (!(in_grouping(z, g_v, 97, 163))) goto lab9;
+                    if (!(in_grouping(z, g_v, 97, 252))) goto lab9;
                     break;
                 lab9:
                     if (z->c >= z->l) goto lab8;
@@ -528,7 +528,7 @@ static int r_mark_regions(struct SN_env * z) {
                 goto lab7;
             lab8:
                 z->c = c;
-                if (!(in_grouping(z, g_v, 97, 163))) goto lab0;
+                if (!(in_grouping(z, g_v, 97, 252))) goto lab0;
                 if (z->c >= z->l) goto lab0;
                 z->c++; /* next, line 40 */
             }
@@ -542,14 +542,14 @@ static int r_mark_regions(struct SN_env * z) {
     }
     {   int c = z->c; /* do, line 43 */
         while(1) { /* gopast, line 44 */
-            if (!(in_grouping(z, g_v, 97, 163))) goto lab11;
+            if (!(in_grouping(z, g_v, 97, 252))) goto lab11;
             break;
         lab11:
             if (z->c >= z->l) goto lab10;
             z->c++;
         }
         while(1) { /* gopast, line 44 */
-            if (!(out_grouping(z, g_v, 97, 163))) goto lab12;
+            if (!(out_grouping(z, g_v, 97, 252))) goto lab12;
             break;
         lab12:
             if (z->c >= z->l) goto lab10;
@@ -557,14 +557,14 @@ static int r_mark_regions(struct SN_env * z) {
         }
         z->I[1] = z->c; /* setmark p1, line 44 */
         while(1) { /* gopast, line 45 */
-            if (!(in_grouping(z, g_v, 97, 163))) goto lab13;
+            if (!(in_grouping(z, g_v, 97, 252))) goto lab13;
             break;
         lab13:
             if (z->c >= z->l) goto lab10;
             z->c++;
         }
         while(1) { /* gopast, line 45 */
-            if (!(out_grouping(z, g_v, 97, 163))) goto lab14;
+            if (!(out_grouping(z, g_v, 97, 252))) goto lab14;
             break;
         lab14:
             if (z->c >= z->l) goto lab10;

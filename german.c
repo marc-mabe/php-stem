@@ -13,18 +13,18 @@ static int r_prelude(struct SN_env * z);
 
 static symbol s_0_1[1] = { 'U' };
 static symbol s_0_2[1] = { 'Y' };
-static symbol s_0_3[1] = { 129 };
-static symbol s_0_4[1] = { 132 };
-static symbol s_0_5[1] = { 148 };
+static symbol s_0_3[1] = { 228 };
+static symbol s_0_4[1] = { 246 };
+static symbol s_0_5[1] = { 252 };
 
 static struct among a_0[6] =
 {
 /*  0 */ { 0, 0, -1, 6, 0},
 /*  1 */ { 1, s_0_1, 0, 2, 0},
 /*  2 */ { 1, s_0_2, 0, 1, 0},
-/*  3 */ { 1, s_0_3, 0, 5, 0},
-/*  4 */ { 1, s_0_4, 0, 3, 0},
-/*  5 */ { 1, s_0_5, 0, 4, 0}
+/*  3 */ { 1, s_0_3, 0, 3, 0},
+/*  4 */ { 1, s_0_4, 0, 4, 0},
+/*  5 */ { 1, s_0_5, 0, 5, 0}
 };
 
 static symbol s_1_0[1] = { 'e' };
@@ -89,13 +89,13 @@ static struct among a_4[8] =
 /*  7 */ { 4, s_4_7, -1, 4, 0}
 };
 
-static unsigned char g_v[] = { 17, 65, 16, 1, 9, 0, 8 };
+static unsigned char g_v[] = { 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 32, 8 };
 
 static unsigned char g_s_ending[] = { 117, 30, 5 };
 
 static unsigned char g_st_ending[] = { 117, 30, 4 };
 
-static symbol s_0[] = { 225 };
+static symbol s_0[] = { 223 };
 static symbol s_1[] = { 's', 's' };
 static symbol s_2[] = { 'u' };
 static symbol s_3[] = { 'U' };
@@ -139,19 +139,19 @@ static int r_prelude(struct SN_env * z) {
         int c = z->c;
         while(1) { /* goto, line 36 */
             int c = z->c;
-            if (!(in_grouping(z, g_v, 97, 148))) goto lab4;
+            if (!(in_grouping(z, g_v, 97, 252))) goto lab4;
             z->bra = z->c; /* [, line 37 */
             {   int c = z->c; /* or, line 37 */
                 if (!(eq_s(z, 1, s_2))) goto lab6;
                 z->ket = z->c; /* ], line 37 */
-                if (!(in_grouping(z, g_v, 97, 148))) goto lab6;
+                if (!(in_grouping(z, g_v, 97, 252))) goto lab6;
                 slice_from_s(z, 1, s_3); /* <-, line 37 */
                 goto lab5;
             lab6:
                 z->c = c;
                 if (!(eq_s(z, 1, s_4))) goto lab4;
                 z->ket = z->c; /* ], line 38 */
-                if (!(in_grouping(z, g_v, 97, 148))) goto lab4;
+                if (!(in_grouping(z, g_v, 97, 252))) goto lab4;
                 slice_from_s(z, 1, s_5); /* <-, line 38 */
             }
         lab5:
@@ -174,14 +174,14 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[0] = z->l;
     z->I[1] = z->l;
     while(1) { /* gopast, line 47 */
-        if (!(in_grouping(z, g_v, 97, 148))) goto lab0;
+        if (!(in_grouping(z, g_v, 97, 252))) goto lab0;
         break;
     lab0:
         if (z->c >= z->l) return 0;
         z->c++;
     }
     while(1) { /* gopast, line 47 */
-        if (!(out_grouping(z, g_v, 97, 148))) goto lab1;
+        if (!(out_grouping(z, g_v, 97, 252))) goto lab1;
         break;
     lab1:
         if (z->c >= z->l) return 0;
@@ -193,14 +193,14 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[0] = 3;
 lab2:
     while(1) { /* gopast, line 49 */
-        if (!(in_grouping(z, g_v, 97, 148))) goto lab3;
+        if (!(in_grouping(z, g_v, 97, 252))) goto lab3;
         break;
     lab3:
         if (z->c >= z->l) return 0;
         z->c++;
     }
     while(1) { /* gopast, line 49 */
-        if (!(out_grouping(z, g_v, 97, 148))) goto lab4;
+        if (!(out_grouping(z, g_v, 97, 252))) goto lab4;
         break;
     lab4:
         if (z->c >= z->l) return 0;

@@ -108,7 +108,7 @@ static struct among a_2[11] =
 /* 10 */ { 7, s_2_10, 9, 1, 0}
 };
 
-static unsigned char g_v[] = { 17, 65, 16, 1, 32, 0, 1, 4 };
+static unsigned char g_v[] = { 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 128 };
 
 static unsigned char g_s_ending[] = { 119, 127, 149, 1 };
 
@@ -118,7 +118,7 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[0] = z->l;
     while(1) { /* goto, line 30 */
         int c = z->c;
-        if (!(in_grouping(z, g_v, 97, 155))) goto lab0;
+        if (!(in_grouping(z, g_v, 97, 248))) goto lab0;
         z->c = c;
         break;
     lab0:
@@ -127,7 +127,7 @@ static int r_mark_regions(struct SN_env * z) {
         z->c++;
     }
     while(1) { /* gopast, line 30 */
-        if (!(out_grouping(z, g_v, 97, 155))) goto lab1;
+        if (!(out_grouping(z, g_v, 97, 248))) goto lab1;
         break;
     lab1:
         if (z->c >= z->l) return 0;

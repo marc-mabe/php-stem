@@ -41,77 +41,77 @@ PHP_FUNCTION(stem_enabled);
 
 #define STEM_DEFAULT	0x0000
 #define STEM_PORTER		0x0001
+#define STEM_ENGLISH	0x0002
+#define STEM_FRENCH		0x0003
+#define STEM_SPANISH	0x0004
+#define STEM_DUTCH		0x0005
+#define STEM_DANISH		0x0006
+#define STEM_GERMAN		0x0007
+#define STEM_ITALIAN	0x0008
+#define STEM_NORWEGIAN	0x0009
+#define STEM_PORTUGUESE	0x000A
+#define STEM_RUSSIAN	0x000B
+#define STEM_SWEDISH	0x000C
+#define STEM_FINNISH	0x000D
 
 #if ENABLE_DANISH
 #include "danish.h"
 PHP_FUNCTION(stem_danish);
-#define STEM_DANISH		0x0006
 #endif
 
 #if ENABLE_DUTCH
 #include "dutch.h"
 PHP_FUNCTION(stem_dutch);
-#define STEM_DUTCH		0x0005
 #endif
 
 #if ENABLE_ENGLISH
 #include "english.h"
 PHP_FUNCTION(stem_english);
-#define STEM_ENGLISH	0x0002
 #endif
 
 #if ENABLE_FINNISH
 #include "finnish.h"
 PHP_FUNCTION(stem_finnish);  
-#define STEM_FINNISH	0x000D
 #endif
 
 #if ENABLE_FRENCH
 #include "french.h"
 PHP_FUNCTION(stem_french);
-#define STEM_FRENCH		0x0003
 #endif
 
 #if ENABLE_GERMAN
 #include "german.h"
 PHP_FUNCTION(stem_german);
-#define STEM_GERMAN		0x0007
 #endif
 
 #if ENABLE_ITALIAN
 #include "italian.h"
 PHP_FUNCTION(stem_italian);
-#define STEM_ITALIAN	0x0008
 #endif
 
 #if ENABLE_NORWEGIAN
 #include "norwegian.h"
 PHP_FUNCTION(stem_norwegian);
-#define STEM_NORWEGIAN	0x0009
 #endif
 
 #if ENABLE_PORTUGUESE
 #include "portuguese.h"
 PHP_FUNCTION(stem_portuguese);
-#define STEM_PORTUGUESE	0x000A
 #endif
 
 #if ENABLE_RUSSIAN
 #include "russian.h"
 PHP_FUNCTION(stem_russian);
-#define STEM_RUSSIAN	0x000B
 #endif
 
 #if ENABLE_SPANISH
 #include "spanish.h"
 PHP_FUNCTION(stem_spanish);
-#define STEM_SPANISH	0x0004
 #endif
 
 #if ENABLE_SWEDISH
 #include "swedish.h"
 PHP_FUNCTION(stem_swedish);
-#define STEM_SWEDISH	0x000C
 #endif
 
 
