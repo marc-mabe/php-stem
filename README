@@ -1,8 +1,9 @@
 
 stem -- a PHP extension that provides word stemming.
+Version 1.2.
 
 J Smith <dark_panda@hushmail.com>
-12 Feb 2002
+18 Apr 2002
 
 0. What is it?
 
@@ -155,3 +156,25 @@ J Smith <dark_panda@hushmail.com>
 	Norwegian: havnemyndighetene -> havnemyndighet
 	Portuguese: quilométricas -> quilométr
 	Swedish: klostergården -> klostergård
+
+
+4. How do you compile it?
+
+	You compile it as you would any other PHP extension.
+
+	On UNIX-like systems:
+
+	0. Unpack the source into /path/to/php/ext.
+	1. Run buildconf.
+	2. Configure using the --enable-stem argument.
+	3. Run make.
+
+
+	On Windows systems:
+
+	0. Unpack the source as above.
+	1. Open up the VC++ 6 workspace or project provided and build
+	   the DLL.
+	2. To use the extension, either use the dl() function to load
+	   the DLL or use the extension=php_stem.dll directive in your
+	   php.ini file.
