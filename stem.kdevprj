@@ -665,7 +665,7 @@ install_location=
 type=DATA
 
 [tests/Makefile.am]
-files=tests/001.phpt,tests/002.phpt,tests/003.phpt,tests/004.phpt,tests/005.phpt,tests/006.phpt,tests/danish.dat,tests/danish.out,tests/dutch.dat,tests/dutch.out,tests/english.dat,tests/english.out,tests/finnish.dat,tests/finnish.out,tests/french.dat,tests/french.out,tests/german.dat,tests/german.out,tests/italian.dat,tests/italian.out,tests/norwegian.dat,tests/norwegian.out,tests/porter.dat,tests/porter.out,tests/portuguese.dat,tests/portuguese.out,tests/russian.dat,tests/russian.out,tests/spanish.dat,tests/spanish.out,tests/swedish.dat,tests/swedish.out,tests/tests.php,tests/007.phpt,tests/008.phpt,tests/009.phpt,tests/010.phpt,tests/011.phpt,tests/012.phpt,tests/013.phpt,tests/014.phpt,tests/015.phpt,tests/016.phpt,tests/017.phpt,tests/018.phpt,tests/019.phpt,tests/020.phpt,tests/021.phpt,tests/022.phpt,tests/023.phpt,tests/024.phpt,tests/025.phpt,tests/026.phpt,tests/danish.dat.gz,tests/danish.out.gz,tests/dutch.dat.gz,tests/dutch.out.gz,tests/english.dat.gz,tests/english.out.gz,tests/finnish.dat.gz,tests/finnish.out.gz,tests/french.dat.gz,tests/french.out.gz,tests/german.dat.gz,tests/german.out.gz,tests/italian.dat.gz,tests/italian.out.gz,tests/norwegian.dat.gz,tests/norwegian.out.gz,tests/porter.dat.gz,tests/porter.out.gz,tests/portuguese.dat.gz,tests/portuguese.out.gz,tests/russian.dat.gz,tests/russian.out.gz,tests/spanish.dat.gz,tests/spanish.out.gz,tests/swedish.dat.gz,tests/swedish.out.gz
+files=tests/001.phpt,tests/002.phpt,tests/003.phpt,tests/004.phpt,tests/005.phpt,tests/006.phpt,tests/danish.dat,tests/danish.out,tests/dutch.dat,tests/dutch.out,tests/english.dat,tests/english.out,tests/finnish.dat,tests/finnish.out,tests/french.dat,tests/french.out,tests/german.dat,tests/german.out,tests/italian.dat,tests/italian.out,tests/norwegian.dat,tests/norwegian.out,tests/porter.dat,tests/porter.out,tests/portuguese.dat,tests/portuguese.out,tests/russian.dat,tests/russian.out,tests/spanish.dat,tests/spanish.out,tests/swedish.dat,tests/swedish.out,tests/tests.php,tests/007.phpt,tests/008.phpt,tests/009.phpt,tests/010.phpt,tests/011.phpt,tests/012.phpt,tests/013.phpt,tests/014.phpt,tests/015.phpt,tests/016.phpt,tests/017.phpt,tests/018.phpt,tests/019.phpt,tests/020.phpt,tests/021.phpt,tests/022.phpt,tests/023.phpt,tests/024.phpt,tests/025.phpt,tests/026.phpt,tests/danish.dat.gz,tests/danish.out.gz,tests/dutch.dat.gz,tests/dutch.out.gz,tests/english.dat.gz,tests/english.out.gz,tests/finnish.dat.gz,tests/finnish.out.gz,tests/french.dat.gz,tests/french.out.gz,tests/german.dat.gz,tests/german.out.gz,tests/italian.dat.gz,tests/italian.out.gz,tests/norwegian.dat.gz,tests/norwegian.out.gz,tests/porter.dat.gz,tests/porter.out.gz,tests/portuguese.dat.gz,tests/portuguese.out.gz,tests/russian.dat.gz,tests/russian.out.gz,tests/spanish.dat.gz,tests/spanish.out.gz,tests/swedish.dat.gz,tests/swedish.out.gz,tests/fulltests.php
 sub_dirs=
 type=normal
 
@@ -784,6 +784,12 @@ install_location=
 type=DATA
 
 [tests/french.out.gz]
+dist=true
+install=false
+install_location=
+type=DATA
+
+[tests/fulltests.php]
 dist=true
 install=false
 install_location=

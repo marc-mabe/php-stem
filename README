@@ -3,7 +3,7 @@ stem -- a PHP extension that provides word stemming.
 Version 1.3.
 
 J Smith <dark_panda@hushmail.com>
-25 Nov 2002
+27 Nov 2002
 
 NOTE: There have been changes to some of the stemming algorithms,
 so they are not 100% compatible with older versions of stem-php.
@@ -206,8 +206,12 @@ may not match with the current version. Be careful.
 
 5. Tests?
 
-	Tests are available in ext/stem/tests, obviously. You need to have
-	the zlib module enabled in order to run the extensive tests.
-	Alteratively, you can get rid of the zlib checks, uncompress the
-	*.dat and *.out files and modify test.php to not use gzfile() and
-	use regular old file() instead.
+	Tests are available in ext/stem/tests. More complete tests are
+	available at
+
+	  http://www.tutorbuddy.com/software/
+
+	These tests are more extensive, as they involve long word lists
+	and such. I didn't include them with the standard distribution
+	'cause it would mean a gigantic file size for the gzipped source.
+

@@ -6,6 +6,10 @@ ChangeLog:
 * Added some simple tests. The real tests involve
   gigantic word lists, and to save space, they're
   gzipped, so you need zlib enabled to do them.
+  The real tests have been removed from the standard
+  distribution, but are available from
+
+    http://www.tutorbuddy.com/software/
 
 26 Nov 2002
 
