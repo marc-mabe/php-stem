@@ -6,7 +6,8 @@
    | Check out COPYING for the exact license.                             |
    +----------------------------------------------------------------------+
 
- */
+$Id$
+*/
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

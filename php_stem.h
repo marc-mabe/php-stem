@@ -6,7 +6,8 @@
    | Check out COPYING for the exact license.                             |
    +----------------------------------------------------------------------+
 
- */
+$Id$
+*/
 
 #ifndef PHP_STEM_H
 #define PHP_STEM_H
