@@ -1,5 +1,10 @@
 ChangeLog:
 
+28 Mar 2002
+
+* Fixed a bug relating to the lower-casing of words.
+* Release of 1.4
+
 18 Dec 2002
 
 * Change all incoming words to lower-case before
