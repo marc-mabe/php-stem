@@ -100,6 +100,19 @@ PHP_MINFO_FUNCTION(stem)
 {
 	php_info_print_table_start();
 	php_info_print_table_header(2, "stem support", "enabled");
+	php_info_print_table_row(1, "Languages Supported");
+	php_info_print_table_row(2, "Original Porter", "enabled");
+	php_info_print_table_row(2, "English", "enabled");
+	php_info_print_table_row(2, "French", "enabled");
+	php_info_print_table_row(2, "Spanish", "enabled");
+	php_info_print_table_row(2, "Dutch", "enabled");
+	php_info_print_table_row(2, "Danish", "enabled");
+	php_info_print_table_row(2, "German", "enabled");
+	php_info_print_table_row(2, "Italian", "enabled");
+	php_info_print_table_row(2, "Norwegian", "enabled");
+	php_info_print_table_row(2, "Portuguese", "enabled");
+	php_info_print_table_row(2, "Russian", "enabled");
+	php_info_print_table_row(2, "Swedish", "enabled");
 	php_info_print_table_end();
 }
 /* }}} */
