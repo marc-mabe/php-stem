@@ -178,3 +178,14 @@ J Smith <dark_panda@hushmail.com>
 	2. To use the extension, either use the dl() function to load
 	   the DLL or use the extension=php_stem.dll directive in your
 	   php.ini file.
+
+
+	I've tested this extension on the following systems:
+
+	- Linux, using gcc 2.96 (yes, the Red Hat gcc) and PHP 4.1.2,
+	  4.2.0RC2 and 4.2.0RC4.
+
+	- Solaris 8 using gcc 2.95 and PHP 4.1.2.
+
+	- Windows 2000 using Visual C++ 6 with service packs 2 and 5 and
+	  PHP 4.1.2.
