@@ -215,3 +215,10 @@ may not match with the current version. Be careful.
 	and such. I didn't include them with the standard distribution
 	'cause it would mean a gigantic file size for the gzipped source.
 
+
+6. Public key?
+
+	You can use the public key associated with my Hushmail account
+	(see above) or use the public key at
+
+		http://www.tutorbuddy.com/software/jsmith.pubkey.txt
