@@ -1,6 +1,6 @@
 /*
    +----------------------------------------------------------------------+
-   | Copyright (c) 2002, 2003 J Smith <dark_panda@hushmail.com>           |
+   | Copyright (c) 2002-2004 J Smith <dark_panda@hushmail.com>            |
    | Snowball sources copyright (c) M.F. Porter                           |
    +----------------------------------------------------------------------+
    | Check out COPYING for the exact license.                             |
