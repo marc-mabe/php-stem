@@ -3,21 +3,5 @@
 <KDevPrjSession>
  <LastCompileConfig>(Default)</LastCompileConfig>
  <Mainframe MaximizeMode="1" />
- <DocsAndViews NumberOfDocuments="5" >
-  <Doc0 CursorPosLine="306" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="0" FileName="/home/jay/setup/php/stem/stem.c" >
-   <View0 Top="25" Width="400" Attach="1" Height="300" Left="3" Focus="0" Type="KWriteView" MinMaxMode="0" />
-  </Doc0>
-  <Doc1 CursorPosLine="139" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="0" FileName="/home/jay/setup/php/stem/php_stem.h" >
-   <View0 Top="48" Width="400" Attach="1" Height="300" Left="26" Focus="0" Type="KWriteView" MinMaxMode="0" />
-  </Doc1>
-  <Doc2 CursorPosLine="10" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="25" FileName="/home/jay/setup/php/stem/config.m4" >
-   <View0 Top="71" Width="1040" Attach="1" Height="620" Left="49" Focus="0" Type="KWriteView" MinMaxMode="0" />
-  </Doc2>
-  <Doc3 CursorPosLine="9" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="0" FileName="/home/jay/setup/php/stem/Makefile.in" >
-   <View0 Top="94" Width="1040" Attach="1" Height="602" Left="72" Focus="0" Type="KWriteView" MinMaxMode="0" />
-  </Doc3>
-  <Doc4 CursorPosLine="218" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="0" FileName="/home/jay/setup/php/stem/README" >
-   <View0 Top="92" Width="1046" Attach="1" Height="631" Left="92" Focus="1" Type="KWriteView" MinMaxMode="2" />
-  </Doc4>
- </DocsAndViews>
+ <DocsAndViews NumberOfDocuments="0" />
 </KDevPrjSession>

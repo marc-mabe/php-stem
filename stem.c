@@ -178,7 +178,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	struct SN_env* (*create_env)(void);
 	void (*close_env)(struct SN_env*);
 	int (*stem)(struct SN_env*);
-
+	
 	char* incoming;
 	int len = -1;
 
@@ -196,8 +196,6 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	if (len <= 0) {
 		RETVAL_STRINGL(incoming, len, 1);
 	}
-
-	incoming = php_strtolower(incoming, strlen(incoming));
 
 	switch (lang)
 	{
@@ -310,14 +308,13 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	}
 
 	z = create_env();
-	SN_set_current(z, strlen(incoming), incoming);
+	SN_set_current(z, len, incoming);
+	php_strtolower(z->p, len);
 	stem(z);
 	z->p[z->l]= '\0';
-	len = z->l;
-	strncpy(incoming, z->p, z->l);
-	close_env(z);
 
-	RETVAL_STRINGL(incoming, len, 1);
+	RETVAL_STRINGL(z->p, z->l, 1);
+	close_env(z);
 }
 /* }}} */
 
