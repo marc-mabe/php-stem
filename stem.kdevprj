@@ -292,7 +292,7 @@ User Interface=*.ui,*.kdevdlg,*.rc,
 groups=Headers,Sources,GNU,Translations,User Interface,Others
 
 [Makefile.am]
-files=api.c,api.h,danish.c,ChangeLog,config.m4,COPYING,CREDITS,danish.h,english.c,english.h,EXPERIMENTAL,french.c,french.h,german.c,german.h,header.h,italian.c,italian.h,Makefile.in,norwegian.c,norwegian.h,php_stem.h,porter.c,porter.h,portuguese.c,portuguese.h,README,russian.c,russian.h,spanish.c,spanish.h,stem.c,swedish.c,swedish.h,utilities.c
+files=api.c,api.h,danish.c,ChangeLog,config.m4,COPYING,CREDITS,danish.h,english.c,english.h,EXPERIMENTAL,french.c,french.h,german.c,german.h,header.h,italian.c,italian.h,Makefile.in,norwegian.c,norwegian.h,php_stem.h,porter.c,porter.h,portuguese.c,portuguese.h,README,russian.c,russian.h,spanish.c,spanish.h,stem.c,swedish.c,swedish.h,utilities.c,dutch.c,dutch.h
 sharedlib_LDFLAGS=-version-info 0:0:0
 sharedlib_rootname=.
 sub_dirs=
@@ -335,6 +335,18 @@ install_location=
 type=SOURCE
 
 [danish.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[dutch.c]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[dutch.h]
 dist=true
 install=false
 install_location=

@@ -15,7 +15,7 @@ static int r_RV(struct SN_env * z);
 static int r_mark_regions(struct SN_env * z);
 static int r_postlude(struct SN_env * z);
 
-static symbol s_0_0[0] = {  };
+static symbol s_0_0[1] = { '\0' };
 static symbol s_0_1[1] = { 130 };
 static symbol s_0_2[1] = { 160 };
 static symbol s_0_3[1] = { 161 };

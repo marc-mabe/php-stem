@@ -29,7 +29,7 @@ static struct among a_0[4] =
 /*  3 */ { 2, s_0_3, 0, -1, 0}
 };
 
-static symbol s_1_0[0] = {  };
+static symbol s_1_0[1] = { '\0' };
 static symbol s_1_1[2] = { 'b', 'b' };
 static symbol s_1_2[2] = { 'd', 'd' };
 static symbol s_1_3[2] = { 'f', 'f' };
