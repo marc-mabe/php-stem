@@ -263,9 +263,9 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 
 		#if ENABLE_NORWEGIAN
 		case STEM_NORWEGIAN:
-			create_env = (struct SN_env*) dutch_create_env;
-			stem = (int*) dutch_stem;
-			close_env = (void*) dutch_close_env;
+			create_env = (struct SN_env*) norwegian_create_env;
+			stem = (int*) norwegian_stem;
+			close_env = (void*) norwegian_close_env;
 		break;
 		#endif
 
@@ -308,12 +308,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 
 	z = create_env();
 	SN_set_current(z, strlen(incoming), incoming);
-	if (stem(z) <= 0) {
-		php_error(E_NOTICE, "%s() couldn't stem word", get_active_function_name(TSRMLS_C));
-		close_env(z);
-		RETURN_FALSE;
-	}
-
+	stem(z);
 	z->p[z->l]= '\0';
 	len = z->l;
 	strncpy(incoming, z->p, z->l);
