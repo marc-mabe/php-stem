@@ -166,6 +166,16 @@ PHP_MINFO_FUNCTION(stem)
 }
 /* }}} */
 
+#ifdef PHP_WIN32
+#define INIT_FUNCS(x)		create_env = (struct SN_env*) x ## _create_env; \
+							stem = (int*) x ## _stem; \
+							close_env = (void*) x ## _close_env;
+#else
+#define INIT_FUNCS(x)		create_env = x ## _create_env; \
+							stem = x ## _stem; \
+							close_env = x ## _close_env;
+#endif
+
 
 /* {{{ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
    Return a stemmed string. lang is one of the language constants. By default,
@@ -201,104 +211,78 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	{
 		case STEM_DEFAULT:
 		case STEM_PORTER:
-			create_env = (struct SN_env*) porter_create_env;
-			stem = (int*) porter_stem;
-			close_env = (void*) porter_close_env;
+			INIT_FUNCS(porter)
 		break;
 
 		#if ENABLE_DANISH
 		case STEM_DANISH:
-			create_env = (struct SN_env*) danish_create_env;
-			stem = (int*) danish_stem;
-			close_env = (void*) danish_close_env;
+			INIT_FUNCS(danish)
 		break;
 		#endif
 
 		#if ENABLE_DUTCH
 		case STEM_DUTCH:
-			create_env = (struct SN_env*) dutch_create_env;
-			stem = (int*) dutch_stem;
-			close_env = (void*) dutch_close_env;
+			INIT_FUNCS(dutch)
 		break;
 		#endif
 
 		#if ENABLE_ENGLISH
 		case STEM_ENGLISH:
-			create_env = (struct SN_env*) english_create_env;
-			stem = (int*) english_stem;
-			close_env = (void*) english_close_env;
+			INIT_FUNCS(english)
 		break;
 		#endif
 
 		#if ENABLE_FINNISH
 		case STEM_FINNISH:
-			create_env = (struct SN_env*) finnish_create_env;
-			stem = (int*) finnish_stem;
-			close_env = (void*) finnish_close_env;
+			INIT_FUNCS(finnish)
 		break;
 		#endif
 
 		#if ENABLE_FRENCH
 		case STEM_FRENCH:
-			create_env = (struct SN_env*) french_create_env;
-			stem = (int*) french_stem;
-			close_env = (void*) french_close_env;
+			INIT_FUNCS(french)
 		break;
 		#endif
 
 		#if ENABLE_GERMAN
 		case STEM_GERMAN:
-			create_env = (struct SN_env*) german_create_env;
-			stem = (int*) german_stem;
-			close_env = (void*) german_close_env;
+			INIT_FUNCS(german)
 		break;
 		#endif
 
 		#if ENABLE_ITALIAN
 		case STEM_ITALIAN:
-			create_env = (struct SN_env*) italian_create_env;
-			stem = (int*) italian_stem;
-			close_env = (void*) italian_close_env;
+			INIT_FUNCS(italian)
 		break;
 		#endif
 
 		#if ENABLE_NORWEGIAN
 		case STEM_NORWEGIAN:
-			create_env = (struct SN_env*) norwegian_create_env;
-			stem = (int*) norwegian_stem;
-			close_env = (void*) norwegian_close_env;
+			INIT_FUNCS(norwegian)
 		break;
 		#endif
 
 		#if ENABLE_PORTUGUESE
 		case STEM_PORTUGUESE:
-			create_env = (struct SN_env*) portuguese_create_env;
-			stem = (int*) portuguese_stem;
-			close_env = (void*) portuguese_close_env;
+			INIT_FUNCS(portuguese)
 		break;
 		#endif
 
 		#if ENABLE_RUSSIAN
 		case STEM_RUSSIAN:
-			create_env = (struct SN_env*) russian_create_env;
-			stem = (int*) russian_stem;
-			close_env = (void*) russian_close_env;
+			INIT_FUNCS(russian)
 		break;
 		#endif
 
 		#if ENABLE_SPANISH
 		case STEM_SPANISH:
-			create_env = (struct SN_env*) spanish_create_env;
-			stem = (int*) spanish_stem;
-			close_env = (void*) spanish_close_env;
+			INIT_FUNCS(spanish)
 		break;
 		#endif
 
 		#if ENABLE_SWEDISH
 		case STEM_SWEDISH:
-			create_env = (struct SN_env*) swedish_create_env;
-			stem = (int*) swedish_stem;
-			close_env = (void*) swedish_close_env;
+			INIT_FUNCS(swedish)
 		break;
 		#endif
 
