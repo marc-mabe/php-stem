@@ -23,14 +23,14 @@ static int le_stem;
 /* {{{ stem_functions[]
 */
 function_entry stem_functions[] = {
-	PHP_FE(stem,					NULL)
-	PHP_FE(stem_porter,				NULL)
+	PHP_FE(stem,				NULL)
+	PHP_FE(stem_porter,			NULL)
 	PHP_FE(stem_english,			NULL)
-	PHP_FE(stem_french,				NULL)
+	PHP_FE(stem_french,			NULL)
 	PHP_FE(stem_spanish,			NULL)
-	PHP_FE(stem_dutch,				NULL)
-	PHP_FE(stem_danish,				NULL)
-	PHP_FE(stem_german,				NULL)
+	PHP_FE(stem_dutch,			NULL)
+	PHP_FE(stem_danish,			NULL)
+	PHP_FE(stem_german,			NULL)
 	PHP_FE(stem_italian,			NULL)
 	PHP_FE(stem_norwegian,			NULL)
 	PHP_FE(stem_portuguese,			NULL)
