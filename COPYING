@@ -75,26 +75,3 @@ For the exact terms of Dr. Porter's license, check out
    http://snowball.sourceforge.net/license.php
 
 
-In this release, the output created by Snowball has been modified slightly
-from the "official" versions to correct for some errors and warnings given
-about zero-sized arrays, which are forbidden by ANSI/ISO C. The changes look
-something like this:
-
-original: static symbol s_0_0[0] = {  };
-corrected: static symbol s_0_0[1] = { '\0' };
-
-This problem occurs in the following files:
-
-dutch.c
-english.c
-french.c
-german.c
-italian.c
-porter.c
-portuguese.c
-spanish.c
-
-There is also a small change in api.c to stop a warning message about
-calloc() and free() being undefined. All that was done here is an
-extra line to #include <stdlib.h>.
-

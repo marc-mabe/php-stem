@@ -15,7 +15,6 @@ static int r_mark_regions(struct SN_env * z);
 static int r_postlude(struct SN_env * z);
 static int r_prelude(struct SN_env * z);
 
-static symbol s_0_0[1] = { '\0' };
 static symbol s_0_1[2] = { 'q', 'u' };
 static symbol s_0_2[1] = { 130 };
 static symbol s_0_3[1] = { 160 };
@@ -25,7 +24,7 @@ static symbol s_0_6[1] = { 163 };
 
 static struct among a_0[7] =
 {
-/*  0 */ { 0, s_0_0, -1, 7, 0},
+/*  0 */ { 0, 0, -1, 7, 0},
 /*  1 */ { 2, s_0_1, 0, 6, 0},
 /*  2 */ { 1, s_0_2, 0, 2, 0},
 /*  3 */ { 1, s_0_3, 0, 1, 0},
@@ -34,13 +33,12 @@ static struct among a_0[7] =
 /*  6 */ { 1, s_0_6, 0, 5, 0}
 };
 
-static symbol s_1_0[1] = { '\0' };
 static symbol s_1_1[1] = { 'I' };
 static symbol s_1_2[1] = { 'U' };
 
 static struct among a_1[3] =
 {
-/*  0 */ { 0, s_1_0, -1, 3, 0},
+/*  0 */ { 0, 0, -1, 3, 0},
 /*  1 */ { 1, s_1_1, 0, 1, 0},
 /*  2 */ { 1, s_1_2, 0, 2, 0}
 };
