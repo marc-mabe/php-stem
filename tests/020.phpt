@@ -16,8 +16,8 @@ runQuickTest(STEM_GERMAN, "weltverantwortung", "weltverantwort");
 
 ?>
 --EXPECT--
-abenteuerspielplatzen -> abenteuerspielplatz: OK
+abenteuerspielplätzen -> abenteuerspielplatz: OK
 eingefleischten -> eingefleischt: OK
-kummerlichen -> kumm: OK
+kümmerlichen -> kumm: OK
 weltverantwortung -> weltverantwort: OK
 

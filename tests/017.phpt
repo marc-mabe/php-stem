@@ -18,6 +18,6 @@ runQuickTest(STEM_DUTCH, "zwitserse", "zwitser");
 --EXPECT--
 aangekondigde -> aangekondigd: OK
 aantrekkelijkheid -> aantrek: OK
-bosendorferstrasse -> bosendorferstras: OK
+bösendorferstrasse -> bosendorferstras: OK
 zwitserse -> zwitser: OK
 

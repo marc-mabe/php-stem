@@ -19,5 +19,5 @@ runQuickTest(STEM_SPANISH, "pugilística", "pugilist");
 acercaron -> acerc: OK
 chapoteaderos -> chapoteader: OK
 lloraba -> llor: OK
-pugilistica -> pugilist: OK
+pugilística -> pugilist: OK
 
