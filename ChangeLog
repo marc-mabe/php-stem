@@ -1,5 +1,9 @@
 ChangeLog:
 
+06 May 2002
+
+* Small fixes to the phpinfo() table block.
+
 19 Apr 2002
 
 * Although I released 1.2 yesterday, Dr. Porter was so
