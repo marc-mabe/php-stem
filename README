@@ -1,9 +1,9 @@
 
 stem -- a PHP extension that provides word stemming.
-Version 1.2.1.
+Version 1.3.
 
 J Smith <dark_panda@hushmail.com>
-19 Apr 2002
+17 May 2002
 
 0. What is it?
 
@@ -183,7 +183,7 @@ J Smith <dark_panda@hushmail.com>
 	I've tested this extension on the following systems:
 
 	- Linux, using gcc 2.96 (yes, the Red Hat gcc) and PHP 4.1.2,
-	  4.2.0RC2 and 4.2.0RC4.
+	  4.2.0 and 4.2.1.
 
 	- Solaris 8 using gcc 2.95 and PHP 4.1.2.
 
