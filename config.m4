@@ -27,6 +27,7 @@ if test "$PHP_STEM" != "no"; then
 		                        norwegian.c \
 		                        portuguese.c \
 		                        russian.c \
-		                        swedish.c, $ext_shared,,)
+		                        swedish.c \
+		                        finnish.c, $ext_shared,,)
 	fi
 fi

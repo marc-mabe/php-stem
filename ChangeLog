@@ -1,5 +1,14 @@
 ChangeLog:
 
+22 Nov 2002
+
+* Finally did some more work. Added the ability to
+  enable/disable languages via stemconf.h.
+* New function: bool stem_enabled(int lang) -- returns
+  true if the language has been enabled, false if it
+  hasn't.
+* Added a Finnish language stemmer.
+
 06 May 2002
 
 * Small fixes to the phpinfo() table block.

@@ -25,17 +25,56 @@ static int le_stem;
 function_entry stem_functions[] = {
 	PHP_FE(stem,				NULL)
 	PHP_FE(stem_porter,			NULL)
-	PHP_FE(stem_english,		NULL)
-	PHP_FE(stem_french,			NULL)
-	PHP_FE(stem_spanish,		NULL)
-	PHP_FE(stem_dutch,			NULL)
+	PHP_FE(stem_enabled,		NULL)
+
+	#if ENABLE_DANISH
 	PHP_FE(stem_danish,			NULL)
+	#endif
+
+	#if ENABLE_DUTCH
+	PHP_FE(stem_dutch,			NULL)
+	#endif
+
+	#if ENABLE_ENGLISH
+	PHP_FE(stem_english,		NULL)
+	#endif
+
+	#if ENABLE_FINNISH
+	PHP_FE(stem_finnish,		NULL)
+	#endif
+
+	#if ENABLE_FRENCH
+	PHP_FE(stem_french,			NULL)
+	#endif
+
+	#if ENABLE_GERMAN
 	PHP_FE(stem_german,			NULL)
+	#endif
+
+	#if ENABLE_ITALIAN
 	PHP_FE(stem_italian,		NULL)
+	#endif
+
+	#if ENABLE_NORWEGIAN
 	PHP_FE(stem_norwegian,		NULL)
+	#endif
+
+	#if ENABLE_PORTUGUESE
 	PHP_FE(stem_portuguese,		NULL)
+	#endif
+
+	#if ENABLE_RUSSIAN
 	PHP_FE(stem_russian,		NULL)
+	#endif
+
+	#if ENABLE_SPANISH
+	PHP_FE(stem_spanish,		NULL)
+	#endif
+
+	#if ENABLE_SWEDISH
 	PHP_FE(stem_swedish,		NULL)
+	#endif
+
 	{NULL, NULL, NULL}	
 };
 /* }}} */
@@ -68,19 +107,56 @@ PHP_MINIT_FUNCTION(stem)
 	*/
 
 	REGISTER_LONG_CONSTANT("STEM_PORTER",		STEM_PORTER,		CONST_CS | CONST_PERSISTENT);
+
+	#if ENABLE_DANISH
+	REGISTER_LONG_CONSTANT("STEM_DANISH",		STEM_DANISH,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_DUTCH
+	REGISTER_LONG_CONSTANT("STEM_DUTCH",		STEM_DUTCH,			CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_ENGLISH
 	REGISTER_LONG_CONSTANT("STEM_ENGLISH",		STEM_ENGLISH,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_FINNISH
+	REGISTER_LONG_CONSTANT("STEM_FINNISH",		STEM_FINNISH,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_FRENCH
 	REGISTER_LONG_CONSTANT("STEM_FRENCH",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_FRANCAIS",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_GERMAN
+	REGISTER_LONG_CONSTANT("STEM_GERMAN",		STEM_GERMAN,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_ITALIAN
+	REGISTER_LONG_CONSTANT("STEM_ITALIAN",		STEM_ITALIAN,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_NORWEGIAN
+	REGISTER_LONG_CONSTANT("STEM_NORWEGIAN",	STEM_NORWEGIAN,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_PORTUGUESE
+	REGISTER_LONG_CONSTANT("STEM_PORTUGUESE",	STEM_PORTUGUESE,	CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_RUSSIAN
+	REGISTER_LONG_CONSTANT("STEM_RUSSIAN",		STEM_RUSSIAN,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_SPANISH
 	REGISTER_LONG_CONSTANT("STEM_SPANISH",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_ESPANOL",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_DUTCH",		STEM_DUTCH,			CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_DANISH",		STEM_DANISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_GERMAN",		STEM_GERMAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_ITALIAN",		STEM_ITALIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_NORWEGIAN",	STEM_NORWEGIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_PORTUGUESE",	STEM_PORTUGUESE,	CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_RUSSIAN",		STEM_RUSSIAN,		CONST_CS | CONST_PERSISTENT);
+	#endif
+
+	#if ENABLE_SWEDISH
 	REGISTER_LONG_CONSTANT("STEM_SWEDISH",		STEM_SWEDISH,		CONST_CS | CONST_PERSISTENT);
+	#endif
 
 	return SUCCESS;
 }
@@ -101,18 +177,19 @@ PHP_MINFO_FUNCTION(stem)
 	php_info_print_table_start();
 	php_info_print_table_header(2, "stem support", "enabled");
 	php_info_print_table_colspan_header(2, "Languages Supported");
-	php_info_print_table_row(2, "Original Porter", "enabled");
-	php_info_print_table_row(2, "English", "enabled");
-	php_info_print_table_row(2, "French", "enabled");
-	php_info_print_table_row(2, "Spanish", "enabled");
-	php_info_print_table_row(2, "Dutch", "enabled");
-	php_info_print_table_row(2, "Danish", "enabled");
-	php_info_print_table_row(2, "German", "enabled");
-	php_info_print_table_row(2, "Italian", "enabled");
-	php_info_print_table_row(2, "Norwegian", "enabled");
-	php_info_print_table_row(2, "Portuguese", "enabled");
-	php_info_print_table_row(2, "Russian", "enabled");
-	php_info_print_table_row(2, "Swedish", "enabled");
+	php_info_print_table_row(2, "Original Porter", 	"enabled (default)");
+	php_info_print_table_row(2, "Danish", 			(ENABLE_DANISH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Dutch", 			(ENABLE_DUTCH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "English", 			(ENABLE_ENGLISH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Finnish", 			(ENABLE_FINNISH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "French", 			(ENABLE_FRENCH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "German", 			(ENABLE_GERMAN ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Italian", 			(ENABLE_ITALIAN ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Norwegian", 		(ENABLE_NORWEGIAN ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Portuguese", 		(ENABLE_PORTUGUESE ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Russian", 			(ENABLE_RUSSIAN ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Spanish", 			(ENABLE_SPANISH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Swedish", 			(ENABLE_SWEDISH ? "enabled" : "disabled"));
 	php_info_print_table_end();
 }
 /* }}} */
@@ -135,12 +212,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 
 	if (lang == STEM_DEFAULT) {
 		if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s|l", &incoming, &len, &lang) == FAILURE) {
-			return;
+			RETURN_FALSE;
 		}
 	}
 	else {
 		if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &incoming, &len) == FAILURE) {
-			return;
+			RETURN_FALSE;
 		}
 	}
 
@@ -157,74 +234,104 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 			close_env = (void*) porter_close_env;
 		break;
 
-		case STEM_ENGLISH:
-			create_env = (void*) english_create_env;
-			stem = (void*) english_stem;
-			close_env = (void*) english_close_env;
-		break;
-
-		case STEM_FRENCH:
-			create_env = (void*) french_create_env;
-			stem = (void*) french_stem;
-			close_env = (void*) french_close_env;
-		break;
-
-		case STEM_SPANISH:
-			create_env = (void*) spanish_create_env;
-			stem = (void*) spanish_stem;
-			close_env = (void*) spanish_close_env;
-		break;
-
-		case STEM_DUTCH:
-			create_env = (void*) dutch_create_env;
-			stem = (void*) dutch_stem;
-			close_env = (void*) dutch_close_env;
-		break;
-
+		#if ENABLE_DANISH
 		case STEM_DANISH:
 			create_env = (void*) danish_create_env;
 			stem = (void*) danish_stem;
 			close_env = (void*) danish_close_env;
 		break;
+		#endif
 
+		#if ENABLE_DUTCH
+		case STEM_DUTCH:
+			create_env = (void*) dutch_create_env;
+			stem = (void*) dutch_stem;
+			close_env = (void*) dutch_close_env;
+		break;
+		#endif
+
+		#if ENABLE_ENGLISH
+		case STEM_ENGLISH:
+			create_env = (void*) english_create_env;
+			stem = (void*) english_stem;
+			close_env = (void*) english_close_env;
+		break;
+		#endif
+
+		#if ENABLE_FINNISH
+		case STEM_FINNISH:
+			create_env = (void*) finnish_create_env;
+			stem = (void*) finnish_stem;
+			close_env = (void*) finnish_close_env;
+		break;
+		#endif
+
+		#if ENABLE_FRENCH
+		case STEM_FRENCH:
+			create_env = (void*) french_create_env;
+			stem = (void*) french_stem;
+			close_env = (void*) french_close_env;
+		break;
+		#endif
+
+		#if ENABLE_GERMAN
 		case STEM_GERMAN:
 			create_env = (void*) german_create_env;
 			stem = (void*) german_stem;
 			close_env = (void*) german_close_env;
 		break;
+		#endif
 
+		#if ENABLE_ITALIAN
 		case STEM_ITALIAN:
 			create_env = (void*) italian_create_env;
 			stem = (void*) italian_stem;
 			close_env = (void*) italian_close_env;
 		break;
+		#endif
 
+		#if ENABLE_NORWEGIAN
 		case STEM_NORWEGIAN:
 			create_env = (void*) dutch_create_env;
 			stem = (void*) dutch_stem;
 			close_env = (void*) dutch_close_env;
 		break;
+		#endif
 
+		#if ENABLE_PORTUGUESE
 		case STEM_PORTUGUESE:
 			create_env = (void*) portuguese_create_env;
 			stem = (void*) portuguese_stem;
 			close_env = (void*) portuguese_close_env;
 		break;
+		#endif
 
+		#if ENABLE_RUSSIAN
 		case STEM_RUSSIAN:
 			create_env = (void*) russian_create_env;
 			stem = (void*) russian_stem;
 			close_env = (void*) russian_close_env;
 		break;
+		#endif
 
+		#if ENABLE_SPANISH
+		case STEM_SPANISH:
+			create_env = (void*) spanish_create_env;
+			stem = (void*) spanish_stem;
+			close_env = (void*) spanish_close_env;
+		break;
+		#endif
+
+		#if ENABLE_SWEDISH
 		case STEM_SWEDISH:
 			create_env = (void*) swedish_create_env;
 			stem = (void*) swedish_stem;
 			close_env = (void*) swedish_close_env;
 		break;
+		#endif
 
 		default:
-			php_error(E_NOTICE, "%s() couldn't stem word", get_active_function_name(TSRMLS_C));
+			php_error(E_NOTICE, "%s() couldn't stem word, stemming module not found", get_active_function_name(TSRMLS_C));
 			RETURN_FALSE;
 	}
 
@@ -257,6 +364,81 @@ PHP_FUNCTION(stem)
 }
 /* }}} */
 
+
+/* {{{ bool stem_enabled(int lang)
+   lang is one of the language constants. This function just returns true
+   if the language is available and false if it isn't.
+*/
+PHP_FUNCTION(stem_enabled)
+{
+	int lang;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &lang) == FAILURE) {
+		RETURN_FALSE;
+	}
+
+	switch (lang)
+	{
+		case STEM_PORTER:
+
+		#if ENABLE_DANISH
+		case STEM_DANISH:
+		#endif
+
+		#if ENABLE_DUTCH
+		case STEM_DUTCH:
+		#endif
+
+		#if ENABLE_ENGLISH
+		case STEM_ENGLISH:
+		#endif
+
+		#if ENABLE_FINNISH
+		case STEM_FINNISH:
+		#endif
+
+		#if ENABLE_FRENCH
+		case STEM_FRENCH:
+		#endif
+
+		#if ENABLE_GERMAN
+		case STEM_GERMAN:
+		#endif
+		
+		#if ENABLE_ITALIAN
+		case STEM_ITALIAN:
+		#endif
+		
+		#if ENABLE_NORWEGIAN
+		case STEM_NORWEGIAN:
+		#endif
+		
+		#if ENABLE_PORTUGUESE
+		case STEM_PORTUGUESE:
+		#endif
+		
+		#if ENABLE_RUSSIAN
+		case STEM_RUSSIAN:
+		#endif
+
+		#if ENABLE_SPANISH
+		case STEM_SPANISH:
+		#endif
+
+		#if ENABLE_SWEDISH
+		case STEM_SWEDISH:
+		#endif
+
+			RETURN_TRUE;
+		break;
+
+		default:
+			RETURN_FALSE;
+	}
+}
+/* }}} */
+
+
 /* {{{ string stem_LANG(string arg)
    arg is a string to be stemmed. The language is determined by _LANG, which
    will correspond to any of the available languages. Calling stem_LANG(string)
@@ -268,60 +450,89 @@ PHP_FUNCTION(stem_porter)
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_PORTER);
 }
 
-PHP_FUNCTION(stem_english)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ENGLISH);
-}
-
-PHP_FUNCTION(stem_french)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_FRENCH);
-}
-
-PHP_FUNCTION(stem_spanish)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_SPANISH);
-}
-
+#if ENABLE_DUTCH
 PHP_FUNCTION(stem_dutch)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_DUTCH);
 }
+#endif
 
+#if ENABLE_DANISH
 PHP_FUNCTION(stem_danish)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_DANISH);
 }
+#endif
 
+#if ENABLE_ENGLISH
+PHP_FUNCTION(stem_english)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ENGLISH);
+}
+#endif
+
+#if ENABLE_FINNISH
+PHP_FUNCTION(stem_finnish)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_FINNISH);
+}
+#endif
+
+#if ENABLE_FRENCH
+PHP_FUNCTION(stem_french)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_FRENCH);
+}
+#endif
+
+#if ENABLE_GERMAN
 PHP_FUNCTION(stem_german)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_GERMAN);
 }
+#endif
 
+#if ENABLE_ITALIAN
 PHP_FUNCTION(stem_italian)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ITALIAN);
 }
+#endif
 
+#if ENABLE_NORWEGIAN
 PHP_FUNCTION(stem_norwegian)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_NORWEGIAN);
 }
+#endif
 
+#if ENABLE_PORTUGUESE
 PHP_FUNCTION(stem_portuguese)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_PORTUGUESE);
 }
+#endif
 
+#if ENABLE_RUSSIAN
 PHP_FUNCTION(stem_russian)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_RUSSIAN);
 }
+#endif
 
+#if ENABLE_SPANISH
+PHP_FUNCTION(stem_spanish)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_SPANISH);
+}
+#endif
+
+#if ENABLE_SWEDISH
 PHP_FUNCTION(stem_swedish)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_SWEDISH);
 }
+#endif
 /* }}} */
 
 
