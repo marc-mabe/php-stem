@@ -7,7 +7,7 @@ Original Porter stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_PORTER, "porter.dat", "porter.out");
 

@@ -7,7 +7,7 @@ Modified English Porter stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_ENGLISH, "english.dat", "english.out");
 

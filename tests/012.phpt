@@ -7,7 +7,7 @@ Spanish stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_SPANISH, "spanish.dat", "spanish.out");
 

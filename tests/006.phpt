@@ -7,7 +7,7 @@ French stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_FRENCH, "french.dat", "french.out");
 

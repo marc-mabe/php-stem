@@ -7,7 +7,7 @@ German stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_GERMAN, "german.dat", "german.out");
 

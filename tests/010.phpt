@@ -7,7 +7,7 @@ Portuguese stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_PORTUGUESE, "portuguese.dat", "portuguese.out");
 

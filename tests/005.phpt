@@ -7,7 +7,7 @@ Finnish stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("tests.php");
+require("fulltests.php");
 
 runTest(STEM_FINNISH, "finnish.dat", "finnish.out");
 
