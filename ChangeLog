@@ -1,5 +1,12 @@
 ChangeLog:
 
+18 Apr 2002
+
+* Released version 1.2.
+* Added fixes to the Snowball generated sources to make
+  them compile on Windows with VC++.
+* Added VC++ 6 project files.
+
 15 Apr 2002
 
 * Removed some dumbass comments from stem.c.
