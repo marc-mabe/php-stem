@@ -196,6 +196,8 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 		RETVAL_STRINGL(incoming, len, 1);
 	}
 
+	incoming = php_strtolower(incoming, strlen(incoming));
+
 	switch (lang)
 	{
 		case STEM_DEFAULT:

@@ -1,5 +1,10 @@
 ChangeLog:
 
+18 Dec 2002
+
+* Change all incoming words to lower-case before
+  stemming. Snowball likes that.
+
 27 Nov 2002
 
 * Release of 1.3.
