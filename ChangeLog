@@ -1,5 +1,12 @@
 ChangeLog:
 
+27 Nov 2002
+
+* Release of 1.3.
+* Added some simple tests. The real tests involve
+  gigantic word lists, and to save space, they're
+  gzipped, so you need zlib enabled to do them.
+
 26 Nov 2002
 
 * Fixed up a bunch of tests. Note that English and
