@@ -18,13 +18,10 @@
 #include "php_stem.h"
 
 
-/* True global resources - no need for thread safety here */
 static int le_stem;
 
 /* {{{ stem_functions[]
- *
- * Every user visible function must have an entry in stem_functions[].
- */
+*/
 function_entry stem_functions[] = {
 	PHP_FE(stem,					NULL)
 	PHP_FE(stem_porter,				NULL)
@@ -39,7 +36,7 @@ function_entry stem_functions[] = {
 	PHP_FE(stem_portuguese,			NULL)
 	PHP_FE(stem_russian,			NULL)
 	PHP_FE(stem_swedish,			NULL)
-	{NULL, NULL, NULL}	/* Must be the last line in stem_functions[] */
+	{NULL, NULL, NULL}	
 };
 /* }}} */
 
@@ -54,7 +51,7 @@ zend_module_entry stem_module_entry = {
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
-    "1.1", /* Replace with version number for your extension */
+    "1.2", 
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
@@ -107,10 +104,6 @@ PHP_MINFO_FUNCTION(stem)
 }
 /* }}} */
 
-
-/* Remove the following function when you have succesfully modified config.m4
-   so that your module can be compiled into PHP, it exists only for testing
-   purposes. */
 
 /* {{{ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
    Return a stemmed string. lang is one of the language constants. By default,

@@ -1,5 +1,11 @@
 ChangeLog:
 
+15 Apr 2002
+
+* Removed some dumbass comments from stem.c.
+* Added an include for stdlib.h to api.c to qwell some
+  warnings.
+
 13 Mar 2002
 
 * Updated the sources for Snowball. See COPYING for the 
