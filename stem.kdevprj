@@ -586,8 +586,14 @@ install=false
 install_location=
 type=DATA
 
+[tests/014.phpt]
+dist=true
+install=false
+install_location=
+type=DATA
+
 [tests/Makefile.am]
-files=tests/001.phpt,tests/002.phpt,tests/003.phpt,tests/004.phpt,tests/005.phpt,tests/006.phpt,tests/danish.dat,tests/danish.out,tests/dutch.dat,tests/dutch.out,tests/english.dat,tests/english.out,tests/finnish.dat,tests/finnish.out,tests/french.dat,tests/french.out,tests/german.dat,tests/german.out,tests/italian.dat,tests/italian.out,tests/norwegian.dat,tests/norwegian.out,tests/porter.dat,tests/porter.out,tests/portuguese.dat,tests/portuguese.out,tests/russian.dat,tests/russian.out,tests/spanish.dat,tests/spanish.out,tests/swedish.dat,tests/swedish.out,tests/tests.php,tests/007.phpt,tests/008.phpt,tests/009.phpt,tests/010.phpt,tests/011.phpt,tests/012.phpt,tests/013.phpt
+files=tests/001.phpt,tests/002.phpt,tests/003.phpt,tests/004.phpt,tests/005.phpt,tests/006.phpt,tests/danish.dat,tests/danish.out,tests/dutch.dat,tests/dutch.out,tests/english.dat,tests/english.out,tests/finnish.dat,tests/finnish.out,tests/french.dat,tests/french.out,tests/german.dat,tests/german.out,tests/italian.dat,tests/italian.out,tests/norwegian.dat,tests/norwegian.out,tests/porter.dat,tests/porter.out,tests/portuguese.dat,tests/portuguese.out,tests/russian.dat,tests/russian.out,tests/spanish.dat,tests/spanish.out,tests/swedish.dat,tests/swedish.out,tests/tests.php,tests/007.phpt,tests/008.phpt,tests/009.phpt,tests/010.phpt,tests/011.phpt,tests/012.phpt,tests/013.phpt,tests/014.phpt
 sub_dirs=
 type=normal
 

@@ -23,13 +23,28 @@ function runTest($lang, $in, $out, $gz = true)
 
         if (stem($in[$i], $lang) != $out[$i])
         {
-        print "|" . $in[$i] . "| -> |" . stem($in[$i], $lang) . "|, expected |" . $out[$i] . "|\n";
-        ++$bad;
+            print "|" . $in[$i] . "| -> |" . stem($in[$i], $lang) . "|, expected |" . $out[$i] . "|\n";
+            ++$bad;
+        }
     }
+
+    print "BAD: $bad\n";
 }
 
-print "BAD: $bad\n";
-
+function runQuickTest($lang, $incoming, $expected)
+{
+    $outgoing = stem($incoming, $lang);
+    print "$incoming -> $outgoing: ";
+    if (stem($incoming, $lang) == $expected)
+    {
+        print "OK\n";
+        return true;
+    }
+    else
+    {
+        print "BAD\n";
+        return false;
+    }
 }
 
 ?>
