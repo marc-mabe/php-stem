@@ -1,14 +1,14 @@
 The following files are covered under a BSD-like license, copyright
-2002 J Smith <dark_panda@hushmail.com>:
+2002, 2003 J Smith <dark_panda@hushmail.com>:
 
 php_stem.h
 stem.c
 stemconf.h
 
-The exact license is as follows:
+The exact license for stem-php is as follows:
 
 
-Copyright (c) 2002, J Smith, <dark_panda@hushmail.com>
+Copyright (c) 2002, 2003 J Smith, <dark_panda@hushmail.com>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
