@@ -7,11 +7,11 @@ PHP_ARG_ENABLE(stem, whether to enable stem support,
 
 if test "$PHP_STEM" != "no"; then
 
-	if test "$MINOR_VERSION" != "3"; then
+	if test "$MINOR_VERSION" -lt "3"; then
 		PHP_EXTENSION(stem, $ext_shared)
 		AC_DEFUN(PHP_NEW_EXTENSION, [])
 	
-	elif test "$MINOR_VERSION" = "3" || "$MINOR_VERSION" -gt "3"; then
+	elif test "$MINOR_VERSION" -gt "2"; then
 		AC_DEFINE(HAVE_STEM, 1, [ ])
 		PHP_NEW_EXTENSION(stem, stem.c \
 		                        api.c \
