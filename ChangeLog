@@ -1,5 +1,12 @@
 ChangeLog:
 
+19 Apr 2002
+
+* Although I released 1.2 yesterday, Dr. Porter was so
+  quick to fix the minor bug (?) I found in Snowball
+  that I'm releasing a new version with the updated
+  stemmers already. This version is 1.2.1.
+
 18 Apr 2002
 
 * Released version 1.2.

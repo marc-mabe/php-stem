@@ -43,7 +43,6 @@ static struct among a_1[6] =
 /*  5 */ { 2, s_1_5, 1, -1, 0}
 };
 
-static symbol s_2_0[1] = { '\0' };
 static symbol s_2_1[2] = { 'b', 'b' };
 static symbol s_2_2[2] = { 'd', 'd' };
 static symbol s_2_3[2] = { 'f', 'f' };
@@ -59,7 +58,7 @@ static symbol s_2_12[2] = { 'i', 'z' };
 
 static struct among a_2[13] =
 {
-/*  0 */ { 0, s_2_0, -1, 3, 0},
+/*  0 */ { 0, 0, -1, 3, 0},
 /*  1 */ { 2, s_2_1, 0, 2, 0},
 /*  2 */ { 2, s_2_2, 0, 2, 0},
 /*  3 */ { 2, s_2_3, 0, 2, 0},

@@ -51,7 +51,7 @@ zend_module_entry stem_module_entry = {
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
-    "1.2", 
+    "1.2.1", 
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
