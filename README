@@ -1,0 +1,157 @@
+
+stem -- a PHP extension that provides word stemming.
+
+J Smith <dark_panda@hushmail.com>
+12 Feb 2002
+
+0. What is it?
+
+	Basically, a word stemmer takes a word and strips it of its suffix.
+	(Or suffixes.) Words like "assassination", "assassinations",
+	"assassinate" and "assassinated" all have the same base -- "assassin".
+	A word stemmer breaks each of the aforementioned words down to their
+	common base.
+
+	The stem extension for PHP provides this capability for a variety of
+	languages using Dr. M.F. Porter's Snowball API, which can be found at
+
+	  http://snowball.sourceforge.net
+
+
+1. What is it good for?
+
+	The idea behind stemming is to increase the efficiency of information
+	retrieval by combining similar words. This has a couple of advantages
+	in, say, a typical search engine:
+
+	* You can reduce the size of your database/keyword list. There's no
+	  reason to store "physics", "physicist" and "physical" when you
+	  can just store "physic" and provide more or less the same results.
+	  This can decrease the search time as well as decrease the physical
+	  size of the database.
+
+	* Provide more generalized results. If a user searches on "assassins",
+	  it's easy to provide them results with words like "assassinated",
+	  "assassinations" and "assassin", since they all work out to the same
+	  thing after stemming.
+
+	There are lots of uses for stemming in the IR world. You can read up
+	on them at Dr. Porter's Snowball site.
+
+
+2. Why?
+
+	When I was first hired for my current job, I had to quickly pound
+	together a dynamic web site/application combined with a search engine.
+	I had about a month to do it. So I hammered it all together in PHP.
+
+	The search engine was pretty terrible at first, but eventually I
+	prettied it up, adding a lot of features like Boolean syntax, the ability
+	to run as a "daemon"-type service, and the ability to serve XML documents
+	for results, thus freeing it from it's web interface and making it
+	implementation independent.
+
+	Another feature I added after reading Dr. Porter's "An algorithm for
+	suffix stemming" article, first featured in "Program". (Although I read
+	it in "Readings in Information Retrieval", a collection of IR works by
+	K.S. Jones and P. Willett.)
+
+	My own implementation of Porter's stemmer went through several variations,
+	none of which were 100% correct, which wasn't a total surprise. (Porter's
+	site recants many malformed implementations.)
+
+	I finally hit it dead on after re-writing my crappy little stemmer in C
+	as a PHP module using standard POSIX regexes. After pumping some 50,000
+	words through the module and comparing it with Porter's own stemmer
+	(also written in C), I came up with identical results. (His was a bit
+	faster, though, which is to be expected considering the extra layers
+	of abstration PHP and Zend required.)
+
+	Eventually I realized we'd probably need a French stemmer, seeing as
+	I work for a Canadian company. So back to the drawing board I went.
+
+	By this time, Dr. Porter's Snowball project was well underway. After
+	discovering it, I decided to pack a bunch of languages into one PHP
+	extension -- stem.
+
+
+3. How do you use it?
+
+	There are two basic prototypes for the stem extension:
+
+		string stem(string word [, int language])
+		string stem_LANGUAGE(string word)
+
+	Both prototypes have the same return values: the stemmed word on success,
+	and false should some kind of Snowball error occur. (An E_NOTICE is
+	also raised on various errors.)
+
+	In the first prototype, language can be one of the following:
+
+	STEM_DANISH
+	STEM_DUTCH
+	STEM_ENGLISH -- enhanced Porter stemming algorithm
+	STEM_FRENCH
+	STEM_GERMAN
+	STEM_ITALIAN
+	STEM_NORWEGIAN
+	STEM_PORTER -- the original Porter stemming algorithm
+	STEM_PORTUGUESE
+	STEM_RUSSIAN
+	STEM_SPANISH
+	STEM_SWEDISH
+
+	By default, STEM_PORTER is used.
+
+	In the second prototype variation, you can use the following forms:
+
+	stem_danish
+	stem_dutch
+	stem_english
+	stem_french
+	stem_german
+	stem_italian
+	stem_norwegian
+	stem_porter
+	stem_portuguese
+	stem_russian
+	stem_spanish
+	stem_swedish
+
+	Each function will accept and return strings in standard Latin encodings
+	except for Russian, which uses Cyrillic KO18-R encoding.
+
+	More languages may follow, and perhaps some aliases (like stem_francais()
+	will be equivalent to stem_french(). Who knows.)
+
+	A quick example:
+
+	<?php
+
+	print "Original porter (default): assassinations -> " . stem("assassinations") . "\n";
+	print "English: devestating -> " . stem("devestating", STEM_ENGLISH) . "\n";
+	print "French: majestueusement -> " . stem("majestueusement", STEM_FRENCH) . "\n";
+	print "Spanish: chicharrones -> " . stem("chicharrones", STEM_SPANISH) . "\n";
+	print "Dutch: lichamelijkheden -> " . stem("lichamelijkheden", STEM_DUTCH) . "\n";
+	print "Danish: undersøgelsen -> " . stem_danish("undersøgelsen") . "\n";
+	print "German: aufeinanderschlügen -> " . stem_german("aufeinanderschlügen") . "\n";
+	print "Italian: pronunciamento -> " . stem_italian("pronunciamento") . "\n";
+	print "Norwegian: havnemyndighetene -> " . stem_norwegian("havnemyndighetene") . "\n";
+	print "Portuguese: quilométricas -> " . stem_portuguese("quilométricas") . "\n";
+	print "Swedish: klostergården -> " . stem_swedish("klostergården") . "\n";
+
+	?>
+
+	Output:
+
+	Original porter (default): assassinations -> assassin
+	English: devestating -> devest
+	French: majestueusement -> majestu
+	Spanish: chicharrones -> chicharron
+	Dutch: lichamelijkheden -> licham
+	Danish: undersøgelsen -> undersøg
+	German: aufeinanderschlügen -> aufeinanderschlüg
+	Italian: pronunciamento -> pronunc
+	Norwegian: havnemyndighetene -> havnemyndighet
+	Portuguese: quilométricas -> quilométr
+	Swedish: klostergården -> klostergård

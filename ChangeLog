@@ -1,0 +1,15 @@
+ChangeLog:
+
+13 Mar 2002
+
+* Updated the sources for Snowball. See COPYING for the 
+  specific files. This should fix a small memory leak. 
+
+12 Feb 2002
+
+* Finished the extension, for the most part.
+* Yea.
+
+
+J Smith
+<dark_panda@hushmail.com>
