@@ -1,5 +1,11 @@
 ChangeLog:
 
+26 Nov 2002
+
+* Fixed up a bunch of tests. Note that English and
+  Norwegian still don't work properly, as the output
+  files seem to be behind on the Snowball site.
+
 25 Nov 2002
 
 * Various stemming algorithms changed to match changes

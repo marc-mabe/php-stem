@@ -202,3 +202,12 @@ may not match with the current version. Be careful.
 
 	- Windows 2000 using Visual C++ 6 with service packs 2 and 5 and
 	  PHP 4.1.2 and 4.2.x.
+
+
+5. Tests?
+
+	Tests are available in ext/stem/tests, obviously. You need to have
+	the zlib module enabled in order to run the extensive tests.
+	Alteratively, you can get rid of the zlib checks, uncompress the
+	*.dat and *.out files and modify test.php to not use gzfile() and
+	use regular old file() instead.
