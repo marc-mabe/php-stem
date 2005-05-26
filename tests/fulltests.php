@@ -1,5 +1,7 @@
 <?php
 
+chdir(dirname(realpath($_SERVER['PHP_SELF'])));
+
 function runTest($lang, $in, $out, $gz = true)
 {
     if ($gz)
