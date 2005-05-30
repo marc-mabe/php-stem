@@ -1,0 +1,24 @@
+// $Id$
+// vim:ft=javascript
+
+ARG_WITH("stem", "stem support", "no");
+
+if (PHP_STEM != "no") {
+	EXTENSION("stem", 	"stem.c \
+				api.c \
+				utilities.c \
+				porter.c \
+				french.c \
+				spanish.c \
+				danish.c \
+				dutch.c \
+				english.c \
+				german.c \
+				italian.c \
+				norwegian.c \
+				portuguese.c \
+				russian.c \
+				swedish.c \
+				finnish.c");
+}
+
