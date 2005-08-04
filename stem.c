@@ -91,7 +91,7 @@ zend_module_entry stem_module_entry = {
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
-	"1.4", 
+	"1.4.1", 
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
@@ -204,7 +204,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	}
 
 	if (len <= 0) {
-		RETVAL_STRINGL(incoming, len, 1);
+		RETURN_STRINGL(incoming, len, 1);
 	}
 
 	switch (lang)
