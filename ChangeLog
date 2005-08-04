@@ -1,5 +1,13 @@
 ChangeLog:
 
+04 Aug 2005
+
+* Fixed a tiny memory leak caused when stemming words
+  of <= 0 length. The leak was pretty minimal at 1 byte,
+  but it was still a leak nonetheless. Oops.
+* Release of 1.4.1.
+
+
 28 Mar 2002
 
 * Fixed a bug relating to the lower-casing of words.

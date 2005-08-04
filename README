@@ -1,10 +1,10 @@
 $Id$
 
 stem-php -- a PHP extension that provides word stemming.
-Version 1.4.
+Version 1.4.1.
 
 J Smith <dark_panda@hushmail.com>
-28 Mar 2003
+04 Aug 2005
 
 NOTE: There have been changes to some of the stemming algorithms,
 so they are not 100% compatible with older versions of stem-php.
