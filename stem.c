@@ -189,7 +189,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	void (*close_env)(struct SN_env*);
 	int (*stem)(struct SN_env*);
 	
-	char* incoming;
+	symbol* incoming;
 	int len = -1;
 
 	if (lang == STEM_DEFAULT) {
@@ -204,7 +204,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	}
 
 	if (len <= 0) {
-		RETURN_STRINGL(incoming, len, 1);
+		RETURN_STRINGL((char*) incoming, len, 1);
 	}
 
 	switch (lang)
@@ -297,7 +297,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	stem(z);
 	z->p[z->l]= '\0';
 
-	RETVAL_STRINGL(z->p, z->l, 1);
+	RETVAL_STRINGL((char*) z->p, z->l, 1);
 	close_env(z);
 }
 /* }}} */
