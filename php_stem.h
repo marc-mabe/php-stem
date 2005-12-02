@@ -40,20 +40,21 @@ PHP_FUNCTION(stem);
 PHP_FUNCTION(stem_porter);
 PHP_FUNCTION(stem_enabled);
 
-#define STEM_DEFAULT	0x0000
-#define STEM_PORTER		0x0001
-#define STEM_ENGLISH	0x0002
-#define STEM_FRENCH		0x0003
-#define STEM_SPANISH	0x0004
-#define STEM_DUTCH		0x0005
-#define STEM_DANISH		0x0006
-#define STEM_GERMAN		0x0007
-#define STEM_ITALIAN	0x0008
-#define STEM_NORWEGIAN	0x0009
-#define STEM_PORTUGUESE	0x000A
-#define STEM_RUSSIAN	0x000B
-#define STEM_SWEDISH	0x000C
-#define STEM_FINNISH	0x000D
+#define STEM_DEFAULT	0
+#define STEM_PORTER		1
+#define STEM_ENGLISH	2
+#define STEM_FRENCH		3
+#define STEM_SPANISH	4
+#define STEM_DUTCH		5
+#define STEM_DANISH		6
+#define STEM_GERMAN		7
+#define STEM_ITALIAN	8
+#define STEM_NORWEGIAN	9
+#define STEM_PORTUGUESE	10
+#define STEM_RUSSIAN	11
+#define STEM_SWEDISH	12
+#define STEM_FINNISH	13
+#define STEM_RUSSIAN_UNICODE 14
 
 #if ENABLE_DANISH
 #include "danish.h"
@@ -103,6 +104,11 @@ PHP_FUNCTION(stem_portuguese);
 #if ENABLE_RUSSIAN
 #include "russian.h"
 PHP_FUNCTION(stem_russian);
+#endif
+
+#if ENABLE_RUSSIAN_UNICODE
+#include "russian_unicode.h"
+PHP_FUNCTION(stem_russian_unicode);
 #endif
 
 #if ENABLE_SPANISH
