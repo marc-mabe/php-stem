@@ -68,6 +68,10 @@ function_entry stem_functions[] = {
 	PHP_FE(stem_russian,		NULL)
 	#endif
 
+	#if ENABLE_RUSSIAN_UNICODE
+	PHP_FE(stem_russian_unicode,	NULL)
+	#endif
+
 	#if ENABLE_SPANISH
 	PHP_FE(stem_spanish,		NULL)
 	#endif
@@ -91,7 +95,7 @@ zend_module_entry stem_module_entry = {
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
-	"1.4.1", 
+	"1.4.2", 
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
@@ -118,6 +122,7 @@ PHP_MINIT_FUNCTION(stem)
 	REGISTER_LONG_CONSTANT("STEM_NORWEGIAN",	STEM_NORWEGIAN,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_PORTUGUESE",	STEM_PORTUGUESE,	CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_RUSSIAN",		STEM_RUSSIAN,		CONST_CS | CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("STEM_RUSSIAN_UNICODE", STEM_RUSSIAN_UNICODE, CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_SPANISH",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_ESPANOL",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_SWEDISH",		STEM_SWEDISH,		CONST_CS | CONST_PERSISTENT);
@@ -160,6 +165,7 @@ PHP_MINFO_FUNCTION(stem)
 	php_info_print_table_row(2, "Norwegian", 		(ENABLE_NORWEGIAN ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Portuguese", 		(ENABLE_PORTUGUESE ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Russian", 			(ENABLE_RUSSIAN ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Russian (Unicode)",	(ENABLE_RUSSIAN_UNICODE ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Spanish", 			(ENABLE_SPANISH ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Swedish", 			(ENABLE_SWEDISH ? "enabled" : "disabled"));
 	php_info_print_table_end();
@@ -189,22 +195,25 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	void (*close_env)(struct SN_env*);
 	int (*stem)(struct SN_env*);
 	
-	symbol* incoming;
-	int len = -1;
+	zval** incoming;
+	zval** zlang;
 
-	if (lang == STEM_DEFAULT) {
-		if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s|l", &incoming, &len, &lang) == FAILURE) {
-			RETURN_FALSE;
-		}
+	if (ZEND_NUM_ARGS() < 1 || ZEND_NUM_ARGS() > 2) {
+		WRONG_PARAM_COUNT;
 	}
-	else {
-		if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &incoming, &len) == FAILURE) {
-			RETURN_FALSE;
-		}
+	else if (ZEND_NUM_ARGS() == 1) {
+		zend_get_parameters_ex(ZEND_NUM_ARGS(), &incoming);
+	}
+	else if (ZEND_NUM_ARGS() == 2) {
+		zend_get_parameters_ex(ZEND_NUM_ARGS(), &incoming, &zlang);
+		convert_to_long_ex(zlang);
+		lang = Z_LVAL_PP(zlang);
 	}
 
-	if (len <= 0) {
-		RETURN_STRINGL((char*) incoming, len, 1);
+	convert_to_string_ex(incoming);
+
+	if (Z_STRLEN_PP(incoming) <= 0) {
+		RETURN_STRINGL(Z_STRVAL_PP(incoming), Z_STRLEN_PP(incoming), 1);
 	}
 
 	switch (lang)
@@ -274,6 +283,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 		break;
 		#endif
 
+		#if ENABLE_RUSSIAN_UNICODE
+		case STEM_RUSSIAN_UNICODE:
+			INIT_FUNCS(russian_unicode)
+		break;
+		#endif
+
 		#if ENABLE_SPANISH
 		case STEM_SPANISH:
 			INIT_FUNCS(spanish)
@@ -292,12 +307,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	}
 
 	z = create_env();
-	SN_set_current(z, len, incoming);
-	php_strtolower(z->p, len);
+	SN_set_current(z, Z_STRLEN_PP(incoming), Z_STRVAL_PP(incoming));
+	php_strtolower(z->p, Z_STRLEN_PP(incoming));
 	stem(z);
 	z->p[z->l]= '\0';
 
-	RETVAL_STRINGL((char*) z->p, z->l, 1);
+	RETVAL_STRINGL(z->p, z->l, 1);
 	close_env(z);
 }
 /* }}} */
@@ -467,6 +482,13 @@ PHP_FUNCTION(stem_portuguese)
 PHP_FUNCTION(stem_russian)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_RUSSIAN);
+}
+#endif
+
+#if ENABLE_RUSSIAN_UNICODE
+PHP_FUNCTION(stem_russian_unicode)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_RUSSIAN_UNICODE);
 }
 #endif
 
