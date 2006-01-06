@@ -1,5 +1,17 @@
 ChangeLog:
 
+06 Jan 2006
+
+* Re-did a few areas that were causing problems on
+  64-bit x86 boxes. Not sure what the problem was, but
+  it seemed to be an engine problem. Need to take a 
+  closer look at that.
+* Added a new Unicode stemmer for Russian Cyrillic text.
+  Use it as you would the other stemmers using the
+  new russian_unicode() function or the STEM_RUSSIAN_UNICODE
+  constant.
+* Release of 1.4.2.
+
 04 Aug 2005
 
 * Fixed a tiny memory leak caused when stemming words

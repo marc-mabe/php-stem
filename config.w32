@@ -18,6 +18,7 @@ if (PHP_STEM != "no") {
 				norwegian.c \
 				portuguese.c \
 				russian.c \
+				russian_unicode.c \
 				swedish.c \
 				finnish.c");
 }
