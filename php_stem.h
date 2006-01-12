@@ -25,12 +25,6 @@ extern zend_module_entry stem_module_entry;
 #include "TSRM.h"
 #endif
 
-
-// this is the extension's configuration file. You can
-// disable stemming algorithms in it, if you're so inclined.
-
-#include "stemconf.h"
-
 // Snowball headers...
 
 #include "api.h"
