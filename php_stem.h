@@ -25,7 +25,7 @@ extern zend_module_entry stem_module_entry;
 #include "TSRM.h"
 #endif
 
-// Snowball headers...
+/* Snowball headers... */
 
 #include "api.h"
 #include "porter.h"

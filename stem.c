@@ -108,7 +108,7 @@ ZEND_GET_MODULE(stem)
  */
 PHP_MINIT_FUNCTION(stem)
 {
-	// Just set up our constants for the PHP function stem().
+	/* Just set up our constants for the PHP function stem(). */
 
 	REGISTER_LONG_CONSTANT("STEM_PORTER",		STEM_PORTER,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_DANISH",		STEM_DANISH,		CONST_CS | CONST_PERSISTENT);
