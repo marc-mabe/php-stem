@@ -21,5 +21,19 @@ if (PHP_STEM != "no") {
 				russian_unicode.c \
 				swedish.c \
 				finnish.c");
+
+  AC_DEFINE(ENABLE_DANISH, 1, "Danish support");
+  AC_DEFINE(ENABLE_DUTCH, 1, "Dutch support");
+  AC_DEFINE(ENABLE_ENGLISH, 1, "English support");
+  AC_DEFINE(ENABLE_FRENCH, 1, "French support");
+  AC_DEFINE(ENABLE_FINNISH, 1, "Finnish support");
+  AC_DEFINE(ENABLE_GERMAN, 1, "German support");
+  AC_DEFINE(ENABLE_ITALIAN, 1, "Italian support");
+  AC_DEFINE(ENABLE_NORWEGIAN, 1, "Norwegian support");
+  AC_DEFINE(ENABLE_PORTUGUESE, 1, "Portuguese support");
+  AC_DEFINE(ENABLE_RUSSIAN, 1, "Russian support");
+  AC_DEFINE(ENABLE_RUSSIAN_UNICODE, 1, "Russian (UTF8) support");
+  AC_DEFINE(ENABLE_SPANISH, 1, "Spanish support");
+  AC_DEFINE(ENABLE_SWEDISH, 1, "Swedish support");
 }
 
