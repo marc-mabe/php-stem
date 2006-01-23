@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=1 /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /FR /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=1 /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /D ENABLE_DANISH=1 /D ENABLE_DUTCH=1 /D ENABLE_ENGLISH=1 /D ENABLE_FINNISH=1 /D ENABLE_FRENCH=1 /D ENABLE_GERMAN=1 /D ENABLE_ITALIAN=1 /D ENABLE_NORWEGIAN=1 /D ENABLE_PORTUGUESE=1 /D ENABLE_RUSSIAN=1 /D ENABLE_RUSSIAN_UNICODE=1 /D ENABLE_SPANISH=1 /D ENABLE_SWEDISH=1 /FR /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
@@ -70,7 +70,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /YX /FD /c
-# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=0 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /YX /FD /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\\" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=0 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /D ENABLE_DANISH=1 /D ENABLE_DUTCH=1 /D ENABLE_ENGLISH=1 /D ENABLE_FINNISH=1 /D ENABLE_FRENCH=1 /D ENABLE_GERMAN=1 /D ENABLE_ITALIAN=1 /D ENABLE_NORWEGIAN=1 /D ENABLE_PORTUGUESE=1 /D ENABLE_RUSSIAN=1 /D ENABLE_RUSSIAN_UNICODE=1 /D ENABLE_SPANISH=1 /D ENABLE_SWEDISH=1 /YX /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
@@ -80,7 +80,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib php4ts.lib /nologo /dll /machine:I386 /out:"..\..\Release_TS/php_stem.dll" /libpath:"..\..\Release_TS"
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib php4ts.lib /nologo /dll /machine:I386 /out:"..\..\Release_TS\php_stem.dll" /libpath:"..\..\Release_TS"
 # SUBTRACT LINK32 /pdb:none
 
 !ENDIF 
@@ -139,6 +139,14 @@ SOURCE=.\portuguese.c
 # Begin Source File
 
 SOURCE=.\russian.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\russian_unicode.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\russian_unicode.h
 # End Source File
 # Begin Source File
 
@@ -219,10 +227,6 @@ SOURCE=.\russian.h
 # Begin Source File
 
 SOURCE=.\spanish.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\stemconf.h
 # End Source File
 # Begin Source File
 
