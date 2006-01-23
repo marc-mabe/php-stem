@@ -19,8 +19,8 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>1.4.2</version>
-    <date>2006-01-08</date>
+    <version>1.4.3</version>
+    <date>2006-01-23</date>
     <license>BSD</license>
     <state>stable</state>
     <notes>Initial PECL release</notes>
@@ -88,8 +88,8 @@
   </filelist>
   <changelog>
     <release>
-      <version>1.4.2</version>
-      <date>2006-01-09</date>
+      <version>1.4.3</version>
+      <date>2006-01-23</date>
       <state>stable</state>
       <notes></notes>
     </release>

@@ -1,5 +1,19 @@
 ChangeLog:
 
+23 Jan 2006
+
+* We've got another developer to welcome to Team
+  PHP Stemming Extension, so let's all welcome
+  Olivier Hill. You might remember Olivier as 
+  maintainer of the French translation of the
+  PEAR manual. Olivier got the stem extension ready
+  for inclusion into PECL and re-did the configuration
+  files for the PEAR package system.
+* Fixed up some of the aforementioned configuration
+  files PECL-style. You can now install with the pear
+  command a la "pear install stem-1.4.3.tar.gz".
+* Release of 1.4.3.
+
 06 Jan 2006
 
 * Re-did a few areas that were causing problems on

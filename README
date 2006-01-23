@@ -1,10 +1,12 @@
 $Id$
 
 stem-php -- a PHP extension that provides word stemming.
-Version 1.4.2.
+Version 1.4.3.
 
-J Smith <dark_panda@hushmail.com>
-06 Jan 2006
+23 Jan 2006
+
+J Smith <jay@php.net>
+Olivier Hill <ohill@php.net>
 
 NOTE: There have been changes to some of the stemming algorithms,
 so they are not 100% compatible with older versions of stem-php.
@@ -176,39 +178,54 @@ may not match with the current version. Be careful.
 
 	On UNIX-like systems:
 
-	0. Unpack the source into /path/to/php/ext.
-	1. Run buildconf.
-	2. Configure using the --enable-stem argument.
-	3. If you want to disable any languages for whatever reason,
-	   check out stemconf.h.
-	4. Run make.
+	0. Unpack the source.
+	1. Run phpize.
+	2. You can optionally enable/disable languages using
+	   --enable-LANGUAGE=(yes|no) style arugments.
+	3. Run "make" and "make install".
+
+	Alternatively, you can install using the pear command thusly
+	as root:
+
+	# pear install stem-x.x.x.tar.gz
 
 
-	On Windows systems:
+	On Windows systems it's a bit trickier, so you might want to
+	just download the extension from http://pecl4win.php.net/.
+	If you must build it, you've going to have to do some work to
+	get things running.
 
-	0. Unpack the source as above.
-	1. Open up the VC++ 6 workspace or project provided and build
-	   the DLL.
-	2. To use the extension, either use the dl() function to load
+	For PHP 4.x:
+
+	0. Unpack the source. It's probably best to unpack it under
+	   c:\path\to\php-src\ext, as the paths for the headers and
+	   libraries are set up to look for them in that general area.
+	1. Open up the VC++ 6 workspace provided. You will likely have
+	   to adjust the project settings to point to the proper 
+	   directories for the PHP includes and library files. Look
+	   under Project->Settings for those paths.
+	2. Build the DLL and move it to the proper extension directory
+	   for your system.
+	3. To use the extension, either use the dl() function to load
 	   the DLL or use the extension=php_stem.dll directive in your
 	   php.ini file.
 
+	For PHP 5.x and above:
 
-5. Tests?
+	0. Unpack the source into c:\path\to\php-src\ext. 
+	1. Open up a console window and head to the directory you just
+	   unpacked to.
+	2. Run the buildconf.bat script. This will build configure.js
+	   with the new build information for the stem extension.
+	3. Build your PHP tree as you normally would and add --with-stem
+	   to build the stem module.
+	4. To use the extension, either use the dl() function to load
+	   the DLL or use the extension=php_stem.dll directive in your
+	   php.ini file.
+				  
 
-	Tests are available in ext/stem/tests. More complete tests are
-	available at
-
-	  http://www.tutorbuddy.com/software/
-
-	These tests are more extensive, as they involve long word lists
-	and such. I didn't include them with the standard distribution
-	'cause it would mean a gigantic file size for the gzipped source.
+	You might be able to just do all of this using the pecl/pear 
+	command on Windows. Honestly, I have no idea, I'm just glad 
+	I'm able to compile this thing under Windows to begin with.
 
 
-6. Public key?
-
-	You can use the public key associated with my Hushmail account
-	(see above) or use the public key at
-
-		http://www.tutorbuddy.com/software/jsmith.pubkey.txt
