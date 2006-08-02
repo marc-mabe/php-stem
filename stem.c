@@ -18,9 +18,6 @@ $Id$
 #include "ext/standard/info.h"
 #include "php_stem.h"
 
-
-static int le_stem;
-
 /* {{{ stem_functions[]
 */
 function_entry stem_functions[] = {
