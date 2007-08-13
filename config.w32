@@ -14,12 +14,15 @@ if (PHP_STEM != "no") {
 				dutch.c \
 				english.c \
 				german.c \
+				hungarian.c \
 				italian.c \
 				norwegian.c \
 				portuguese.c \
+				romanian.c \
 				russian.c \
 				russian_unicode.c \
 				swedish.c \
+				turkish_unicode.c \
 				finnish.c");
 
   AC_DEFINE("ENABLE_DANISH", 1, "Danish support");
@@ -28,12 +31,15 @@ if (PHP_STEM != "no") {
   AC_DEFINE("ENABLE_FRENCH", 1, "French support");
   AC_DEFINE("ENABLE_FINNISH", 1, "Finnish support");
   AC_DEFINE("ENABLE_GERMAN", 1, "German support");
+  AC_DEFINE("ENABLE_HUNGARIAN", 1, "Hungarian support");
   AC_DEFINE("ENABLE_ITALIAN", 1, "Italian support");
   AC_DEFINE("ENABLE_NORWEGIAN", 1, "Norwegian support");
   AC_DEFINE("ENABLE_PORTUGUESE", 1, "Portuguese support");
+  AC_DEFINE("ENABLE_ROMANIAN", 1, "Romanian support");
   AC_DEFINE("ENABLE_RUSSIAN", 1, "Russian support");
   AC_DEFINE("ENABLE_RUSSIAN_UNICODE", 1, "Russian (UTF8) support");
   AC_DEFINE("ENABLE_SPANISH", 1, "Spanish support");
   AC_DEFINE("ENABLE_SWEDISH", 1, "Swedish support");
+  AC_DEFINE("ENABLE_TURKISH_UNICODE", 1, "Turkish (UTF8) support");
 }
 

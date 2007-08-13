@@ -49,6 +49,9 @@ PHP_FUNCTION(stem_enabled);
 #define STEM_SWEDISH	12
 #define STEM_FINNISH	13
 #define STEM_RUSSIAN_UNICODE 14
+#define STEM_HUNGARIAN 15
+#define STEM_ROMANIAN 16
+#define STEM_TURKISH_UNICODE 17
 
 #if ENABLE_DANISH
 #include "danish.h"
@@ -80,6 +83,11 @@ PHP_FUNCTION(stem_french);
 PHP_FUNCTION(stem_german);
 #endif
 
+#if ENABLE_HUNGARIAN
+#include "hungarian.h"
+PHP_FUNCTION(stem_hungarian);
+#endif
+
 #if ENABLE_ITALIAN
 #include "italian.h"
 PHP_FUNCTION(stem_italian);
@@ -93,6 +101,11 @@ PHP_FUNCTION(stem_norwegian);
 #if ENABLE_PORTUGUESE
 #include "portuguese.h"
 PHP_FUNCTION(stem_portuguese);
+#endif
+
+#if ENABLE_ROMANIAN
+#include "romanian.h"
+PHP_FUNCTION(stem_romanian);
 #endif
 
 #if ENABLE_RUSSIAN
@@ -113,6 +126,11 @@ PHP_FUNCTION(stem_spanish);
 #if ENABLE_SWEDISH
 #include "swedish.h"
 PHP_FUNCTION(stem_swedish);
+#endif
+
+#if ENABLE_TURKISH_UNICODE
+#include "turkish_unicode.h"
+PHP_FUNCTION(stem_turkish_unicode);
 #endif
 
 

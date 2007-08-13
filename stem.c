@@ -49,6 +49,10 @@ function_entry stem_functions[] = {
 	PHP_FE(stem_german,			NULL)
 	#endif
 
+	#if ENABLE_HUNGARIAN
+	PHP_FE(stem_hungarian,		NULL)
+	#endif
+	
 	#if ENABLE_ITALIAN
 	PHP_FE(stem_italian,		NULL)
 	#endif
@@ -59,6 +63,10 @@ function_entry stem_functions[] = {
 
 	#if ENABLE_PORTUGUESE
 	PHP_FE(stem_portuguese,		NULL)
+	#endif
+
+	#if ENABLE_ROMANIAN
+	PHP_FE(stem_romanian,		NULL)
 	#endif
 
 	#if ENABLE_RUSSIAN
@@ -77,6 +85,10 @@ function_entry stem_functions[] = {
 	PHP_FE(stem_swedish,		NULL)
 	#endif
 
+	#if ENABLE_TURKISH_UNICODE
+	PHP_FE(stem_turkish_unicode,	NULL)
+	#endif
+
 	{NULL, NULL, NULL}	
 };
 /* }}} */
@@ -92,7 +104,7 @@ zend_module_entry stem_module_entry = {
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
-	"1.4.3", 
+	"1.5.0-dev", 
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
@@ -115,14 +127,17 @@ PHP_MINIT_FUNCTION(stem)
 	REGISTER_LONG_CONSTANT("STEM_FRENCH",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_FRANCAIS",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_GERMAN",		STEM_GERMAN,		CONST_CS | CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("STEM_HUNGARIAN",	STEM_HUNGARIAN,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_ITALIAN",		STEM_ITALIAN,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_NORWEGIAN",	STEM_NORWEGIAN,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_PORTUGUESE",	STEM_PORTUGUESE,	CONST_CS | CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("STEM_ROMANIAN",		STEM_ROMANIAN,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_RUSSIAN",		STEM_RUSSIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_RUSSIAN_UNICODE", STEM_RUSSIAN_UNICODE, CONST_CS | CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("STEM_RUSSIAN_UNICODE",	STEM_RUSSIAN_UNICODE,	CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_SPANISH",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_ESPANOL",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("STEM_SWEDISH",		STEM_SWEDISH,		CONST_CS | CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("STEM_TURKISH_UNICODE",	STEM_TURKISH_UNICODE,	CONST_CS | CONST_PERSISTENT);
 
 	return SUCCESS;
 }
@@ -158,13 +173,16 @@ PHP_MINFO_FUNCTION(stem)
 	php_info_print_table_row(2, "Finnish", 			(ENABLE_FINNISH ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "French", 			(ENABLE_FRENCH ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "German", 			(ENABLE_GERMAN ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Hungarian", 		(ENABLE_HUNGARIAN ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Italian", 			(ENABLE_ITALIAN ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Norwegian", 		(ENABLE_NORWEGIAN ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Portuguese", 		(ENABLE_PORTUGUESE ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Romanian", 		(ENABLE_ROMANIAN ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Russian", 			(ENABLE_RUSSIAN ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Russian (Unicode)",	(ENABLE_RUSSIAN_UNICODE ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Spanish", 			(ENABLE_SPANISH ? "enabled" : "disabled"));
 	php_info_print_table_row(2, "Swedish", 			(ENABLE_SWEDISH ? "enabled" : "disabled"));
+	php_info_print_table_row(2, "Turkish (Unicode)", 	(ENABLE_TURKISH_UNICODE ? "enabled" : "disabled"));
 	php_info_print_table_end();
 }
 /* }}} */
@@ -256,6 +274,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 		break;
 		#endif
 
+		#if ENABLE_HUNGARIAN
+		case STEM_HUNGARIAN:
+			INIT_FUNCS(hungarian)
+		break;
+		#endif
+
 		#if ENABLE_ITALIAN
 		case STEM_ITALIAN:
 			INIT_FUNCS(italian)
@@ -271,6 +295,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 		#if ENABLE_PORTUGUESE
 		case STEM_PORTUGUESE:
 			INIT_FUNCS(portuguese)
+		break;
+		#endif
+
+		#if ENABLE_ROMANIAN
+		case STEM_ROMANIAN:
+			INIT_FUNCS(romanian)
 		break;
 		#endif
 
@@ -295,6 +325,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 		#if ENABLE_SWEDISH
 		case STEM_SWEDISH:
 			INIT_FUNCS(swedish)
+		break;
+		#endif
+
+		#if ENABLE_TURKISH_UNICODE
+		case STEM_TURKISH_UNICODE:
+			INIT_FUNCS(turkish_unicode)
 		break;
 		#endif
 
@@ -367,6 +403,10 @@ PHP_FUNCTION(stem_enabled)
 		case STEM_GERMAN:
 		#endif
 		
+		#if ENABLE_HUNGARIAN
+		case STEM_HUNGARIAN:
+		#endif
+		
 		#if ENABLE_ITALIAN
 		case STEM_ITALIAN:
 		#endif
@@ -379,6 +419,10 @@ PHP_FUNCTION(stem_enabled)
 		case STEM_PORTUGUESE:
 		#endif
 		
+		#if ENABLE_ROMANIAN
+		case STEM_ROMANIAN:
+		#endif
+
 		#if ENABLE_RUSSIAN
 		case STEM_RUSSIAN:
 		#endif
@@ -389,6 +433,10 @@ PHP_FUNCTION(stem_enabled)
 
 		#if ENABLE_SWEDISH
 		case STEM_SWEDISH:
+		#endif
+
+		#if ENABLE_TURKISH_UNICODE
+		case STEM_TURKISH_UNICODE:
 		#endif
 
 			RETURN_TRUE;
@@ -454,6 +502,13 @@ PHP_FUNCTION(stem_german)
 }
 #endif
 
+#if ENABLE_HUNGARIAN
+PHP_FUNCTION(stem_hungarian)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_HUNGARIAN);
+}
+#endif
+
 #if ENABLE_ITALIAN
 PHP_FUNCTION(stem_italian)
 {
@@ -472,6 +527,13 @@ PHP_FUNCTION(stem_norwegian)
 PHP_FUNCTION(stem_portuguese)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_PORTUGUESE);
+}
+#endif
+
+#if ENABLE_ROMANIAN
+PHP_FUNCTION(stem_romanian)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ROMANIAN);
 }
 #endif
 
@@ -500,6 +562,13 @@ PHP_FUNCTION(stem_spanish)
 PHP_FUNCTION(stem_swedish)
 {
 	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_SWEDISH);
+}
+#endif
+
+#if ENABLE_TURKISH_UNICODE
+PHP_FUNCTION(stem_turkish_unicode)
+{
+	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_TURKISH_UNICODE);
 }
 #endif
 /* }}} */
