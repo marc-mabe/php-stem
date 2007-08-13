@@ -1,7 +1,7 @@
 $Id$
 
 stem-php -- a PHP extension that provides word stemming.
-Version 1.4.3.
+Version 1.5.0-dev.
 
 23 Jan 2006
 
@@ -103,14 +103,17 @@ may not match with the current version. Be careful.
 	STEM_FINNISH
 	STEM_FRENCH
 	STEM_GERMAN
+	STEM_HUNGARIAN
 	STEM_ITALIAN
 	STEM_NORWEGIAN
 	STEM_PORTER -- the original Porter stemming algorithm
 	STEM_PORTUGUESE
+	STEM_ROMANIAN
 	STEM_RUSSIAN
 	STEM_RUSSIAN_UNICODE -- text is in Unicode encoding rather than UTF-8
 	STEM_SPANISH
 	STEM_SWEDISH
+	STEM_TURKISH_UNICODE
 
 	By default, STEM_PORTER is used.
 
@@ -122,17 +125,23 @@ may not match with the current version. Be careful.
 	stem_finnish
 	stem_french
 	stem_german
+	stem_hungarian
 	stem_italian
 	stem_norwegian
 	stem_porter
 	stem_portuguese
+	stem_romanian
 	stem_russian
 	stem_russian_unicode
 	stem_spanish
 	stem_swedish
+	stem_turkish_unicode
 
 	Each function will accept and return strings in standard Latin encodings
-	except for Russian, which uses Cyrillic KO18-R encoding.
+	except for Russian, which uses Cyrillic KO18-R encoding and Romanian,
+	which uses ISO-8859-2.
+
+	The Unicode versions accept and return strings encoded in UTF-8.
 
 	More languages may follow, and perhaps some aliases (like stem_francais()
 	will be equivalent to stem_french(). Who knows.)
@@ -184,11 +193,14 @@ may not match with the current version. Be careful.
 	   --enable-LANGUAGE=(yes|no) style arugments.
 	3. Run "make" and "make install".
 
-	Alternatively, you can install using the pear command thusly
+	Alternatively, you can install using the pecl command thusly
 	as root:
 
-	# pear install stem-x.x.x.tar.gz
+	# pecl install stem-x.x.x.tar.gz
 
+	Or using the PECL channel, which will pull the latest version:
+
+	# pecl install stem
 
 	On Windows systems it's a bit trickier, so you might want to
 	just download the extension from http://pecl4win.php.net/.

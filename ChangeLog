@@ -1,5 +1,9 @@
 ChangeLog:
 
+* Reimported the new API from Snowball and synchronize
+  all currently available stemmers.
+* Added Turkish (Unicode), Romanian and Hungarian stemmers
+
 23 Jan 2006
 
 * We've got another developer to welcome to Team

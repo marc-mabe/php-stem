@@ -1,5 +1,7 @@
 
-The wrapper code for this extension was written by J Smith.
+The wrapper code for this extension was written by:
+ Jay Smith    <jay@php.net>
+ Olivier Hill <ohill@php.net>
 
 The actual stemmers were all the result of C code spit out
 by Dr. M.F. Porter's Snowball string processor. Snowball
