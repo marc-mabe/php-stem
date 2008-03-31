@@ -15,6 +15,8 @@ $Id$
 extern zend_module_entry stem_module_entry;
 #define phpext_stem_ptr &stem_module_entry
 
+#define PHP_STEM_VERSION "1.4.4-dev"
+
 #ifdef PHP_WIN32
 #define PHP_STEM_API __declspec(dllexport)
 #else

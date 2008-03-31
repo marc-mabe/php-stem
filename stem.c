@@ -104,7 +104,7 @@ zend_module_entry stem_module_entry = {
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
-	"1.5.0-dev", 
+	PHP_STEM_VERSION,
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
@@ -157,7 +157,7 @@ PHP_MINFO_FUNCTION(stem)
 {
 	php_info_print_table_start();
 	php_info_print_table_header(2, "stem support", "enabled");
-	php_info_print_table_header(2, "version", stem_module_entry.version);
+	php_info_print_table_row(2, "version", PHP_STEM_VERSION);
 	php_info_print_table_colspan_header(2,
 	#ifdef COMPILE_DL_STEM
 	"compiled as dynamic module"
