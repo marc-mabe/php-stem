@@ -3,6 +3,7 @@ ChangeLog:
 * Reimported the new API from Snowball and synchronize
   all currently available stemmers.
 * Added Turkish (Unicode), Romanian and Hungarian stemmers
+* Using current param parsing in ZE (don't manipulate zvals directly)
 
 23 Jan 2006
 

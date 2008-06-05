@@ -198,37 +198,28 @@ PHP_MINFO_FUNCTION(stem)
 #endif
 
 
-/* {{{ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
+/* {{{ void php_stem(INTERNAL_FUNCTION_PARAMETERS, long lang)
    Return a stemmed string. lang is one of the language constants. By default,
    STEM_PORTER is used. Returns the stemmed word on success, false if there is
    a Snowball error. This is called from the actual PHP functions listed below.
 */
-void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
+void php_stem(INTERNAL_FUNCTION_PARAMETERS, long lang)
 {
 	struct SN_env* z;
 	struct SN_env* (*create_env)(void);
 	void (*close_env)(struct SN_env*);
 	int (*stem)(struct SN_env*);
-	
-	zval** incoming;
-	zval** zlang;
 
-	if (ZEND_NUM_ARGS() < 1 || ZEND_NUM_ARGS() > 2) {
-		WRONG_PARAM_COUNT;
-	}
-	else if (ZEND_NUM_ARGS() == 1) {
-		zend_get_parameters_ex(ZEND_NUM_ARGS(), &incoming);
-	}
-	else if (ZEND_NUM_ARGS() == 2) {
-		zend_get_parameters_ex(ZEND_NUM_ARGS(), &incoming, &zlang);
-		convert_to_long_ex(zlang);
-		lang = Z_LVAL_PP(zlang);
+	char * incoming;
+	int arglen;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s|l", &incoming, &arglen, &lang) == FAILURE) {
+		return;
 	}
 
-	convert_to_string_ex(incoming);
-
-	if (Z_STRLEN_PP(incoming) <= 0) {
-		RETURN_STRINGL(Z_STRVAL_PP(incoming), Z_STRLEN_PP(incoming), 1);
+	/* Empty string */
+	if (arglen <= 0) {
+		RETURN_STRINGL(incoming, arglen, 1);
 	}
 
 	switch (lang)
@@ -340,8 +331,8 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, int lang)
 	}
 
 	z = create_env();
-	SN_set_current(z, Z_STRLEN_PP(incoming), Z_STRVAL_PP(incoming));
-	php_strtolower(z->p, Z_STRLEN_PP(incoming));
+	SN_set_current(z, arglen, incoming);
+	php_strtolower(z->p, arglen);
 	stem(z);
 	z->p[z->l]= '\0';
 
