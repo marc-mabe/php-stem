@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=1 /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /D ENABLE_DANISH=1 /D ENABLE_DUTCH=1 /D ENABLE_ENGLISH=1 /D ENABLE_FINNISH=1 /D ENABLE_FRENCH=1 /D ENABLE_GERMAN=1 /D ENABLE_ITALIAN=1 /D ENABLE_NORWEGIAN=1 /D ENABLE_PORTUGUESE=1 /D ENABLE_RUSSIAN=1 /D ENABLE_RUSSIAN_UNICODE=1 /D ENABLE_SPANISH=1 /D ENABLE_SWEDISH=1 /FR /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=1 /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /D ENABLE_DANISH=1 /D ENABLE_DUTCH=1 /D ENABLE_ENGLISH=1 /D ENABLE_FINNISH=1 /D ENABLE_FRENCH=1 /D ENABLE_GERMAN=1 /D ENABLE_HUNGARIAN=1 /D ENABLE_ITALIAN=1 /D ENABLE_NORWEGIAN=1 /D ENABLE_PORTUGUESE=1 /D ENABLE_ROMANIAN=1 /D ENABLE_RUSSIAN=1 /D ENABLE_RUSSIAN_UNICODE=1 /D ENABLE_SPANISH=1 /D ENABLE_SWEDISH=1 /D ENABLE_TURKISH_UNICODE=1 /FR /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
@@ -70,7 +70,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /YX /FD /c
-# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\\" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=0 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /D ENABLE_DANISH=1 /D ENABLE_DUTCH=1 /D ENABLE_ENGLISH=1 /D ENABLE_FINNISH=1 /D ENABLE_FRENCH=1 /D ENABLE_GERMAN=1 /D ENABLE_ITALIAN=1 /D ENABLE_NORWEGIAN=1 /D ENABLE_PORTUGUESE=1 /D ENABLE_RUSSIAN=1 /D ENABLE_RUSSIAN_UNICODE=1 /D ENABLE_SPANISH=1 /D ENABLE_SWEDISH=1 /YX /FD /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\.." /I "..\..\main" /I "..\..\Zend" /I "..\..\TSRM" /I "..\..\\" /I "..\..\..\bindlib_w32" /D ZEND_DEBUG=0 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "STEM_EXPORTS" /D "COMPILE_DL_STEM" /D ZTS=1 /D "ZEND_WIN32" /D "PHP_WIN32" /D ENABLE_DANISH=1 /D ENABLE_DUTCH=1 /D ENABLE_ENGLISH=1 /D ENABLE_FINNISH=1 /D ENABLE_FRENCH=1 /D ENABLE_GERMAN=1 /D ENABLE_HUNGARIAN=1 /D ENABLE_ITALIAN=1 /D ENABLE_NORWEGIAN=1 /D ENABLE_PORTUGUESE=1 /D ENABLE_ROMANIAN=1 /D ENABLE_RUSSIAN=1 /D ENABLE_RUSSIAN_UNICODE=1 /D ENABLE_SPANISH=1 /D ENABLE_SWEDISH=1 /D ENABLE_TURKISH_UNICODE=1 /YX /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
@@ -122,6 +122,10 @@ SOURCE=.\german.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\hungarian.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\italian.c
 # End Source File
 # Begin Source File
@@ -135,6 +139,10 @@ SOURCE=.\porter.c
 # Begin Source File
 
 SOURCE=.\portuguese.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\romanian.c
 # End Source File
 # Begin Source File
 
@@ -159,6 +167,10 @@ SOURCE=.\stem.c
 # Begin Source File
 
 SOURCE=.\swedish.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\turkish_unicode.c
 # End Source File
 # Begin Source File
 
@@ -202,6 +214,10 @@ SOURCE=.\header.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\hungarian.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\italian.h
 # End Source File
 # Begin Source File
@@ -222,6 +238,10 @@ SOURCE=.\portuguese.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\romanian.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\russian.h
 # End Source File
 # Begin Source File
@@ -231,6 +251,10 @@ SOURCE=.\spanish.h
 # Begin Source File
 
 SOURCE=.\swedish.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\turkish_unicode.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"
