@@ -55,6 +55,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <file name="german.c" role="src" />
    <file name="german.h" role="src" />
    <file name="header.h" role="src" />
+   <file name="hungarian.c" role="src" />
+   <file name="hungarian.h" role="src" />
    <file name="italian.c" role="src" />
    <file name="italian.h" role="src" />
    <file name="norwegian.c" role="src" />
@@ -66,6 +68,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <file name="portuguese.h" role="src" />
    <file name="README" role="doc" />
    <file name="README.tests" role="doc" />
+   <file name="romanian.c" role="src" />
+   <file name="romanian.h" role="src" />
    <file name="russian.c" role="src" />
    <file name="russian.h" role="src" />
    <file name="russian_unicode.c" role="src" />
@@ -76,6 +80,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <file name="stem.dsp" role="src" />
    <file name="swedish.c" role="src" />
    <file name="swedish.h" role="src" />
+   <file name="turkish_unicode.c" role="src" />
+   <file name="turkish_unicode.h" role="src" />
    <file name="utilities.c" role="src" />
   </dir> <!-- / -->
  </contents>
@@ -97,13 +103,16 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <configureoption default="yes" name="enable-stem-finnish" prompt="Compile Finnish stemmer?" />
   <configureoption default="yes" name="enable-stem-french" prompt="Compile French stemmer?" />
   <configureoption default="yes" name="enable-stem-german" prompt="Compile German stemmer?" />
+  <configureoption default="yes" name="enable-stem-hungarian" prompt="Compile Hungarian stemmer?" />
   <configureoption default="yes" name="enable-stem-italian" prompt="Compile Italian stemmer?" />
   <configureoption default="yes" name="enable-stem-norwegian" prompt="Compile Norwegian stemmer?" />
   <configureoption default="yes" name="enable-stem-portuguese" prompt="Compile Portuguese stemmer?" />
+  <configureoption default="yes" name="enable-stem-romanian" prompt="Compile Romanian stemmer?" />
   <configureoption default="yes" name="enable-stem-russian" prompt="Compile Russian stemmer?" />
   <configureoption default="yes" name="enable-stem-russian_unicode" prompt="Compile Russian (UTF8) stemmer?" />
   <configureoption default="yes" name="enable-stem-spanish" prompt="Compile Spanish stemmer?" />
   <configureoption default="yes" name="enable-stem-swedish" prompt="Compile Swedish stemmer?" />
+  <configureoption default="yes" name="enable-stem-turkish_unicode" prompt="Compile Turkish (UTF8) stemmer?" />
  </extsrcrelease>
  <changelog>
   <release>
