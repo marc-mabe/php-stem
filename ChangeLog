@@ -1,9 +1,13 @@
 ChangeLog:
 
+09 Jun 2008
+
 * Reimported the new API from Snowball and synchronize
   all currently available stemmers.
 * Added Turkish (Unicode), Romanian and Hungarian stemmers
 * Using current param parsing in ZE (don't manipulate zvals directly)
+* Fix bug #12482
+* Release of 1.5.0
 
 23 Jan 2006
 

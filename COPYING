@@ -1,14 +1,14 @@
 The following files are covered under a BSD-like license, copyright
-2002-2006 J Smith <dark_panda@hushmail.com>:
+2002-2008 Jay Smith <jay@php.net>, Olivier Hill <ohill@php.net>:
 
 php_stem.h
 stem.c
-stemconf.h
 
 The exact license for stem-php is as follows:
 
 
-Copyright (c) 2002-2006 J Smith, <dark_panda@hushmail.com>
+Copyright (c) 2002-2008 Jay Smith, <jay@php.net>
+                        Olivier Hill <ohill@php.net>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -50,15 +50,18 @@ finnish.c/h
 french.c/h
 german.c/h
 header.h
+hungarian.c/h
 italian.c/h
 norwegian.c/h
 porter.c/h
 portuguese.c/h
+romanian.c/h
 russian.c/h
 russian_unicode.c/h
 spanish.c/h
 swedish.c/h
 utilities.c
+turkish_unicode.c/h
 
 For the exact terms of Dr. Porter's license, check out
 
