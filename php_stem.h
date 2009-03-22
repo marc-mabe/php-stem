@@ -1,13 +1,25 @@
 /*
-   +----------------------------------------------------------------------+
-   | Copyright (c) 2002-2006 J Smith <dark_panda@hushmail.com>            |
-   | Snowball sources copyright (c) M.F. Porter                           |
-   +----------------------------------------------------------------------+
-   | Check out COPYING for the exact license.                             |
-   +----------------------------------------------------------------------+
-
-$Id$
+  +----------------------------------------------------------------------+
+  | PHP Version 5                                                        |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2002-2009 The PHP Group                                |
+  +----------------------------------------------------------------------+
+  | This source file is subject to version 3.01 of the PHP license,      |
+  | that is bundled with this package in the file LICENSE, and is        |
+  | available through the world-wide-web at the following url:           |
+  | http://www.php.net/license/3_01.txt.                                 |
+  | If you did not receive a copy of the PHP license and are unable to   |
+  | obtain it through the world-wide-web, please send a note to          |
+  | license@php.net so we can mail you a copy immediately.               |
+  +----------------------------------------------------------------------+
+  | Snowball sources copyright (c) M.F. Porter                           |
+  +----------------------------------------------------------------------+
+  | Author: Jay Smith     <jay@php.net>                                  |
+  |         Olivier Hill  <ohill@php.net>                                |
+  +----------------------------------------------------------------------+
 */
+
+/* $Id$ */
 
 #ifndef PHP_STEM_H
 #define PHP_STEM_H
@@ -15,7 +27,7 @@ $Id$
 extern zend_module_entry stem_module_entry;
 #define phpext_stem_ptr &stem_module_entry
 
-#define PHP_STEM_VERSION "1.5.1-dev"
+#define PHP_STEM_VERSION "2.0.0-dev"
 
 #ifdef PHP_WIN32
 #define PHP_STEM_API __declspec(dllexport)
@@ -54,6 +66,7 @@ PHP_FUNCTION(stem_enabled);
 #define STEM_HUNGARIAN       15
 #define STEM_ROMANIAN        16
 #define STEM_TURKISH_UNICODE 17
+#define STEM_TURKISH 18
 
 #define STEMMER(php_func, c_func, constant, name) \
 	PHP_FUNCTION(stem_ ## php_func);
