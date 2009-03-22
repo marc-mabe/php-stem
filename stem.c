@@ -18,77 +18,20 @@ $Id$
 #include "ext/standard/info.h"
 #include "php_stem.h"
 
+/* {{{ some forward declarations: */
+static short int stem_enabled(int algorithm);
+/* }}} */
+
 /* {{{ stem_functions[]
 */
 function_entry stem_functions[] = {
 	PHP_FE(stem,				NULL)
-	PHP_FE(stem_porter,			NULL)
 	PHP_FE(stem_enabled,		NULL)
 
-	#if ENABLE_DANISH
-	PHP_FE(stem_danish,			NULL)
-	#endif
-
-	#if ENABLE_DUTCH
-	PHP_FE(stem_dutch,			NULL)
-	#endif
-
-	#if ENABLE_ENGLISH
-	PHP_FE(stem_english,		NULL)
-	#endif
-
-	#if ENABLE_FINNISH
-	PHP_FE(stem_finnish,		NULL)
-	#endif
-
-	#if ENABLE_FRENCH
-	PHP_FE(stem_french,			NULL)
-	#endif
-
-	#if ENABLE_GERMAN
-	PHP_FE(stem_german,			NULL)
-	#endif
-
-	#if ENABLE_HUNGARIAN
-	PHP_FE(stem_hungarian,		NULL)
-	#endif
-	
-	#if ENABLE_ITALIAN
-	PHP_FE(stem_italian,		NULL)
-	#endif
-
-	#if ENABLE_NORWEGIAN
-	PHP_FE(stem_norwegian,		NULL)
-	#endif
-
-	#if ENABLE_PORTUGUESE
-	PHP_FE(stem_portuguese,		NULL)
-	#endif
-
-	#if ENABLE_ROMANIAN
-	PHP_FE(stem_romanian,		NULL)
-	#endif
-
-	#if ENABLE_RUSSIAN
-	PHP_FE(stem_russian,		NULL)
-	#endif
-
-	#if ENABLE_RUSSIAN_UNICODE
-	PHP_FE(stem_russian_unicode,	NULL)
-	#endif
-
-	#if ENABLE_SPANISH
-	PHP_FE(stem_spanish,		NULL)
-	#endif
-
-	#if ENABLE_SWEDISH
-	PHP_FE(stem_swedish,		NULL)
-	#endif
-
-	#if ENABLE_TURKISH_UNICODE
-	PHP_FE(stem_turkish_unicode,	NULL)
-	#endif
-
+#	define STEMMER(php_func, c_func, constant, name) \
+	PHP_FE(stem_ ## php_func, NULL)
+#	include "stemmers.def"
+#	undef STEMMER
 	{NULL, NULL, NULL}	
 };
 /* }}} */
@@ -118,26 +61,12 @@ ZEND_GET_MODULE(stem)
 PHP_MINIT_FUNCTION(stem)
 {
 	/* Just set up our constants for the PHP function stem(). */
-
-	REGISTER_LONG_CONSTANT("STEM_PORTER",		STEM_PORTER,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_DANISH",		STEM_DANISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_DUTCH",		STEM_DUTCH,			CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_ENGLISH",		STEM_ENGLISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_FINNISH",		STEM_FINNISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_FRENCH",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_FRANCAIS",		STEM_FRENCH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_GERMAN",		STEM_GERMAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_HUNGARIAN",	STEM_HUNGARIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_ITALIAN",		STEM_ITALIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_NORWEGIAN",	STEM_NORWEGIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_PORTUGUESE",	STEM_PORTUGUESE,	CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_ROMANIAN",		STEM_ROMANIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_RUSSIAN",		STEM_RUSSIAN,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_RUSSIAN_UNICODE",	STEM_RUSSIAN_UNICODE,	CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_SPANISH",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_ESPANOL",		STEM_SPANISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_SWEDISH",		STEM_SWEDISH,		CONST_CS | CONST_PERSISTENT);
-	REGISTER_LONG_CONSTANT("STEM_TURKISH_UNICODE",	STEM_TURKISH_UNICODE,	CONST_CS | CONST_PERSISTENT);
+#	define STEMMER_FORCE 1
+#	define STEMMER(php_func, c_func, constant, name) \
+		REGISTER_LONG_CONSTANT("STEM_" # constant, STEM_ ## constant, CONST_CS | CONST_PERSISTENT);
+#	include "stemmers.def"
+#	undef STEMMER_FORCE
+#	undef STEMMER
 
 	return SUCCESS;
 }
@@ -166,23 +95,14 @@ PHP_MINFO_FUNCTION(stem)
 	#endif
 	);
 	php_info_print_table_colspan_header(2, "Languages Supported");
-	php_info_print_table_row(2, "Original Porter", 	"enabled (default)");
-	php_info_print_table_row(2, "Danish", 			(ENABLE_DANISH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Dutch", 			(ENABLE_DUTCH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "English", 			(ENABLE_ENGLISH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Finnish", 			(ENABLE_FINNISH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "French", 			(ENABLE_FRENCH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "German", 			(ENABLE_GERMAN ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Hungarian", 		(ENABLE_HUNGARIAN ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Italian", 			(ENABLE_ITALIAN ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Norwegian", 		(ENABLE_NORWEGIAN ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Portuguese", 		(ENABLE_PORTUGUESE ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Romanian", 		(ENABLE_ROMANIAN ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Russian", 			(ENABLE_RUSSIAN ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Russian (Unicode)",	(ENABLE_RUSSIAN_UNICODE ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Spanish", 			(ENABLE_SPANISH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Swedish", 			(ENABLE_SWEDISH ? "enabled" : "disabled"));
-	php_info_print_table_row(2, "Turkish (Unicode)", 	(ENABLE_TURKISH_UNICODE ? "enabled" : "disabled"));
+
+#	define STEMMER_FORCE 1
+#	define STEMMER(php_func, c_func, constant, name) \
+		php_info_print_table_row(2, # name, stem_enabled(STEM_ ## constant) ? "enabled" : "disabled");
+#	include "stemmers.def"
+#	undef STEMMER_FORCE
+#	undef STEMMER
+
 	php_info_print_table_end();
 }
 /* }}} */
@@ -225,105 +145,12 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, long lang)
 	switch (lang)
 	{
 		case STEM_DEFAULT:
-		case STEM_PORTER:
-			INIT_FUNCS(porter)
-		break;
-
-		#if ENABLE_DANISH
-		case STEM_DANISH:
-			INIT_FUNCS(danish)
-		break;
-		#endif
-
-		#if ENABLE_DUTCH
-		case STEM_DUTCH:
-			INIT_FUNCS(dutch)
-		break;
-		#endif
-
-		#if ENABLE_ENGLISH
-		case STEM_ENGLISH:
-			INIT_FUNCS(english)
-		break;
-		#endif
-
-		#if ENABLE_FINNISH
-		case STEM_FINNISH:
-			INIT_FUNCS(finnish)
-		break;
-		#endif
-
-		#if ENABLE_FRENCH
-		case STEM_FRENCH:
-			INIT_FUNCS(french)
-		break;
-		#endif
-
-		#if ENABLE_GERMAN
-		case STEM_GERMAN:
-			INIT_FUNCS(german)
-		break;
-		#endif
-
-		#if ENABLE_HUNGARIAN
-		case STEM_HUNGARIAN:
-			INIT_FUNCS(hungarian)
-		break;
-		#endif
-
-		#if ENABLE_ITALIAN
-		case STEM_ITALIAN:
-			INIT_FUNCS(italian)
-		break;
-		#endif
-
-		#if ENABLE_NORWEGIAN
-		case STEM_NORWEGIAN:
-			INIT_FUNCS(norwegian)
-		break;
-		#endif
-
-		#if ENABLE_PORTUGUESE
-		case STEM_PORTUGUESE:
-			INIT_FUNCS(portuguese)
-		break;
-		#endif
-
-		#if ENABLE_ROMANIAN
-		case STEM_ROMANIAN:
-			INIT_FUNCS(romanian)
-		break;
-		#endif
-
-		#if ENABLE_RUSSIAN
-		case STEM_RUSSIAN:
-			INIT_FUNCS(russian)
-		break;
-		#endif
-
-		#if ENABLE_RUSSIAN_UNICODE
-		case STEM_RUSSIAN_UNICODE:
-			INIT_FUNCS(russian_unicode)
-		break;
-		#endif
-
-		#if ENABLE_SPANISH
-		case STEM_SPANISH:
-			INIT_FUNCS(spanish)
-		break;
-		#endif
-
-		#if ENABLE_SWEDISH
-		case STEM_SWEDISH:
-			INIT_FUNCS(swedish)
-		break;
-		#endif
-
-		#if ENABLE_TURKISH_UNICODE
-		case STEM_TURKISH_UNICODE:
-			INIT_FUNCS(turkish_unicode)
-		break;
-		#endif
+#		define STEMMER(php_func, c_func, constant, name) \
+			case STEM_ ## constant: \
+				INIT_FUNCS(c_func) \
+			break;
+#		include "stemmers.def"
+#		undef STEMMER
 
 		default:
 			php_error(E_NOTICE, "%s() couldn't stem word, stemming module not found", get_active_function_name(TSRMLS_C));
@@ -353,6 +180,20 @@ PHP_FUNCTION(stem)
 }
 /* }}} */
 
+/* {{{ just check to see if an algorithm is enabled... */
+static short int stem_enabled(int algorithm)
+{
+	switch (algorithm) {
+#		define STEMMER(php_func, c_func, constant, name) \
+			case STEM_ ## constant:
+#		include "stemmers.def"
+#		undef STEMMER
+			return 1;
+	}
+	return 0;
+}
+/* }}} */
+
 
 /* {{{ bool stem_enabled(int lang)
    lang is one of the language constants. This function just returns true
@@ -366,75 +207,11 @@ PHP_FUNCTION(stem_enabled)
 		RETURN_FALSE;
 	}
 
-	switch (lang)
-	{
-		case STEM_PORTER:
-
-		#if ENABLE_DANISH
-		case STEM_DANISH:
-		#endif
-
-		#if ENABLE_DUTCH
-		case STEM_DUTCH:
-		#endif
-
-		#if ENABLE_ENGLISH
-		case STEM_ENGLISH:
-		#endif
-
-		#if ENABLE_FINNISH
-		case STEM_FINNISH:
-		#endif
-
-		#if ENABLE_FRENCH
-		case STEM_FRENCH:
-		#endif
-
-		#if ENABLE_GERMAN
-		case STEM_GERMAN:
-		#endif
-		
-		#if ENABLE_HUNGARIAN
-		case STEM_HUNGARIAN:
-		#endif
-		
-		#if ENABLE_ITALIAN
-		case STEM_ITALIAN:
-		#endif
-		
-		#if ENABLE_NORWEGIAN
-		case STEM_NORWEGIAN:
-		#endif
-		
-		#if ENABLE_PORTUGUESE
-		case STEM_PORTUGUESE:
-		#endif
-		
-		#if ENABLE_ROMANIAN
-		case STEM_ROMANIAN:
-		#endif
-
-		#if ENABLE_RUSSIAN
-		case STEM_RUSSIAN:
-		#endif
-
-		#if ENABLE_SPANISH
-		case STEM_SPANISH:
-		#endif
-
-		#if ENABLE_SWEDISH
-		case STEM_SWEDISH:
-		#endif
-
-		#if ENABLE_TURKISH_UNICODE
-		case STEM_TURKISH_UNICODE:
-		#endif
-
-			RETURN_TRUE;
-		break;
-
-		default:
-			RETURN_FALSE;
+	if (stem_enabled(lang)) {
+		RETURN_TRUE;
+	}
+	else {
+		RETURN_FALSE;
 	}
 }
 /* }}} */
@@ -446,122 +223,13 @@ PHP_FUNCTION(stem_enabled)
    is the equivalent of calling stem(string, LANG), i.e. stem_french(string) is
    equivalent to stem(string, STEM_FRENCH).
 */
-PHP_FUNCTION(stem_porter)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_PORTER);
-}
-
-#if ENABLE_DUTCH
-PHP_FUNCTION(stem_dutch)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_DUTCH);
-}
-#endif
-
-#if ENABLE_DANISH
-PHP_FUNCTION(stem_danish)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_DANISH);
-}
-#endif
-
-#if ENABLE_ENGLISH
-PHP_FUNCTION(stem_english)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ENGLISH);
-}
-#endif
-
-#if ENABLE_FINNISH
-PHP_FUNCTION(stem_finnish)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_FINNISH);
-}
-#endif
-
-#if ENABLE_FRENCH
-PHP_FUNCTION(stem_french)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_FRENCH);
-}
-#endif
-
-#if ENABLE_GERMAN
-PHP_FUNCTION(stem_german)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_GERMAN);
-}
-#endif
-
-#if ENABLE_HUNGARIAN
-PHP_FUNCTION(stem_hungarian)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_HUNGARIAN);
-}
-#endif
-
-#if ENABLE_ITALIAN
-PHP_FUNCTION(stem_italian)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ITALIAN);
-}
-#endif
-
-#if ENABLE_NORWEGIAN
-PHP_FUNCTION(stem_norwegian)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_NORWEGIAN);
-}
-#endif
-
-#if ENABLE_PORTUGUESE
-PHP_FUNCTION(stem_portuguese)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_PORTUGUESE);
-}
-#endif
-
-#if ENABLE_ROMANIAN
-PHP_FUNCTION(stem_romanian)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ROMANIAN);
-}
-#endif
-
-#if ENABLE_RUSSIAN
-PHP_FUNCTION(stem_russian)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_RUSSIAN);
-}
-#endif
-
-#if ENABLE_RUSSIAN_UNICODE
-PHP_FUNCTION(stem_russian_unicode)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_RUSSIAN_UNICODE);
-}
-#endif
-
-#if ENABLE_SPANISH
-PHP_FUNCTION(stem_spanish)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_SPANISH);
-}
-#endif
-
-#if ENABLE_SWEDISH
-PHP_FUNCTION(stem_swedish)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_SWEDISH);
-}
-#endif
-
-#if ENABLE_TURKISH_UNICODE
-PHP_FUNCTION(stem_turkish_unicode)
-{
-	php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_TURKISH_UNICODE);
-}
-#endif
+#define STEMMER(php_func, c_func, constant, name) \
+	PHP_FUNCTION(stem_ ## php_func) \
+	{ \
+		php_stem(INTERNAL_FUNCTION_PARAM_PASSTHRU, STEM_ ## constant); \
+	}
+#include "stemmers.def"
+#undef STEMMER
 /* }}} */
 
 

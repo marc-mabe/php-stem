@@ -36,105 +36,95 @@ PHP_FUNCTION(stem);
 PHP_FUNCTION(stem_porter);
 PHP_FUNCTION(stem_enabled);
 
-#define STEM_DEFAULT	0
-#define STEM_PORTER		1
-#define STEM_ENGLISH	2
-#define STEM_FRENCH		3
-#define STEM_SPANISH	4
-#define STEM_DUTCH		5
-#define STEM_DANISH		6
-#define STEM_GERMAN		7
-#define STEM_ITALIAN	8
-#define STEM_NORWEGIAN	9
-#define STEM_PORTUGUESE	10
-#define STEM_RUSSIAN	11
-#define STEM_SWEDISH	12
-#define STEM_FINNISH	13
+#define STEM_DEFAULT         0
+#define STEM_PORTER          1
+#define STEM_ENGLISH         2
+#define STEM_FRENCH          3
+#define STEM_SPANISH         4
+#define STEM_DUTCH           5
+#define STEM_DANISH          6
+#define STEM_GERMAN          7
+#define STEM_ITALIAN         8
+#define STEM_NORWEGIAN       9
+#define STEM_PORTUGUESE      10
+#define STEM_RUSSIAN         11
+#define STEM_SWEDISH         12
+#define STEM_FINNISH         13
 #define STEM_RUSSIAN_UNICODE 14
-#define STEM_HUNGARIAN 15
-#define STEM_ROMANIAN 16
+#define STEM_HUNGARIAN       15
+#define STEM_ROMANIAN        16
 #define STEM_TURKISH_UNICODE 17
+
+#define STEMMER(php_func, c_func, constant, name) \
+	PHP_FUNCTION(stem_ ## php_func);
+#include "stemmers.def"
+#undef STEMMER
+
+#include "porter.h"
 
 #if ENABLE_DANISH
 #include "danish.h"
-PHP_FUNCTION(stem_danish);
 #endif
 
 #if ENABLE_DUTCH
 #include "dutch.h"
-PHP_FUNCTION(stem_dutch);
 #endif
 
 #if ENABLE_ENGLISH
 #include "english.h"
-PHP_FUNCTION(stem_english);
 #endif
 
 #if ENABLE_FINNISH
 #include "finnish.h"
-PHP_FUNCTION(stem_finnish);  
 #endif
 
 #if ENABLE_FRENCH
 #include "french.h"
-PHP_FUNCTION(stem_french);
 #endif
 
 #if ENABLE_GERMAN
 #include "german.h"
-PHP_FUNCTION(stem_german);
 #endif
 
 #if ENABLE_HUNGARIAN
 #include "hungarian.h"
-PHP_FUNCTION(stem_hungarian);
 #endif
 
 #if ENABLE_ITALIAN
 #include "italian.h"
-PHP_FUNCTION(stem_italian);
 #endif
 
 #if ENABLE_NORWEGIAN
 #include "norwegian.h"
-PHP_FUNCTION(stem_norwegian);
 #endif
 
 #if ENABLE_PORTUGUESE
 #include "portuguese.h"
-PHP_FUNCTION(stem_portuguese);
 #endif
 
 #if ENABLE_ROMANIAN
 #include "romanian.h"
-PHP_FUNCTION(stem_romanian);
 #endif
 
 #if ENABLE_RUSSIAN
 #include "russian.h"
-PHP_FUNCTION(stem_russian);
-#endif
-
-#if ENABLE_RUSSIAN_UNICODE
-#include "russian_unicode.h"
-PHP_FUNCTION(stem_russian_unicode);
 #endif
 
 #if ENABLE_SPANISH
 #include "spanish.h"
-PHP_FUNCTION(stem_spanish);
 #endif
 
 #if ENABLE_SWEDISH
 #include "swedish.h"
-PHP_FUNCTION(stem_swedish);
+#endif
+
+#if ENABLE_RUSSIAN_UNICODE
+#include "russian_unicode.h"
 #endif
 
 #if ENABLE_TURKISH_UNICODE
 #include "turkish_unicode.h"
-PHP_FUNCTION(stem_turkish_unicode);
 #endif
-
 
 PHP_MINIT_FUNCTION(stem);
 PHP_MSHUTDOWN_FUNCTION(stem);

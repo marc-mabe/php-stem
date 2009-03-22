@@ -86,6 +86,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <file name="turkish_unicode.c" role="src" />
    <file name="turkish_unicode.h" role="src" />
    <file name="utilities.c" role="src" />
+   <file name="stemmers.def" role="src" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
