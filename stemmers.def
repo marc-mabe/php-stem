@@ -1,0 +1,67 @@
+
+STEMMER(porter,      porter,       PORTER,      "Original Porter ISO-8859-1")
+
+#if ENABLE_DANISH || defined(STEMMER_FORCE)
+STEMMER(danish, danish, DANISH, "Danish ISO-8859-1")
+#endif
+
+#if ENABLE_DUTCH || defined(STEMMER_FORCE)
+STEMMER(dutch, dutch, DUTCH, "Dutch ISO-8859-1")
+#endif
+
+#if ENABLE_ENGLISH || defined(STEMMER_FORCE)
+STEMMER(english, english, ENGLISH, "English ISO-8859-1")
+#endif
+
+#if ENABLE_FINNISH || defined(STEMMER_FORCE)
+STEMMER(finnish, finnish, FINNISH, "Finnish ISO-8859-1")
+#endif
+
+#if ENABLE_FRENCH || defined(STEMMER_FORCE)
+STEMMER(french, french, FRENCH, "French ISO-8859-1")
+#endif
+
+#if ENABLE_GERMAN || defined(STEMMER_FORCE)
+STEMMER(german, german, GERMAN, "German ISO-8859-1")
+#endif
+
+#if ENABLE_HUNGARIAN || defined(STEMMER_FORCE)
+STEMMER(hungarian, hungarian, HUNGARIAN, "Hungarian ISO-8859-1")
+#endif
+
+#if ENABLE_ITALIAN || defined(STEMMER_FORCE)
+STEMMER(italian, italian, ITALIAN, "Italian ISO-8859-1")
+#endif
+
+#if ENABLE_NORWEGIAN || defined(STEMMER_FORCE)
+STEMMER(norwegian, norwegian, NORWEGIAN, "Norwegian ISO-8859-1")
+#endif
+
+#if ENABLE_PORTUGUESE || defined(STEMMER_FORCE)
+STEMMER(portuguese, portuguese, PORTUGUESE, "Portuguese ISO-8859-1")
+#endif
+
+#if ENABLE_ROMANIAN || defined(STEMMER_FORCE)
+STEMMER(romanian, romanian, ROMANIAN, "Romanian ISO-8859-2")
+#endif
+
+#if ENABLE_RUSSIAN || defined(STEMMER_FORCE)
+STEMMER(russian, russian, RUSSIAN, "Russian KOI8-R")
+#endif
+
+#if ENABLE_SPANISH || defined(STEMMER_FORCE)
+STEMMER(spanish, spanish, SPANISH, "Spanish ISO-8859-1")
+#endif
+
+#if ENABLE_SWEDISH || defined(STEMMER_FORCE)
+STEMMER(swedish, swedish, SWEDISH, "Swedish ISO-8859-1")
+#endif
+
+#if ENABLE_RUSSIAN_UNICODE || defined(STEMMER_FORCE)
+STEMMER(russian_unicode, russian_unicode, RUSSIAN_UNICODE, "Russian UTF-8")
+#endif
+
+#if ENABLE_TURKISH_UNICODE || defined(STEMMER_FORCE)
+STEMMER(turkish_unicode, turkish_unicode, TURKISH_UNICODE, "Turkish UTF-8")
+#endif
+
