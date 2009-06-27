@@ -113,7 +113,7 @@ static const symbol s_2_0[2] = { 'i', 'g' };
 static const symbol s_2_1[3] = { 'l', 'i', 'g' };
 static const symbol s_2_2[4] = { 'e', 'l', 'i', 'g' };
 static const symbol s_2_3[3] = { 'e', 'l', 's' };
-static const symbol s_2_4[4] = { 'l', 0xF8, 's', 't' };
+static const symbol s_2_4[5] = { 'l', 0xC3, 0xB8, 's', 't' };
 
 static const struct among a_2[5] =
 {
@@ -121,7 +121,7 @@ static const struct among a_2[5] =
 /*  1 */ { 3, s_2_1, 0, 1, 0},
 /*  2 */ { 4, s_2_2, 1, 1, 0},
 /*  3 */ { 3, s_2_3, -1, 1, 0},
-/*  4 */ { 4, s_2_4, -1, 2, 0}
+/*  4 */ { 5, s_2_4, -1, 2, 0}
 };
 
 static const unsigned char g_v[] = { 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 128 };
@@ -130,21 +130,21 @@ static const unsigned char g_s_ending[] = { 239, 254, 42, 3, 0, 0, 0, 0, 0, 0, 0
 
 static const symbol s_0[] = { 's', 't' };
 static const symbol s_1[] = { 'i', 'g' };
-static const symbol s_2[] = { 'l', 0xF8, 's' };
+static const symbol s_2[] = { 'l', 0xC3, 0xB8, 's' };
 
 static int r_mark_regions(struct SN_env * z) {
     z->I[0] = z->l;
     {   int c_test = z->c; /* test, line 33 */
-        {   int ret = z->c + 3;
-            if (0 > ret || ret > z->l) return 0;
+        {   int ret = skip_utf8(z->p, z->c, 0, z->l, + 3);
+            if (ret < 0) return 0;
             z->c = ret; /* hop, line 33 */
         }
         z->I[1] = z->c; /* setmark x, line 33 */
         z->c = c_test;
     }
-    if (out_grouping(z, g_v, 97, 248, 1) < 0) return 0; /* goto */ /* grouping v, line 34 */
+    if (out_grouping_U(z, g_v, 97, 248, 1) < 0) return 0; /* goto */ /* grouping v, line 34 */
     {    /* gopast */ /* non v, line 34 */
-        int ret = in_grouping(z, g_v, 97, 248, 1);
+        int ret = in_grouping_U(z, g_v, 97, 248, 1);
         if (ret < 0) return 0;
         z->c += ret;
     }
@@ -179,7 +179,7 @@ static int r_main_suffix(struct SN_env * z) {
             }
             break;
         case 2:
-            if (in_grouping_b(z, g_s_ending, 97, 229, 0)) return 0;
+            if (in_grouping_b_U(z, g_s_ending, 97, 229, 0)) return 0;
             {   int ret = slice_del(z); /* delete, line 50 */
                 if (ret < 0) return ret;
             }
@@ -204,8 +204,10 @@ static int r_consonant_pair(struct SN_env * z) {
         }
         z->c = z->l - m_test;
     }
-    if (z->c <= z->lb) return 0;
-    z->c--; /* next, line 62 */
+    {   int ret = skip_utf8(z->p, z->c, z->lb, 0, -1);
+        if (ret < 0) return 0;
+        z->c = ret; /* next, line 62 */
+    }
     z->bra = z->c; /* ], line 62 */
     {   int ret = slice_del(z); /* delete, line 62 */
         if (ret < 0) return ret;
@@ -255,7 +257,7 @@ static int r_other_suffix(struct SN_env * z) {
             }
             break;
         case 2:
-            {   int ret = slice_from_s(z, 3, s_2); /* <-, line 72 */
+            {   int ret = slice_from_s(z, 4, s_2); /* <-, line 72 */
                 if (ret < 0) return ret;
             }
             break;
@@ -271,7 +273,7 @@ static int r_undouble(struct SN_env * z) {
         mlimit = z->lb; z->lb = z->c;
         z->c = z->l - m1;
         z->ket = z->c; /* [, line 76 */
-        if (out_grouping_b(z, g_v, 97, 248, 0)) { z->lb = mlimit; return 0; }
+        if (out_grouping_b_U(z, g_v, 97, 248, 0)) { z->lb = mlimit; return 0; }
         z->bra = z->c; /* ], line 76 */
         z->S[0] = slice_to(z, z->S[0]); /* -> ch, line 76 */
         if (z->S[0] == 0) return -1; /* -> ch, line 76 */

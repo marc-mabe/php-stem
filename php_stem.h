@@ -66,7 +66,7 @@ PHP_FUNCTION(stem_enabled);
 #define STEM_HUNGARIAN       15
 #define STEM_ROMANIAN        16
 #define STEM_TURKISH_UNICODE 17
-#define STEM_TURKISH 18
+#define STEM_TURKISH         18
 
 #define STEMMER(php_func, c_func, constant, name) \
 	PHP_FUNCTION(stem_ ## php_func);
@@ -136,7 +136,7 @@ PHP_FUNCTION(stem_enabled);
 #endif
 
 #if ENABLE_TURKISH_UNICODE
-#include "turkish_unicode.h"
+#include "turkish.h"
 #endif
 
 PHP_MINIT_FUNCTION(stem);

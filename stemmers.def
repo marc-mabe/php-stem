@@ -1,67 +1,87 @@
+/*
+  +----------------------------------------------------------------------+
+  | PHP Version 5                                                        |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2002-2009 The PHP Group                                |
+  +----------------------------------------------------------------------+
+  | This source file is subject to version 3.01 of the PHP license,      |
+  | that is bundled with this package in the file LICENSE, and is        |
+  | available through the world-wide-web at the following url:           |
+  | http://www.php.net/license/3_01.txt.                                 |
+  | If you did not receive a copy of the PHP license and are unable to   |
+  | obtain it through the world-wide-web, please send a note to          |
+  | license@php.net so we can mail you a copy immediately.               |
+  +----------------------------------------------------------------------+
+  | Snowball sources copyright (c) M.F. Porter                           |
+  +----------------------------------------------------------------------+
+  | Author: Jay Smith     <jay@php.net>                                  |
+  |         Olivier Hill  <ohill@php.net>                                |
+  +----------------------------------------------------------------------+
+*/
 
+/* $Id$ */
+
+/* STEMMER(php_func, c_func, constant, name) */
 STEMMER(porter,      porter,       PORTER,      "Original Porter ISO-8859-1")
 
 #if ENABLE_DANISH || defined(STEMMER_FORCE)
-STEMMER(danish, danish, DANISH, "Danish ISO-8859-1")
+STEMMER(danish, danish, DANISH, "Danish UTF-8")
 #endif
 
 #if ENABLE_DUTCH || defined(STEMMER_FORCE)
-STEMMER(dutch, dutch, DUTCH, "Dutch ISO-8859-1")
+STEMMER(dutch, dutch, DUTCH, "Dutch UTF-8")
 #endif
 
 #if ENABLE_ENGLISH || defined(STEMMER_FORCE)
-STEMMER(english, english, ENGLISH, "English ISO-8859-1")
+STEMMER(english, english, ENGLISH, "English UTF-8")
 #endif
 
 #if ENABLE_FINNISH || defined(STEMMER_FORCE)
-STEMMER(finnish, finnish, FINNISH, "Finnish ISO-8859-1")
+STEMMER(finnish, finnish, FINNISH, "Finnish UTF-8")
 #endif
 
 #if ENABLE_FRENCH || defined(STEMMER_FORCE)
-STEMMER(french, french, FRENCH, "French ISO-8859-1")
+STEMMER(french, french, FRENCH, "French UTF-8")
 #endif
 
 #if ENABLE_GERMAN || defined(STEMMER_FORCE)
-STEMMER(german, german, GERMAN, "German ISO-8859-1")
+STEMMER(german, german, GERMAN, "German UTF-8")
 #endif
 
 #if ENABLE_HUNGARIAN || defined(STEMMER_FORCE)
-STEMMER(hungarian, hungarian, HUNGARIAN, "Hungarian ISO-8859-1")
+STEMMER(hungarian, hungarian, HUNGARIAN, "Hungarian UTF-8")
 #endif
 
 #if ENABLE_ITALIAN || defined(STEMMER_FORCE)
-STEMMER(italian, italian, ITALIAN, "Italian ISO-8859-1")
+STEMMER(italian, italian, ITALIAN, "Italian UTF-8")
 #endif
 
 #if ENABLE_NORWEGIAN || defined(STEMMER_FORCE)
-STEMMER(norwegian, norwegian, NORWEGIAN, "Norwegian ISO-8859-1")
+STEMMER(norwegian, norwegian, NORWEGIAN, "Norwegian UTF-8")
 #endif
 
 #if ENABLE_PORTUGUESE || defined(STEMMER_FORCE)
-STEMMER(portuguese, portuguese, PORTUGUESE, "Portuguese ISO-8859-1")
+STEMMER(portuguese, portuguese, PORTUGUESE, "Portuguese UTF-8")
 #endif
 
 #if ENABLE_ROMANIAN || defined(STEMMER_FORCE)
-STEMMER(romanian, romanian, ROMANIAN, "Romanian ISO-8859-2")
+STEMMER(romanian, romanian, ROMANIAN, "Romanian UTF-8")
 #endif
 
 #if ENABLE_RUSSIAN || defined(STEMMER_FORCE)
-STEMMER(russian, russian, RUSSIAN, "Russian KOI8-R")
+STEMMER(russian, russian, RUSSIAN, "Russian UTF-8")
+STEMMER(russian_unicode, russian, RUSSIAN_UNICODE, "Russian UTF-8 (old unicode)")
 #endif
 
 #if ENABLE_SPANISH || defined(STEMMER_FORCE)
-STEMMER(spanish, spanish, SPANISH, "Spanish ISO-8859-1")
+STEMMER(spanish, spanish, SPANISH, "Spanish UTF-8")
 #endif
 
 #if ENABLE_SWEDISH || defined(STEMMER_FORCE)
-STEMMER(swedish, swedish, SWEDISH, "Swedish ISO-8859-1")
+STEMMER(swedish, swedish, SWEDISH, "Swedish UTF-8")
 #endif
 
-#if ENABLE_RUSSIAN_UNICODE || defined(STEMMER_FORCE)
-STEMMER(russian_unicode, russian_unicode, RUSSIAN_UNICODE, "Russian UTF-8")
+#if ENABLE_TURKISH || defined(STEMMER_FORCE)
+STEMMER(turkish, turkish, TURKISH, "Turkish UTF-8")
+STEMMER(turkish_unicode, turkish, TURKISH_UNICODE, "Turkish UTF-8 (old unicode)")
 #endif
-
-#if ENABLE_TURKISH_UNICODE || defined(STEMMER_FORCE)
-STEMMER(turkish_unicode, turkish_unicode, TURKISH_UNICODE, "Turkish UTF-8")
-#endif
-

@@ -1,5 +1,11 @@
 ChangeLog:
 
+Release 2.0.0 - x x x
+
+  * Only use UTF-8 internally. Old ISO encodings are not supported anymore
+  * Bring everything to PHP License 3.01, copyright holder is now PHP Group
+  * Use X-macros to simplify code
+  
 09 Jun 2008
 
 * Reimported the new API from Snowball and synchronize

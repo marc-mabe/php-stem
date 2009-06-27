@@ -28,8 +28,6 @@ PHP_ARG_ENABLE(stem-romanian, whether to compile Romanian stemmer,
   [  --enable-stem-romanian   STEM: Whether to compile Romanian stemmer], yes, no)
 PHP_ARG_ENABLE(stem-russian, whether to compile Russian stemmer,
   [  --enable-stem-russian    STEM: Whether to compile Russian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-russian-unicode, whether to compile Russian (UTF8) stemmer,
-  [  --enable-stem-russian-unicode STEM: Whether to compile Russian (UTF8) stemmer], yes, no)
 PHP_ARG_ENABLE(stem-spanish, whether to compile Spanish stemmer,
   [  --enable-stem-spanish    STEM: Whether to compile Spanish stemmer], yes, no)
 PHP_ARG_ENABLE(stem-swedish, whether to compile Swedish stemmer,
@@ -117,15 +115,10 @@ if test "$PHP_STEM_ROMANIAN" = "yes"; then
 
 if test "$PHP_STEM_RUSSIAN" = "yes"; then
     AC_DEFINE(ENABLE_RUSSIAN, 1, [ ])
+    AC_DEFINE(ENABLE_RUSSIAN_UNICODE, 1, [ ])
     extra_lang="$extra_lang russian.c"
   else
     AC_DEFINE(ENABLE_RUSSIAN, 0, [ ])
-  fi
-
-if test "$PHP_STEM_RUSSIAN_UNICODE" = "yes"; then
-    AC_DEFINE(ENABLE_RUSSIAN_UNICODE, 1, [ ])
-    extra_lang="$extra_lang russian_unicode.c"
-  else
     AC_DEFINE(ENABLE_RUSSIAN_UNICODE, 0, [ ])
   fi
 
@@ -144,10 +137,12 @@ if test "$PHP_STEM_SWEDISH" = "yes"; then
   fi
 
 if test "$PHP_STEM_TURKISH_UNICODE" = "yes"; then
+    AC_DEFINE(ENABLE_TURKISH, 1, [ ])
     AC_DEFINE(ENABLE_TURKISH_UNICODE, 1, [ ])
-    extra_lang="$extra_lang turkish_unicode.c"
+    extra_lang="$extra_lang turkish.c"
   else
     AC_DEFINE(ENABLE_TURKISH_UNICODE, 0, [ ])
+    AC_DEFINE(ENABLE_TURKISH, 0, [ ])
   fi
 
 if test "$PHP_STEM" != "no"; then

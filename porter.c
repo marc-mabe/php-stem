@@ -235,9 +235,9 @@ static const symbol s_33[] = { 'Y' };
 static const symbol s_34[] = { 'y' };
 
 static int r_shortv(struct SN_env * z) {
-    if (out_grouping_b(z, g_v_WXY, 89, 121, 0)) return 0;
-    if (in_grouping_b(z, g_v, 97, 121, 0)) return 0;
-    if (out_grouping_b(z, g_v, 97, 121, 0)) return 0;
+    if (out_grouping_b_U(z, g_v_WXY, 89, 121, 0)) return 0;
+    if (in_grouping_b_U(z, g_v, 97, 121, 0)) return 0;
+    if (out_grouping_b_U(z, g_v, 97, 121, 0)) return 0;
     return 1;
 }
 
@@ -300,7 +300,7 @@ static int r_Step_1b(struct SN_env * z) {
         case 2:
             {   int m_test = z->l - z->c; /* test, line 38 */
                 {    /* gopast */ /* grouping v, line 38 */
-                    int ret = out_grouping_b(z, g_v, 97, 121, 1);
+                    int ret = out_grouping_b_U(z, g_v, 97, 121, 1);
                     if (ret < 0) return 0;
                     z->c -= ret;
                 }
@@ -326,8 +326,10 @@ static int r_Step_1b(struct SN_env * z) {
                     break;
                 case 2:
                     z->ket = z->c; /* [, line 44 */
-                    if (z->c <= z->lb) return 0;
-                    z->c--; /* next, line 44 */
+                    {   int ret = skip_utf8(z->p, z->c, z->lb, 0, -1);
+                        if (ret < 0) return 0;
+                        z->c = ret; /* next, line 44 */
+                    }
                     z->bra = z->c; /* ], line 44 */
                     {   int ret = slice_del(z); /* delete, line 44 */
                         if (ret < 0) return ret;
@@ -366,7 +368,7 @@ static int r_Step_1c(struct SN_env * z) {
 lab0:
     z->bra = z->c; /* ], line 52 */
     {    /* gopast */ /* grouping v, line 53 */
-        int ret = out_grouping_b(z, g_v, 97, 121, 1);
+        int ret = out_grouping_b_U(z, g_v, 97, 121, 1);
         if (ret < 0) return 0;
         z->c -= ret;
     }
@@ -596,7 +598,7 @@ extern int porter_stem(struct SN_env * z) {
             int c3 = z->c;
             while(1) { /* goto, line 117 */
                 int c4 = z->c;
-                if (in_grouping(z, g_v, 97, 121, 0)) goto lab3;
+                if (in_grouping_U(z, g_v, 97, 121, 0)) goto lab3;
                 z->bra = z->c; /* [, line 117 */
                 if (!(eq_s(z, 1, s_31))) goto lab3;
                 z->ket = z->c; /* ], line 117 */
@@ -604,8 +606,10 @@ extern int porter_stem(struct SN_env * z) {
                 break;
             lab3:
                 z->c = c4;
-                if (z->c >= z->l) goto lab2;
-                z->c++; /* goto, line 117 */
+                {   int ret = skip_utf8(z->p, z->c, 0, z->l, 1);
+                    if (ret < 0) goto lab2;
+                    z->c = ret; /* goto, line 117 */
+                }
             }
             {   int ret = slice_from_s(z, 1, s_32); /* <-, line 117 */
                 if (ret < 0) return ret;
@@ -622,23 +626,23 @@ extern int porter_stem(struct SN_env * z) {
     z->I[1] = z->l;
     {   int c5 = z->c; /* do, line 121 */
         {    /* gopast */ /* grouping v, line 122 */
-            int ret = out_grouping(z, g_v, 97, 121, 1);
+            int ret = out_grouping_U(z, g_v, 97, 121, 1);
             if (ret < 0) goto lab4;
             z->c += ret;
         }
         {    /* gopast */ /* non v, line 122 */
-            int ret = in_grouping(z, g_v, 97, 121, 1);
+            int ret = in_grouping_U(z, g_v, 97, 121, 1);
             if (ret < 0) goto lab4;
             z->c += ret;
         }
         z->I[0] = z->c; /* setmark p1, line 122 */
         {    /* gopast */ /* grouping v, line 123 */
-            int ret = out_grouping(z, g_v, 97, 121, 1);
+            int ret = out_grouping_U(z, g_v, 97, 121, 1);
             if (ret < 0) goto lab4;
             z->c += ret;
         }
         {    /* gopast */ /* non v, line 123 */
-            int ret = in_grouping(z, g_v, 97, 121, 1);
+            int ret = in_grouping_U(z, g_v, 97, 121, 1);
             if (ret < 0) goto lab4;
             z->c += ret;
         }
@@ -726,8 +730,10 @@ extern int porter_stem(struct SN_env * z) {
                 break;
             lab15:
                 z->c = c16;
-                if (z->c >= z->l) goto lab14;
-                z->c++; /* goto, line 137 */
+                {   int ret = skip_utf8(z->p, z->c, 0, z->l, 1);
+                    if (ret < 0) goto lab14;
+                    z->c = ret; /* goto, line 137 */
+                }
             }
             {   int ret = slice_from_s(z, 1, s_34); /* <-, line 137 */
                 if (ret < 0) return ret;

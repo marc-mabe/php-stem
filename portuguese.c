@@ -32,14 +32,14 @@ extern void portuguese_close_env(struct SN_env * z);
 #ifdef __cplusplus
 }
 #endif
-static const symbol s_0_1[1] = { 0xE3 };
-static const symbol s_0_2[1] = { 0xF5 };
+static const symbol s_0_1[2] = { 0xC3, 0xA3 };
+static const symbol s_0_2[2] = { 0xC3, 0xB5 };
 
 static const struct among a_0[3] =
 {
 /*  0 */ { 0, 0, -1, 3, 0},
-/*  1 */ { 1, s_0_1, 0, 1, 0},
-/*  2 */ { 1, s_0_2, 0, 2, 0}
+/*  1 */ { 2, s_0_1, 0, 1, 0},
+/*  2 */ { 2, s_0_2, 0, 2, 0}
 };
 
 static const symbol s_1_1[2] = { 'a', '~' };
@@ -67,13 +67,13 @@ static const struct among a_2[4] =
 
 static const symbol s_3_0[4] = { 'a', 'n', 't', 'e' };
 static const symbol s_3_1[4] = { 'a', 'v', 'e', 'l' };
-static const symbol s_3_2[4] = { 0xED, 'v', 'e', 'l' };
+static const symbol s_3_2[5] = { 0xC3, 0xAD, 'v', 'e', 'l' };
 
 static const struct among a_3[3] =
 {
 /*  0 */ { 4, s_3_0, -1, 1, 0},
 /*  1 */ { 4, s_3_1, -1, 1, 0},
-/*  2 */ { 4, s_3_2, -1, 1, 0}
+/*  2 */ { 5, s_3_2, -1, 1, 0}
 };
 
 static const symbol s_4_0[2] = { 'i', 'c' };
@@ -88,44 +88,44 @@ static const struct among a_4[3] =
 };
 
 static const symbol s_5_0[3] = { 'i', 'c', 'a' };
-static const symbol s_5_1[5] = { 0xE2, 'n', 'c', 'i', 'a' };
-static const symbol s_5_2[5] = { 0xEA, 'n', 'c', 'i', 'a' };
+static const symbol s_5_1[6] = { 0xC3, 0xA2, 'n', 'c', 'i', 'a' };
+static const symbol s_5_2[6] = { 0xC3, 0xAA, 'n', 'c', 'i', 'a' };
 static const symbol s_5_3[3] = { 'i', 'r', 'a' };
 static const symbol s_5_4[5] = { 'a', 'd', 'o', 'r', 'a' };
 static const symbol s_5_5[3] = { 'o', 's', 'a' };
 static const symbol s_5_6[4] = { 'i', 's', 't', 'a' };
 static const symbol s_5_7[3] = { 'i', 'v', 'a' };
 static const symbol s_5_8[3] = { 'e', 'z', 'a' };
-static const symbol s_5_9[5] = { 'l', 'o', 'g', 0xED, 'a' };
+static const symbol s_5_9[6] = { 'l', 'o', 'g', 0xC3, 0xAD, 'a' };
 static const symbol s_5_10[5] = { 'i', 'd', 'a', 'd', 'e' };
 static const symbol s_5_11[4] = { 'a', 'n', 't', 'e' };
 static const symbol s_5_12[5] = { 'm', 'e', 'n', 't', 'e' };
 static const symbol s_5_13[6] = { 'a', 'm', 'e', 'n', 't', 'e' };
-static const symbol s_5_14[4] = { 0xE1, 'v', 'e', 'l' };
-static const symbol s_5_15[4] = { 0xED, 'v', 'e', 'l' };
-static const symbol s_5_16[5] = { 'u', 'c', 'i', 0xF3, 'n' };
+static const symbol s_5_14[5] = { 0xC3, 0xA1, 'v', 'e', 'l' };
+static const symbol s_5_15[5] = { 0xC3, 0xAD, 'v', 'e', 'l' };
+static const symbol s_5_16[6] = { 'u', 'c', 'i', 0xC3, 0xB3, 'n' };
 static const symbol s_5_17[3] = { 'i', 'c', 'o' };
 static const symbol s_5_18[4] = { 'i', 's', 'm', 'o' };
 static const symbol s_5_19[3] = { 'o', 's', 'o' };
 static const symbol s_5_20[6] = { 'a', 'm', 'e', 'n', 't', 'o' };
 static const symbol s_5_21[6] = { 'i', 'm', 'e', 'n', 't', 'o' };
 static const symbol s_5_22[3] = { 'i', 'v', 'o' };
-static const symbol s_5_23[5] = { 'a', 0xE7, 'a', '~', 'o' };
+static const symbol s_5_23[6] = { 'a', 0xC3, 0xA7, 'a', '~', 'o' };
 static const symbol s_5_24[4] = { 'a', 'd', 'o', 'r' };
 static const symbol s_5_25[4] = { 'i', 'c', 'a', 's' };
-static const symbol s_5_26[6] = { 0xEA, 'n', 'c', 'i', 'a', 's' };
+static const symbol s_5_26[7] = { 0xC3, 0xAA, 'n', 'c', 'i', 'a', 's' };
 static const symbol s_5_27[4] = { 'i', 'r', 'a', 's' };
 static const symbol s_5_28[6] = { 'a', 'd', 'o', 'r', 'a', 's' };
 static const symbol s_5_29[4] = { 'o', 's', 'a', 's' };
 static const symbol s_5_30[5] = { 'i', 's', 't', 'a', 's' };
 static const symbol s_5_31[4] = { 'i', 'v', 'a', 's' };
 static const symbol s_5_32[4] = { 'e', 'z', 'a', 's' };
-static const symbol s_5_33[6] = { 'l', 'o', 'g', 0xED, 'a', 's' };
+static const symbol s_5_33[7] = { 'l', 'o', 'g', 0xC3, 0xAD, 'a', 's' };
 static const symbol s_5_34[6] = { 'i', 'd', 'a', 'd', 'e', 's' };
 static const symbol s_5_35[7] = { 'u', 'c', 'i', 'o', 'n', 'e', 's' };
 static const symbol s_5_36[6] = { 'a', 'd', 'o', 'r', 'e', 's' };
 static const symbol s_5_37[5] = { 'a', 'n', 't', 'e', 's' };
-static const symbol s_5_38[6] = { 'a', 0xE7, 'o', '~', 'e', 's' };
+static const symbol s_5_38[7] = { 'a', 0xC3, 0xA7, 'o', '~', 'e', 's' };
 static const symbol s_5_39[4] = { 'i', 'c', 'o', 's' };
 static const symbol s_5_40[5] = { 'i', 's', 'm', 'o', 's' };
 static const symbol s_5_41[4] = { 'o', 's', 'o', 's' };
@@ -136,44 +136,44 @@ static const symbol s_5_44[4] = { 'i', 'v', 'o', 's' };
 static const struct among a_5[45] =
 {
 /*  0 */ { 3, s_5_0, -1, 1, 0},
-/*  1 */ { 5, s_5_1, -1, 1, 0},
-/*  2 */ { 5, s_5_2, -1, 4, 0},
+/*  1 */ { 6, s_5_1, -1, 1, 0},
+/*  2 */ { 6, s_5_2, -1, 4, 0},
 /*  3 */ { 3, s_5_3, -1, 9, 0},
 /*  4 */ { 5, s_5_4, -1, 1, 0},
 /*  5 */ { 3, s_5_5, -1, 1, 0},
 /*  6 */ { 4, s_5_6, -1, 1, 0},
 /*  7 */ { 3, s_5_7, -1, 8, 0},
 /*  8 */ { 3, s_5_8, -1, 1, 0},
-/*  9 */ { 5, s_5_9, -1, 2, 0},
+/*  9 */ { 6, s_5_9, -1, 2, 0},
 /* 10 */ { 5, s_5_10, -1, 7, 0},
 /* 11 */ { 4, s_5_11, -1, 1, 0},
 /* 12 */ { 5, s_5_12, -1, 6, 0},
 /* 13 */ { 6, s_5_13, 12, 5, 0},
-/* 14 */ { 4, s_5_14, -1, 1, 0},
-/* 15 */ { 4, s_5_15, -1, 1, 0},
-/* 16 */ { 5, s_5_16, -1, 3, 0},
+/* 14 */ { 5, s_5_14, -1, 1, 0},
+/* 15 */ { 5, s_5_15, -1, 1, 0},
+/* 16 */ { 6, s_5_16, -1, 3, 0},
 /* 17 */ { 3, s_5_17, -1, 1, 0},
 /* 18 */ { 4, s_5_18, -1, 1, 0},
 /* 19 */ { 3, s_5_19, -1, 1, 0},
 /* 20 */ { 6, s_5_20, -1, 1, 0},
 /* 21 */ { 6, s_5_21, -1, 1, 0},
 /* 22 */ { 3, s_5_22, -1, 8, 0},
-/* 23 */ { 5, s_5_23, -1, 1, 0},
+/* 23 */ { 6, s_5_23, -1, 1, 0},
 /* 24 */ { 4, s_5_24, -1, 1, 0},
 /* 25 */ { 4, s_5_25, -1, 1, 0},
-/* 26 */ { 6, s_5_26, -1, 4, 0},
+/* 26 */ { 7, s_5_26, -1, 4, 0},
 /* 27 */ { 4, s_5_27, -1, 9, 0},
 /* 28 */ { 6, s_5_28, -1, 1, 0},
 /* 29 */ { 4, s_5_29, -1, 1, 0},
 /* 30 */ { 5, s_5_30, -1, 1, 0},
 /* 31 */ { 4, s_5_31, -1, 8, 0},
 /* 32 */ { 4, s_5_32, -1, 1, 0},
-/* 33 */ { 6, s_5_33, -1, 2, 0},
+/* 33 */ { 7, s_5_33, -1, 2, 0},
 /* 34 */ { 6, s_5_34, -1, 7, 0},
 /* 35 */ { 7, s_5_35, -1, 3, 0},
 /* 36 */ { 6, s_5_36, -1, 1, 0},
 /* 37 */ { 5, s_5_37, -1, 1, 0},
-/* 38 */ { 6, s_5_38, -1, 1, 0},
+/* 38 */ { 7, s_5_38, -1, 1, 0},
 /* 39 */ { 4, s_5_39, -1, 1, 0},
 /* 40 */ { 5, s_5_40, -1, 1, 0},
 /* 41 */ { 4, s_5_41, -1, 1, 0},
@@ -259,49 +259,49 @@ static const symbol s_6_73[3] = { 'e', 'i', 's' };
 static const symbol s_6_74[5] = { 'a', 'r', 'e', 'i', 's' };
 static const symbol s_6_75[5] = { 'e', 'r', 'e', 'i', 's' };
 static const symbol s_6_76[5] = { 'i', 'r', 'e', 'i', 's' };
-static const symbol s_6_77[5] = { 0xE1, 'r', 'e', 'i', 's' };
-static const symbol s_6_78[5] = { 0xE9, 'r', 'e', 'i', 's' };
-static const symbol s_6_79[5] = { 0xED, 'r', 'e', 'i', 's' };
-static const symbol s_6_80[6] = { 0xE1, 's', 's', 'e', 'i', 's' };
-static const symbol s_6_81[6] = { 0xE9, 's', 's', 'e', 'i', 's' };
-static const symbol s_6_82[6] = { 0xED, 's', 's', 'e', 'i', 's' };
-static const symbol s_6_83[5] = { 0xE1, 'v', 'e', 'i', 's' };
-static const symbol s_6_84[4] = { 0xED, 'e', 'i', 's' };
-static const symbol s_6_85[6] = { 'a', 'r', 0xED, 'e', 'i', 's' };
-static const symbol s_6_86[6] = { 'e', 'r', 0xED, 'e', 'i', 's' };
-static const symbol s_6_87[6] = { 'i', 'r', 0xED, 'e', 'i', 's' };
+static const symbol s_6_77[6] = { 0xC3, 0xA1, 'r', 'e', 'i', 's' };
+static const symbol s_6_78[6] = { 0xC3, 0xA9, 'r', 'e', 'i', 's' };
+static const symbol s_6_79[6] = { 0xC3, 0xAD, 'r', 'e', 'i', 's' };
+static const symbol s_6_80[7] = { 0xC3, 0xA1, 's', 's', 'e', 'i', 's' };
+static const symbol s_6_81[7] = { 0xC3, 0xA9, 's', 's', 'e', 'i', 's' };
+static const symbol s_6_82[7] = { 0xC3, 0xAD, 's', 's', 'e', 'i', 's' };
+static const symbol s_6_83[6] = { 0xC3, 0xA1, 'v', 'e', 'i', 's' };
+static const symbol s_6_84[5] = { 0xC3, 0xAD, 'e', 'i', 's' };
+static const symbol s_6_85[7] = { 'a', 'r', 0xC3, 0xAD, 'e', 'i', 's' };
+static const symbol s_6_86[7] = { 'e', 'r', 0xC3, 0xAD, 'e', 'i', 's' };
+static const symbol s_6_87[7] = { 'i', 'r', 0xC3, 0xAD, 'e', 'i', 's' };
 static const symbol s_6_88[4] = { 'a', 'd', 'o', 's' };
 static const symbol s_6_89[4] = { 'i', 'd', 'o', 's' };
 static const symbol s_6_90[4] = { 'a', 'm', 'o', 's' };
-static const symbol s_6_91[6] = { 0xE1, 'r', 'a', 'm', 'o', 's' };
-static const symbol s_6_92[6] = { 0xE9, 'r', 'a', 'm', 'o', 's' };
-static const symbol s_6_93[6] = { 0xED, 'r', 'a', 'm', 'o', 's' };
-static const symbol s_6_94[6] = { 0xE1, 'v', 'a', 'm', 'o', 's' };
-static const symbol s_6_95[5] = { 0xED, 'a', 'm', 'o', 's' };
-static const symbol s_6_96[7] = { 'a', 'r', 0xED, 'a', 'm', 'o', 's' };
-static const symbol s_6_97[7] = { 'e', 'r', 0xED, 'a', 'm', 'o', 's' };
-static const symbol s_6_98[7] = { 'i', 'r', 0xED, 'a', 'm', 'o', 's' };
+static const symbol s_6_91[7] = { 0xC3, 0xA1, 'r', 'a', 'm', 'o', 's' };
+static const symbol s_6_92[7] = { 0xC3, 0xA9, 'r', 'a', 'm', 'o', 's' };
+static const symbol s_6_93[7] = { 0xC3, 0xAD, 'r', 'a', 'm', 'o', 's' };
+static const symbol s_6_94[7] = { 0xC3, 0xA1, 'v', 'a', 'm', 'o', 's' };
+static const symbol s_6_95[6] = { 0xC3, 0xAD, 'a', 'm', 'o', 's' };
+static const symbol s_6_96[8] = { 'a', 'r', 0xC3, 0xAD, 'a', 'm', 'o', 's' };
+static const symbol s_6_97[8] = { 'e', 'r', 0xC3, 0xAD, 'a', 'm', 'o', 's' };
+static const symbol s_6_98[8] = { 'i', 'r', 0xC3, 0xAD, 'a', 'm', 'o', 's' };
 static const symbol s_6_99[4] = { 'e', 'm', 'o', 's' };
 static const symbol s_6_100[6] = { 'a', 'r', 'e', 'm', 'o', 's' };
 static const symbol s_6_101[6] = { 'e', 'r', 'e', 'm', 'o', 's' };
 static const symbol s_6_102[6] = { 'i', 'r', 'e', 'm', 'o', 's' };
-static const symbol s_6_103[7] = { 0xE1, 's', 's', 'e', 'm', 'o', 's' };
-static const symbol s_6_104[7] = { 0xEA, 's', 's', 'e', 'm', 'o', 's' };
-static const symbol s_6_105[7] = { 0xED, 's', 's', 'e', 'm', 'o', 's' };
+static const symbol s_6_103[8] = { 0xC3, 0xA1, 's', 's', 'e', 'm', 'o', 's' };
+static const symbol s_6_104[8] = { 0xC3, 0xAA, 's', 's', 'e', 'm', 'o', 's' };
+static const symbol s_6_105[8] = { 0xC3, 0xAD, 's', 's', 'e', 'm', 'o', 's' };
 static const symbol s_6_106[4] = { 'i', 'm', 'o', 's' };
 static const symbol s_6_107[5] = { 'a', 'r', 'm', 'o', 's' };
 static const symbol s_6_108[5] = { 'e', 'r', 'm', 'o', 's' };
 static const symbol s_6_109[5] = { 'i', 'r', 'm', 'o', 's' };
-static const symbol s_6_110[4] = { 0xE1, 'm', 'o', 's' };
-static const symbol s_6_111[4] = { 'a', 'r', 0xE1, 's' };
-static const symbol s_6_112[4] = { 'e', 'r', 0xE1, 's' };
-static const symbol s_6_113[4] = { 'i', 'r', 0xE1, 's' };
+static const symbol s_6_110[5] = { 0xC3, 0xA1, 'm', 'o', 's' };
+static const symbol s_6_111[5] = { 'a', 'r', 0xC3, 0xA1, 's' };
+static const symbol s_6_112[5] = { 'e', 'r', 0xC3, 0xA1, 's' };
+static const symbol s_6_113[5] = { 'i', 'r', 0xC3, 0xA1, 's' };
 static const symbol s_6_114[2] = { 'e', 'u' };
 static const symbol s_6_115[2] = { 'i', 'u' };
 static const symbol s_6_116[2] = { 'o', 'u' };
-static const symbol s_6_117[3] = { 'a', 'r', 0xE1 };
-static const symbol s_6_118[3] = { 'e', 'r', 0xE1 };
-static const symbol s_6_119[3] = { 'i', 'r', 0xE1 };
+static const symbol s_6_117[4] = { 'a', 'r', 0xC3, 0xA1 };
+static const symbol s_6_118[4] = { 'e', 'r', 0xC3, 0xA1 };
+static const symbol s_6_119[4] = { 'i', 'r', 0xC3, 0xA1 };
 
 static const struct among a_6[120] =
 {
@@ -382,58 +382,58 @@ static const struct among a_6[120] =
 /* 74 */ { 5, s_6_74, 73, 1, 0},
 /* 75 */ { 5, s_6_75, 73, 1, 0},
 /* 76 */ { 5, s_6_76, 73, 1, 0},
-/* 77 */ { 5, s_6_77, 73, 1, 0},
-/* 78 */ { 5, s_6_78, 73, 1, 0},
-/* 79 */ { 5, s_6_79, 73, 1, 0},
-/* 80 */ { 6, s_6_80, 73, 1, 0},
-/* 81 */ { 6, s_6_81, 73, 1, 0},
-/* 82 */ { 6, s_6_82, 73, 1, 0},
-/* 83 */ { 5, s_6_83, 73, 1, 0},
-/* 84 */ { 4, s_6_84, 73, 1, 0},
-/* 85 */ { 6, s_6_85, 84, 1, 0},
-/* 86 */ { 6, s_6_86, 84, 1, 0},
-/* 87 */ { 6, s_6_87, 84, 1, 0},
+/* 77 */ { 6, s_6_77, 73, 1, 0},
+/* 78 */ { 6, s_6_78, 73, 1, 0},
+/* 79 */ { 6, s_6_79, 73, 1, 0},
+/* 80 */ { 7, s_6_80, 73, 1, 0},
+/* 81 */ { 7, s_6_81, 73, 1, 0},
+/* 82 */ { 7, s_6_82, 73, 1, 0},
+/* 83 */ { 6, s_6_83, 73, 1, 0},
+/* 84 */ { 5, s_6_84, 73, 1, 0},
+/* 85 */ { 7, s_6_85, 84, 1, 0},
+/* 86 */ { 7, s_6_86, 84, 1, 0},
+/* 87 */ { 7, s_6_87, 84, 1, 0},
 /* 88 */ { 4, s_6_88, -1, 1, 0},
 /* 89 */ { 4, s_6_89, -1, 1, 0},
 /* 90 */ { 4, s_6_90, -1, 1, 0},
-/* 91 */ { 6, s_6_91, 90, 1, 0},
-/* 92 */ { 6, s_6_92, 90, 1, 0},
-/* 93 */ { 6, s_6_93, 90, 1, 0},
-/* 94 */ { 6, s_6_94, 90, 1, 0},
-/* 95 */ { 5, s_6_95, 90, 1, 0},
-/* 96 */ { 7, s_6_96, 95, 1, 0},
-/* 97 */ { 7, s_6_97, 95, 1, 0},
-/* 98 */ { 7, s_6_98, 95, 1, 0},
+/* 91 */ { 7, s_6_91, 90, 1, 0},
+/* 92 */ { 7, s_6_92, 90, 1, 0},
+/* 93 */ { 7, s_6_93, 90, 1, 0},
+/* 94 */ { 7, s_6_94, 90, 1, 0},
+/* 95 */ { 6, s_6_95, 90, 1, 0},
+/* 96 */ { 8, s_6_96, 95, 1, 0},
+/* 97 */ { 8, s_6_97, 95, 1, 0},
+/* 98 */ { 8, s_6_98, 95, 1, 0},
 /* 99 */ { 4, s_6_99, -1, 1, 0},
 /*100 */ { 6, s_6_100, 99, 1, 0},
 /*101 */ { 6, s_6_101, 99, 1, 0},
 /*102 */ { 6, s_6_102, 99, 1, 0},
-/*103 */ { 7, s_6_103, 99, 1, 0},
-/*104 */ { 7, s_6_104, 99, 1, 0},
-/*105 */ { 7, s_6_105, 99, 1, 0},
+/*103 */ { 8, s_6_103, 99, 1, 0},
+/*104 */ { 8, s_6_104, 99, 1, 0},
+/*105 */ { 8, s_6_105, 99, 1, 0},
 /*106 */ { 4, s_6_106, -1, 1, 0},
 /*107 */ { 5, s_6_107, -1, 1, 0},
 /*108 */ { 5, s_6_108, -1, 1, 0},
 /*109 */ { 5, s_6_109, -1, 1, 0},
-/*110 */ { 4, s_6_110, -1, 1, 0},
-/*111 */ { 4, s_6_111, -1, 1, 0},
-/*112 */ { 4, s_6_112, -1, 1, 0},
-/*113 */ { 4, s_6_113, -1, 1, 0},
+/*110 */ { 5, s_6_110, -1, 1, 0},
+/*111 */ { 5, s_6_111, -1, 1, 0},
+/*112 */ { 5, s_6_112, -1, 1, 0},
+/*113 */ { 5, s_6_113, -1, 1, 0},
 /*114 */ { 2, s_6_114, -1, 1, 0},
 /*115 */ { 2, s_6_115, -1, 1, 0},
 /*116 */ { 2, s_6_116, -1, 1, 0},
-/*117 */ { 3, s_6_117, -1, 1, 0},
-/*118 */ { 3, s_6_118, -1, 1, 0},
-/*119 */ { 3, s_6_119, -1, 1, 0}
+/*117 */ { 4, s_6_117, -1, 1, 0},
+/*118 */ { 4, s_6_118, -1, 1, 0},
+/*119 */ { 4, s_6_119, -1, 1, 0}
 };
 
 static const symbol s_7_0[1] = { 'a' };
 static const symbol s_7_1[1] = { 'i' };
 static const symbol s_7_2[1] = { 'o' };
 static const symbol s_7_3[2] = { 'o', 's' };
-static const symbol s_7_4[1] = { 0xE1 };
-static const symbol s_7_5[1] = { 0xED };
-static const symbol s_7_6[1] = { 0xF3 };
+static const symbol s_7_4[2] = { 0xC3, 0xA1 };
+static const symbol s_7_5[2] = { 0xC3, 0xAD };
+static const symbol s_7_6[2] = { 0xC3, 0xB3 };
 
 static const struct among a_7[7] =
 {
@@ -441,30 +441,30 @@ static const struct among a_7[7] =
 /*  1 */ { 1, s_7_1, -1, 1, 0},
 /*  2 */ { 1, s_7_2, -1, 1, 0},
 /*  3 */ { 2, s_7_3, -1, 1, 0},
-/*  4 */ { 1, s_7_4, -1, 1, 0},
-/*  5 */ { 1, s_7_5, -1, 1, 0},
-/*  6 */ { 1, s_7_6, -1, 1, 0}
+/*  4 */ { 2, s_7_4, -1, 1, 0},
+/*  5 */ { 2, s_7_5, -1, 1, 0},
+/*  6 */ { 2, s_7_6, -1, 1, 0}
 };
 
 static const symbol s_8_0[1] = { 'e' };
-static const symbol s_8_1[1] = { 0xE7 };
-static const symbol s_8_2[1] = { 0xE9 };
-static const symbol s_8_3[1] = { 0xEA };
+static const symbol s_8_1[2] = { 0xC3, 0xA7 };
+static const symbol s_8_2[2] = { 0xC3, 0xA9 };
+static const symbol s_8_3[2] = { 0xC3, 0xAA };
 
 static const struct among a_8[4] =
 {
 /*  0 */ { 1, s_8_0, -1, 1, 0},
-/*  1 */ { 1, s_8_1, -1, 2, 0},
-/*  2 */ { 1, s_8_2, -1, 1, 0},
-/*  3 */ { 1, s_8_3, -1, 1, 0}
+/*  1 */ { 2, s_8_1, -1, 2, 0},
+/*  2 */ { 2, s_8_2, -1, 1, 0},
+/*  3 */ { 2, s_8_3, -1, 1, 0}
 };
 
 static const unsigned char g_v[] = { 17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 19, 12, 2 };
 
 static const symbol s_0[] = { 'a', '~' };
 static const symbol s_1[] = { 'o', '~' };
-static const symbol s_2[] = { 0xE3 };
-static const symbol s_3[] = { 0xF5 };
+static const symbol s_2[] = { 0xC3, 0xA3 };
+static const symbol s_3[] = { 0xC3, 0xB5 };
 static const symbol s_4[] = { 'l', 'o', 'g' };
 static const symbol s_5[] = { 'u' };
 static const symbol s_6[] = { 'e', 'n', 't', 'e' };
@@ -485,7 +485,7 @@ static int r_prelude(struct SN_env * z) {
     while(1) { /* repeat, line 36 */
         int c1 = z->c;
         z->bra = z->c; /* [, line 37 */
-        if (z->c >= z->l || (z->p[z->c + 0] != 227 && z->p[z->c + 0] != 245)) among_var = 3; else
+        if (z->c + 1 >= z->l || (z->p[z->c + 1] != 163 && z->p[z->c + 1] != 181)) among_var = 3; else
         among_var = find_among(z, a_0, 3); /* substring, line 37 */
         if (!(among_var)) goto lab0;
         z->ket = z->c; /* ], line 37 */
@@ -502,8 +502,10 @@ static int r_prelude(struct SN_env * z) {
                 }
                 break;
             case 3:
-                if (z->c >= z->l) goto lab0;
-                z->c++; /* next, line 40 */
+                {   int ret = skip_utf8(z->p, z->c, 0, z->l, 1);
+                    if (ret < 0) goto lab0;
+                    z->c = ret; /* next, line 40 */
+                }
                 break;
         }
         continue;
@@ -520,20 +522,20 @@ static int r_mark_regions(struct SN_env * z) {
     z->I[2] = z->l;
     {   int c1 = z->c; /* do, line 50 */
         {   int c2 = z->c; /* or, line 52 */
-            if (in_grouping(z, g_v, 97, 250, 0)) goto lab2;
+            if (in_grouping_U(z, g_v, 97, 250, 0)) goto lab2;
             {   int c3 = z->c; /* or, line 51 */
-                if (out_grouping(z, g_v, 97, 250, 0)) goto lab4;
+                if (out_grouping_U(z, g_v, 97, 250, 0)) goto lab4;
                 {    /* gopast */ /* grouping v, line 51 */
-                    int ret = out_grouping(z, g_v, 97, 250, 1);
+                    int ret = out_grouping_U(z, g_v, 97, 250, 1);
                     if (ret < 0) goto lab4;
                     z->c += ret;
                 }
                 goto lab3;
             lab4:
                 z->c = c3;
-                if (in_grouping(z, g_v, 97, 250, 0)) goto lab2;
+                if (in_grouping_U(z, g_v, 97, 250, 0)) goto lab2;
                 {    /* gopast */ /* non v, line 51 */
-                    int ret = in_grouping(z, g_v, 97, 250, 1);
+                    int ret = in_grouping_U(z, g_v, 97, 250, 1);
                     if (ret < 0) goto lab2;
                     z->c += ret;
                 }
@@ -542,20 +544,22 @@ static int r_mark_regions(struct SN_env * z) {
             goto lab1;
         lab2:
             z->c = c2;
-            if (out_grouping(z, g_v, 97, 250, 0)) goto lab0;
+            if (out_grouping_U(z, g_v, 97, 250, 0)) goto lab0;
             {   int c4 = z->c; /* or, line 53 */
-                if (out_grouping(z, g_v, 97, 250, 0)) goto lab6;
+                if (out_grouping_U(z, g_v, 97, 250, 0)) goto lab6;
                 {    /* gopast */ /* grouping v, line 53 */
-                    int ret = out_grouping(z, g_v, 97, 250, 1);
+                    int ret = out_grouping_U(z, g_v, 97, 250, 1);
                     if (ret < 0) goto lab6;
                     z->c += ret;
                 }
                 goto lab5;
             lab6:
                 z->c = c4;
-                if (in_grouping(z, g_v, 97, 250, 0)) goto lab0;
-                if (z->c >= z->l) goto lab0;
-                z->c++; /* next, line 53 */
+                if (in_grouping_U(z, g_v, 97, 250, 0)) goto lab0;
+                {   int ret = skip_utf8(z->p, z->c, 0, z->l, 1);
+                    if (ret < 0) goto lab0;
+                    z->c = ret; /* next, line 53 */
+                }
             }
         lab5:
             ;
@@ -567,23 +571,23 @@ static int r_mark_regions(struct SN_env * z) {
     }
     {   int c5 = z->c; /* do, line 56 */
         {    /* gopast */ /* grouping v, line 57 */
-            int ret = out_grouping(z, g_v, 97, 250, 1);
+            int ret = out_grouping_U(z, g_v, 97, 250, 1);
             if (ret < 0) goto lab7;
             z->c += ret;
         }
         {    /* gopast */ /* non v, line 57 */
-            int ret = in_grouping(z, g_v, 97, 250, 1);
+            int ret = in_grouping_U(z, g_v, 97, 250, 1);
             if (ret < 0) goto lab7;
             z->c += ret;
         }
         z->I[1] = z->c; /* setmark p1, line 57 */
         {    /* gopast */ /* grouping v, line 58 */
-            int ret = out_grouping(z, g_v, 97, 250, 1);
+            int ret = out_grouping_U(z, g_v, 97, 250, 1);
             if (ret < 0) goto lab7;
             z->c += ret;
         }
         {    /* gopast */ /* non v, line 58 */
-            int ret = in_grouping(z, g_v, 97, 250, 1);
+            int ret = in_grouping_U(z, g_v, 97, 250, 1);
             if (ret < 0) goto lab7;
             z->c += ret;
         }
@@ -606,18 +610,20 @@ static int r_postlude(struct SN_env * z) {
         switch(among_var) {
             case 0: goto lab0;
             case 1:
-                {   int ret = slice_from_s(z, 1, s_2); /* <-, line 64 */
+                {   int ret = slice_from_s(z, 2, s_2); /* <-, line 64 */
                     if (ret < 0) return ret;
                 }
                 break;
             case 2:
-                {   int ret = slice_from_s(z, 1, s_3); /* <-, line 65 */
+                {   int ret = slice_from_s(z, 2, s_3); /* <-, line 65 */
                     if (ret < 0) return ret;
                 }
                 break;
             case 3:
-                if (z->c >= z->l) goto lab0;
-                z->c++; /* next, line 66 */
+                {   int ret = skip_utf8(z->p, z->c, 0, z->l, 1);
+                    if (ret < 0) goto lab0;
+                    z->c = ret; /* next, line 66 */
+                }
                 break;
         }
         continue;

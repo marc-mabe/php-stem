@@ -110,12 +110,12 @@ PHP_MINFO_FUNCTION(stem)
 	);
 	php_info_print_table_colspan_header(2, "Languages Supported");
 
-#	define STEMMER_FORCE 1
-#	define STEMMER(php_func, c_func, constant, name) \
+#define STEMMER_FORCE 1
+#define STEMMER(php_func, c_func, constant, name) \
 		php_info_print_table_row(2, # name, stem_enabled(STEM_ ## constant) ? "enabled" : "disabled");
-#	include "stemmers.def"
-#	undef STEMMER_FORCE
-#	undef STEMMER
+#include "stemmers.def"
+#undef STEMMER_FORCE
+#undef STEMMER
 
 	php_info_print_table_end();
 }
@@ -166,7 +166,7 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, long lang)
 			break;
 #include "stemmers.def"
 #undef STEMMER
-
+			
 		default:
 			php_error(E_NOTICE, "%s() couldn't stem word, stemming module not found", get_active_function_name(TSRMLS_C));
 			RETURN_FALSE;
