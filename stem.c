@@ -40,10 +40,10 @@ function_entry stem_functions[] = {
 	PHP_FE(stem,				NULL)
 	PHP_FE(stem_enabled,		NULL)
 
-#	define STEMMER(php_func, c_func, constant, name) \
-	PHP_FE(stem_ ## php_func, NULL)
-#	include "stemmers.def"
-#	undef STEMMER
+#define STEMMER(php_func, c_func, constant, name) \
+	PHP_FE(stem_ ## php_func,	NULL)
+#include "stemmers.def"
+#undef STEMMER
 
 	{NULL, NULL, NULL}	
 };
@@ -74,12 +74,13 @@ ZEND_GET_MODULE(stem)
 PHP_MINIT_FUNCTION(stem)
 {
 	/* Just set up our constants for the PHP function stem(). */
-#	define STEMMER_FORCE 1
-#	define STEMMER(php_func, c_func, constant, name) \
-		REGISTER_LONG_CONSTANT("STEM_" # constant, STEM_ ## constant, CONST_CS | CONST_PERSISTENT);
-#	include "stemmers.def"
-#	undef STEMMER_FORCE
-#	undef STEMMER
+
+#define STEMMER_FORCE 1
+#define STEMMER(php_func, c_func, constant, name) \
+	REGISTER_LONG_CONSTANT("STEM_" # constant, STEM_ ## constant, CONST_CS | CONST_PERSISTENT);
+#include "stemmers.def"
+#undef STEMMER_FORCE
+#undef STEMMER
 
 	return SUCCESS;
 }
@@ -158,12 +159,13 @@ void php_stem(INTERNAL_FUNCTION_PARAMETERS, long lang)
 	switch (lang)
 	{
 		case STEM_DEFAULT:
-#		define STEMMER(php_func, c_func, constant, name) \
-			case STEM_ ## constant: \
-				INIT_FUNCS(c_func) \
+
+#define STEMMER(php_func, c_func, constant, name) \
+		case STEM_ ## constant: \
+			INIT_FUNCS(c_func) \
 			break;
-#		include "stemmers.def"
-#		undef STEMMER
+#include "stemmers.def"
+#undef STEMMER
 
 		default:
 			php_error(E_NOTICE, "%s() couldn't stem word, stemming module not found", get_active_function_name(TSRMLS_C));
