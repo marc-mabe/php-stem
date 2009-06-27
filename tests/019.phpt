@@ -10,13 +10,13 @@ French stemming algorithm (quick)
 require("tests.php");
 
 runQuickTest(STEM_FRENCH, "abandonnez", "abandon");
-runQuickTest(STEM_FRENCH, "température", "températur");
+runQuickTest(STEM_FRENCH, "tempÃ©rature", "tempÃ©ratur");
 runQuickTest(STEM_FRENCH, "virtuose", "virtuos");
 runQuickTest(STEM_FRENCH, "yakounines", "yakounin");
 
 ?>
 --EXPECT--
 abandonnez -> abandon: OK
-température -> températur: OK
+tempÃ©rature -> tempÃ©ratur: OK
 virtuose -> virtuos: OK
 yakounines -> yakounin: OK

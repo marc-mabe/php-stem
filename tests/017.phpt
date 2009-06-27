@@ -11,13 +11,13 @@ require("tests.php");
 
 runQuickTest(STEM_DUTCH, "aangekondigde", "aangekondigd");
 runQuickTest(STEM_DUTCH, "aantrekkelijkheid", "aantrek");
-runQuickTest(STEM_DUTCH, "bösendorferstrasse", "bosendorferstras");
+runQuickTest(STEM_DUTCH, "bÃ¶sendorferstrasse", "bosendorferstras");
 runQuickTest(STEM_DUTCH, "zwitserse", "zwitser");
 
 ?>
 --EXPECT--
 aangekondigde -> aangekondigd: OK
 aantrekkelijkheid -> aantrek: OK
-bösendorferstrasse -> bosendorferstras: OK
+bÃ¶sendorferstrasse -> bosendorferstras: OK
 zwitserse -> zwitser: OK
 

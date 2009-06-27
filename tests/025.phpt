@@ -12,12 +12,12 @@ require("tests.php");
 runQuickTest(STEM_SPANISH, "acercaron", "acerc");
 runQuickTest(STEM_SPANISH, "chapoteaderos", "chapoteader");
 runQuickTest(STEM_SPANISH, "lloraba", "llor");
-runQuickTest(STEM_SPANISH, "pugilística", "pugilist");
+runQuickTest(STEM_SPANISH, "pugilÃ­stica", "pugilist");
 
 ?>
 --EXPECT--
 acercaron -> acerc: OK
 chapoteaderos -> chapoteader: OK
 lloraba -> llor: OK
-pugilística -> pugilist: OK
+pugilÃ­stica -> pugilist: OK
 

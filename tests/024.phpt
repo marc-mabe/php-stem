@@ -9,14 +9,14 @@ Russian stemming algorithm (quick)
 
 require("tests.php");
 
-runQuickTest(STEM_RUSSIAN, "ÁËÓÅÌØÂÁÎÔÁÍÉ", "ÁËÓÅÌØÂÁÎÔ");
-runQuickTest(STEM_RUSSIAN, "×ÏÓÈÉÝÁÔØÓÑ", "×ÏÓÈÉÝÁ");
-runQuickTest(STEM_RUSSIAN, "×ÙÓÔÁ×ÉÔ", "×ÙÓÔÁ×");
-runQuickTest(STEM_RUSSIAN, "ÄÅËÏÒÁÃÉÊ", "ÄÅËÏÒÁÃ");
+runQuickTest(STEM_RUSSIAN, "Ð°ÐºÑÐµÐ»ÑŒÐ±Ð°Ð½Ñ‚Ð°Ð¼Ð¸", "Ð°ÐºÑÐµÐ»ÑŒÐ±Ð°Ð½Ñ‚");
+runQuickTest(STEM_RUSSIAN, "Ð²Ð¾ÑÑ…Ð¸Ñ‰Ð°Ñ‚ÑŒÑÑ", "Ð²Ð¾ÑÑ…Ð¸Ñ‰Ð°");
+runQuickTest(STEM_RUSSIAN, "Ð²Ñ‹ÑÑ‚Ð°Ð²Ð¸Ñ‚", "Ð²Ñ‹ÑÑ‚Ð°Ð²");
+runQuickTest(STEM_RUSSIAN, "Ð´ÐµÐºÐ¾Ñ€Ð°Ñ†Ð¸Ð¹", "Ð´ÐµÐºÐ¾Ñ€Ð°Ñ†");
 
 ?>
 --EXPECT--
-ÁËÓÅÌØÂÁÎÔÁÍÉ -> ÁËÓÅÌØÂÁÎÔ: OK
-×ÏÓÈÉÝÁÔØÓÑ -> ×ÏÓÈÉÝÁ: OK
-×ÙÓÔÁ×ÉÔ -> ×ÙÓÔÁ×: OK
-ÄÅËÏÒÁÃÉÊ -> ÄÅËÏÒÁÃ: OK
+Ð°ÐºÑÐµÐ»ÑŒÐ±Ð°Ð½Ñ‚Ð°Ð¼Ð¸ -> Ð°ÐºÑÐµÐ»ÑŒÐ±Ð°Ð½Ñ‚: OK
+Ð²Ð¾ÑÑ…Ð¸Ñ‰Ð°Ñ‚ÑŒÑÑ -> Ð²Ð¾ÑÑ…Ð¸Ñ‰Ð°: OK
+Ð²Ñ‹ÑÑ‚Ð°Ð²Ð¸Ñ‚ -> Ð²Ñ‹ÑÑ‚Ð°Ð²: OK
+Ð´ÐµÐºÐ¾Ñ€Ð°Ñ†Ð¸Ð¹ -> Ð´ÐµÐºÐ¾Ñ€Ð°Ñ†: OK

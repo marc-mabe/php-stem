@@ -9,15 +9,15 @@ German stemming algorithm (quick)
 
 require("tests.php");
 
-runQuickTest(STEM_GERMAN, "abenteuerspielplätzen", "abenteuerspielplatz");
+runQuickTest(STEM_GERMAN, "abenteuerspielplÃ¤tzen", "abenteuerspielplatz");
 runQuickTest(STEM_GERMAN, "eingefleischten", "eingefleischt");
-runQuickTest(STEM_GERMAN, "kümmerlichen", "kumm");
+runQuickTest(STEM_GERMAN, "kÃ¼mmerlichen", "kumm");
 runQuickTest(STEM_GERMAN, "weltverantwortung", "weltverantwort");
 
 ?>
 --EXPECT--
-abenteuerspielplätzen -> abenteuerspielplatz: OK
+abenteuerspielplÃ¤tzen -> abenteuerspielplatz: OK
 eingefleischten -> eingefleischt: OK
-kümmerlichen -> kumm: OK
+kÃ¼mmerlichen -> kumm: OK
 weltverantwortung -> weltverantwort: OK
 

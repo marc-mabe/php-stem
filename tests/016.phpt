@@ -12,12 +12,12 @@ require("tests.php");
 runQuickTest(STEM_DANISH, "abarimbjergene", "abarimbjerg");
 runQuickTest(STEM_DANISH, "beskyldningerne", "beskyldning");
 runQuickTest(STEM_DANISH, "fredstilbudet", "fredstilbud");
-runQuickTest(STEM_DANISH, "ørkesløse", "ørkesløs");
+runQuickTest(STEM_DANISH, "Ã¸rkeslÃ¸se", "Ã¸rkeslÃ¸s");
 
 ?>
 --EXPECT--
 abarimbjergene -> abarimbjerg: OK
 beskyldningerne -> beskyldning: OK
 fredstilbudet -> fredstilbud: OK
-ørkesløse -> ørkesløs: OK
+Ã¸rkeslÃ¸se -> Ã¸rkeslÃ¸s: OK
 

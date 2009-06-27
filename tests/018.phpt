@@ -9,15 +9,15 @@ Finnish stemming algorithm (quick)
 
 require("tests.php");
 
-runQuickTest(STEM_FINNISH, "aakkosjärjestyksessä", "aakkosjärjestyks");
-runQuickTest(STEM_FINNISH, "englanninkielisellä", "englanninkielis");
+runQuickTest(STEM_FINNISH, "aakkosjÃ¤rjestyksessÃ¤", "aakkosjÃ¤rjestyks");
+runQuickTest(STEM_FINNISH, "englanninkielisellÃ¤", "englanninkielis");
 runQuickTest(STEM_FINNISH, "goldbergerille", "goldberger");
 runQuickTest(STEM_FINNISH, "irakilaisille", "irakilais");
 
 ?>
 --EXPECT--
-aakkosjärjestyksessä -> aakkosjärjestyks: OK
-englanninkielisellä -> englanninkielis: OK
+aakkosjÃ¤rjestyksessÃ¤ -> aakkosjÃ¤rjestyks: OK
+englanninkielisellÃ¤ -> englanninkielis: OK
 goldbergerille -> goldberger: OK
 irakilaisille -> irakilais: OK
 
