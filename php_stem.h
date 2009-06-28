@@ -131,11 +131,7 @@ PHP_FUNCTION(stem_enabled);
 #include "swedish.h"
 #endif
 
-#if ENABLE_RUSSIAN_UNICODE
-#include "russian_unicode.h"
-#endif
-
-#if ENABLE_TURKISH_UNICODE
+#if ENABLE_TURKISH
 #include "turkish.h"
 #endif
 
