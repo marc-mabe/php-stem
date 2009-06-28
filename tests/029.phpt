@@ -1,7 +1,7 @@
 --TEST--
-Turkish (Unicode) stemming algorithm (extensive)
+Turkish stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !extension_loaded("zlib") || !stem_enabled(STEM_TURKISH_UNICODE)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !extension_loaded("zlib") || !stem_enabled(STEM_TURKISH)) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Turkish (Unicode) stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_TURKISH_UNICODE, "turkish_unicode.dat", "turkish_unicode.out");
+runTest(STEM_TURKISH, "turkish_unicode.dat", "turkish_unicode.out");
 
 ?>
 --EXPECT--
