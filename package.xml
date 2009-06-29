@@ -38,6 +38,36 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </notes>
  <contents>
   <dir name="/">
+   <dir name="tests">
+    <file name="001.phpt" role="test" />
+    <file name="002.phpt" role="test" />
+    <file name="003.phpt" role="test" />
+    <file name="004.phpt" role="test" />
+    <file name="005.phpt" role="test" />
+    <file name="006.phpt" role="test" />
+    <file name="007.phpt" role="test" />
+    <file name="008.phpt" role="test" />
+    <file name="009.phpt" role="test" />
+    <file name="010.phpt" role="test" />
+    <file name="011.phpt" role="test" />
+    <file name="013.phpt" role="test" />
+    <file name="014.phpt" role="test" />
+    <file name="015.phpt" role="test" />
+    <file name="016.phpt" role="test" />
+    <file name="017.phpt" role="test" />
+    <file name="018.phpt" role="test" />
+    <file name="019.phpt" role="test" />
+    <file name="020.phpt" role="test" />
+    <file name="021.phpt" role="test" />
+    <file name="022.phpt" role="test" />
+    <file name="023.phpt" role="test" />
+    <file name="024.phpt" role="test" />
+    <file name="025.phpt" role="test" />
+    <file name="026.phpt" role="test" />
+    <file name="027.phpt" role="test" />
+    <file name="028.phpt" role="test" />
+    <file name="029.phpt" role="test" />
+   </dir> <!-- //tests -->
    <file name="api.c" role="src" />
    <file name="api.h" role="src" />
    <file name="ChangeLog" role="doc" />
@@ -75,16 +105,14 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <file name="romanian.h" role="src" />
    <file name="russian.c" role="src" />
    <file name="russian.h" role="src" />
-   <file name="russian_unicode.c" role="src" />
-   <file name="russian_unicode.h" role="src" />
    <file name="spanish.c" role="src" />
    <file name="spanish.h" role="src" />
    <file name="stem.c" role="src" />
    <file name="stem.dsp" role="src" />
    <file name="swedish.c" role="src" />
    <file name="swedish.h" role="src" />
-   <file name="turkish_unicode.c" role="src" />
-   <file name="turkish_unicode.h" role="src" />
+   <file name="turkish.c" role="src" />
+   <file name="turkish.h" role="src" />
    <file name="utilities.c" role="src" />
    <file name="stemmers.def" role="src" />
   </dir> <!-- / -->
@@ -113,10 +141,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <configureoption default="yes" name="enable-stem-portuguese" prompt="Compile Portuguese stemmer?" />
   <configureoption default="yes" name="enable-stem-romanian" prompt="Compile Romanian stemmer?" />
   <configureoption default="yes" name="enable-stem-russian" prompt="Compile Russian stemmer?" />
-  <configureoption default="yes" name="enable-stem-russian_unicode" prompt="Compile Russian (UTF8) stemmer?" />
   <configureoption default="yes" name="enable-stem-spanish" prompt="Compile Spanish stemmer?" />
   <configureoption default="yes" name="enable-stem-swedish" prompt="Compile Swedish stemmer?" />
-  <configureoption default="yes" name="enable-stem-turkish_unicode" prompt="Compile Turkish (UTF8) stemmer?" />
+  <configureoption default="yes" name="enable-stem-turkish" prompt="Compile Turkish stemmer?" />
  </extsrcrelease>
  <changelog>
   <release>

@@ -20,9 +20,8 @@ if (PHP_STEM != "no") {
 				portuguese.c \
 				romanian.c \
 				russian.c \
-				russian_unicode.c \
 				swedish.c \
-				turkish_unicode.c \
+				turkish.c \
 				finnish.c");
 
   AC_DEFINE("ENABLE_DANISH", 1, "Danish support");
@@ -37,9 +36,8 @@ if (PHP_STEM != "no") {
   AC_DEFINE("ENABLE_PORTUGUESE", 1, "Portuguese support");
   AC_DEFINE("ENABLE_ROMANIAN", 1, "Romanian support");
   AC_DEFINE("ENABLE_RUSSIAN", 1, "Russian support");
-  AC_DEFINE("ENABLE_RUSSIAN_UNICODE", 1, "Russian (UTF8) support");
   AC_DEFINE("ENABLE_SPANISH", 1, "Spanish support");
   AC_DEFINE("ENABLE_SWEDISH", 1, "Swedish support");
-  AC_DEFINE("ENABLE_TURKISH_UNICODE", 1, "Turkish (UTF8) support");
+  AC_DEFINE("ENABLE_TURKISH", 1, "Turkish support");
 }
 
