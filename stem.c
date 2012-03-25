@@ -20,7 +20,7 @@ $Id$
 
 /* {{{ stem_functions[]
 */
-function_entry stem_functions[] = {
+zend_function_entry stem_functions[] = {
 	PHP_FE(stem,				NULL)
 	PHP_FE(stem_porter,			NULL)
 	PHP_FE(stem_enabled,		NULL)
