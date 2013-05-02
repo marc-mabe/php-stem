@@ -11,4 +11,4 @@ before_install:
  - ./configure --enable-stem
 
 script:
- - make test
+ - echo "n" | make test
