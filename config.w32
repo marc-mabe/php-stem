@@ -14,6 +14,7 @@ if (PHP_STEM != "no") {
 				dutch.c \
 				english.c \
 				german.c \
+				german2.c \
 				hungarian.c \
 				italian.c \
 				norwegian.c \
@@ -30,6 +31,7 @@ if (PHP_STEM != "no") {
   AC_DEFINE("ENABLE_FRENCH", 1, "French support");
   AC_DEFINE("ENABLE_FINNISH", 1, "Finnish support");
   AC_DEFINE("ENABLE_GERMAN", 1, "German support");
+  AC_DEFINE("ENABLE_GERMAN2", 1, "German2 support");
   AC_DEFINE("ENABLE_HUNGARIAN", 1, "Hungarian support");
   AC_DEFINE("ENABLE_ITALIAN", 1, "Italian support");
   AC_DEFINE("ENABLE_NORWEGIAN", 1, "Norwegian support");

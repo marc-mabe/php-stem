@@ -16,6 +16,8 @@ PHP_ARG_ENABLE(stem-finnish, whether to compile Finnish stemmer,
   [  --enable-stem-finnish    STEM: Whether to compile Finnish stemmer], yes, no)
 PHP_ARG_ENABLE(stem-german, whether to compile German stemmer,
   [  --enable-stem-german     STEM: Whether to compile German stemmer], yes, no)
+PHP_ARG_ENABLE(stem-german2, whether to compile German2 stemmer,
+  [  --enable-stem-german2     STEM: Whether to compile German2 stemmer], yes, no)
 PHP_ARG_ENABLE(stem-hungarian, whether to compile Hungarian stemmer,
   [  --enable-stem-hungarian  STEM: Whether to compile Hungarian stemmer], yes, no)
 PHP_ARG_ENABLE(stem-italian, whether to compile Italian stemmer,
@@ -76,6 +78,13 @@ if test "$PHP_STEM_GERMAN" = "yes"; then
     extra_lang="$extra_lang german.c"
   else
     AC_DEFINE(ENABLE_GERMAN, 0, [ ])
+  fi
+
+if test "$PHP_STEM_GERMAN2" = "yes"; then
+    AC_DEFINE(ENABLE_GERMAN2, 1, [ ])
+    extra_lang="$extra_lang german2.c"
+  else
+    AC_DEFINE(ENABLE_GERMAN2, 0, [ ])
   fi
 
 if test "$PHP_STEM_HUNGARIAN" = "yes"; then

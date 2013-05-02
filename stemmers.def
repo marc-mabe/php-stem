@@ -48,6 +48,10 @@ STEMMER(french, french, FRENCH, "French")
 STEMMER(german, german, GERMAN, "German")
 #endif
 
+#if ENABLE_GERMAN2 || defined(STEMMER_FORCE)
+STEMMER(german2, german2, GERMAN2, "German2")
+#endif
+
 #if ENABLE_HUNGARIAN || defined(STEMMER_FORCE)
 STEMMER(hungarian, hungarian, HUNGARIAN, "Hungarian")
 #endif
