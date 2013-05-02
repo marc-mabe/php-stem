@@ -1,7 +1,7 @@
 --TEST--
 Hungarian stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !extension_loaded("zlib") || !stem_enabled(STEM_HUNGARIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !stem_enabled(STEM_HUNGARIAN)) print "skip"; ?>
 --POST--
 --GET--
 --FILE--

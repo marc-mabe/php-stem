@@ -1,7 +1,7 @@
 --TEST--
 Original Porter stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !extension_loaded("zlib")) print "skip"; ?>
+<?php if (!extension_loaded("stem")) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
