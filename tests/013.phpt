@@ -9,7 +9,7 @@ Swedish stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_SWEDISH, "swedish.dat", "swedish.out");
+runTest(STEM_SWEDISH, "swedish.dat");
 
 ?>
 --EXPECT--

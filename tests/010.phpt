@@ -9,7 +9,7 @@ Portuguese stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_PORTUGUESE, "portuguese.dat", "portuguese.out");
+runTest(STEM_PORTUGUESE, "portuguese.dat");
 
 ?>
 --EXPECT--

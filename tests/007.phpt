@@ -9,7 +9,7 @@ German stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_GERMAN, "german.dat", "german.out");
+runTest(STEM_GERMAN, "german.dat");
 
 ?>
 --EXPECT--

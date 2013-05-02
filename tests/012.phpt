@@ -9,7 +9,7 @@ Spanish stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_SPANISH, "spanish.dat", "spanish.out");
+runTest(STEM_SPANISH, "spanish.dat");
 
 ?>
 --EXPECT--

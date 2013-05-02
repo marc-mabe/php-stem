@@ -9,7 +9,7 @@ Norwegian stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_NORWEGIAN, "norwegian.dat", "norwegian.out");
+runTest(STEM_NORWEGIAN, "norwegian.dat");
 
 ?>
 --EXPECT--

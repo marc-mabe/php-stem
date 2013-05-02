@@ -9,7 +9,7 @@ Italian stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_ITALIAN, "italian.dat", "italian.out");
+runTest(STEM_ITALIAN, "italian.dat");
 
 ?>
 --EXPECT--

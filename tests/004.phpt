@@ -9,7 +9,7 @@ Dutch stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_DUTCH, "dutch.dat", "dutch.out");
+runTest(STEM_DUTCH, "dutch.dat");
 
 ?>
 --EXPECT--

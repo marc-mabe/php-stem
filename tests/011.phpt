@@ -9,7 +9,7 @@ Russian stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_RUSSIAN, "russian.dat", "russian.out");
+runTest(STEM_RUSSIAN, "russian.dat");
 
 ?>
 --EXPECT--

@@ -9,7 +9,7 @@ Modified English Porter stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_ENGLISH, "english.dat", "english.out");
+runTest(STEM_ENGLISH, "english.dat");
 
 ?>
 --EXPECT--

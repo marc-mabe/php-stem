@@ -9,7 +9,7 @@ Turkish stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_TURKISH, "turkish_unicode.dat", "turkish_unicode.out");
+runTest(STEM_TURKISH, "turkish.dat");
 
 ?>
 --EXPECT--

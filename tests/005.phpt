@@ -9,7 +9,7 @@ Finnish stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_FINNISH, "finnish.dat", "finnish.out");
+runTest(STEM_FINNISH, "finnish.dat");
 
 ?>
 --EXPECT--

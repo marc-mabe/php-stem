@@ -9,7 +9,7 @@ French stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_FRENCH, "french.dat", "french.out");
+runTest(STEM_FRENCH, "french.dat");
 
 ?>
 --EXPECT--

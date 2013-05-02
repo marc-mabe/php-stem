@@ -1,19 +1,19 @@
 <?php
 
-chdir(dirname(realpath($_SERVER['PHP_SELF'])));
+chdir(dirname(__FILE__));
 
-function runTest($lang, $in, $out)
+function runTest($lang, $file)
 {
-    $in  = file($in);
-    $out = file($out);
-    $bad = 0;
+    $lines = file($file);
+    $bad   = 0;
 
-    for ($i = 0; $i < count($in); $i++) {
-        $in[$i]  = trim($in[$i]);
-        $out[$i] = trim($out[$i]);
-
-        if (stem($in[$i], $lang) != $out[$i]) {
-            print "|" . $in[$i] . "| -> |" . stem($in[$i], $lang) . "|, expected |" . $out[$i] . "|\n";
+    foreach ($lines as $i => $line) {
+        list($input, $expected) = explode('=>', $line);
+        $input    = trim($input);
+        $expected = trim($expected);
+        $stem     = stem($input, $lang);
+        if ($stem != $expected) {
+            echo 'L' . ($i + 1) . ': "' . $input . '" => "' . $stem . '", expected "' . $expected . '"' . PHP_EOL;
             ++$bad;
         }
     }
@@ -21,4 +21,3 @@ function runTest($lang, $in, $out)
     print "BAD: $bad\n";
 }
 
-?>

@@ -9,7 +9,7 @@ Danish stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_DANISH, "danish.dat", "danish.out");
+runTest(STEM_DANISH, "danish.dat");
 
 ?>
 --EXPECT--

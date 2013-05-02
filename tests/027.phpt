@@ -9,7 +9,7 @@ Hungarian stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_HUNGARIAN, "hungarian.dat", "hungarian.out");
+runTest(STEM_HUNGARIAN, "hungarian.dat");
 
 ?>
 --EXPECT--

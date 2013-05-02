@@ -9,7 +9,7 @@ Romanian stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_ROMANIAN, "romanian.dat", "romanian.out");
+runTest(STEM_ROMANIAN, "romanian.dat");
 
 ?>
 --EXPECT--

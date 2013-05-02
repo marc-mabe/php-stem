@@ -9,7 +9,7 @@ Original Porter stemming algorithm (extensive)
 
 require("fulltests.php");
 
-runTest(STEM_PORTER, "porter.dat", "porter.out");
+runTest(STEM_PORTER, "porter.dat");
 
 ?>
 --EXPECT--
