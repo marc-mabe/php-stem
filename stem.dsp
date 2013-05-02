@@ -150,11 +150,11 @@ SOURCE=.\russian.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\russian_unicode.c
+SOURCE=.\russian.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\russian_unicode.h
+SOURCE=.\russian.h
 # End Source File
 # Begin Source File
 
@@ -170,7 +170,7 @@ SOURCE=.\swedish.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\turkish_unicode.c
+SOURCE=.\turkish.c
 # End Source File
 # Begin Source File
 
@@ -254,7 +254,7 @@ SOURCE=.\swedish.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\turkish_unicode.h
+SOURCE=.\turkish.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

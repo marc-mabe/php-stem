@@ -110,10 +110,10 @@ may not match with the current version. Be careful.
 	STEM_PORTUGUESE
 	STEM_ROMANIAN
 	STEM_RUSSIAN
-	STEM_RUSSIAN_UNICODE -- text is in Unicode encoding rather than UTF-8
+	STEM_RUSSIAN
 	STEM_SPANISH
 	STEM_SWEDISH
-	STEM_TURKISH_UNICODE
+	STEM_TURKISH
 
 	By default, STEM_PORTER is used.
 
@@ -132,16 +132,12 @@ may not match with the current version. Be careful.
 	stem_portuguese
 	stem_romanian
 	stem_russian
-	stem_russian_unicode
+	stem_russian
 	stem_spanish
 	stem_swedish
-	stem_turkish_unicode
+	stem_turkish
 
-	Each function will accept and return strings in standard Latin encodings
-	except for Russian, which uses Cyrillic KO18-R encoding and Romanian,
-	which uses ISO-8859-2.
-
-	The Unicode versions accept and return strings encoded in UTF-8.
+	Each function will accept and return strings encoded in UTF-8.
 
 	More languages may follow, and perhaps some aliases (like stem_francais()
 	will be equivalent to stem_french(). Who knows.)

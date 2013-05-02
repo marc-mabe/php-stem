@@ -62,10 +62,10 @@ PHP_FUNCTION(stem_enabled);
 #define STEM_RUSSIAN         11
 #define STEM_SWEDISH         12
 #define STEM_FINNISH         13
-#define STEM_RUSSIAN_UNICODE 14
+#define STEM_RUSSIAN         14
 #define STEM_HUNGARIAN       15
 #define STEM_ROMANIAN        16
-#define STEM_TURKISH_UNICODE 17
+#define STEM_TURKISH         17
 #define STEM_TURKISH         18
 
 #define STEMMER(php_func, c_func, constant, name) \

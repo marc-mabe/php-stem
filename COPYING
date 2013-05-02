@@ -57,11 +57,11 @@ porter.c/h
 portuguese.c/h
 romanian.c/h
 russian.c/h
-russian_unicode.c/h
+russian.c/h
 spanish.c/h
 swedish.c/h
 utilities.c
-turkish_unicode.c/h
+turkish.c/h
 
 For the exact terms of Dr. Porter's license, check out
 
