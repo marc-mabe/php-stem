@@ -11,4 +11,6 @@ before_install:
  - ./configure --enable-stem
 
 script:
- - echo "n" | make test
+ - make
+ - export NO_INTERACTION=1
+ - make test
