@@ -8,7 +8,7 @@ php:
 
 before_install:
  - phpize
- - configure --enable-stem
+ - ./configure --enable-stem
 
 script:
  - make test
