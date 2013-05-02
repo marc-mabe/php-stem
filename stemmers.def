@@ -24,6 +24,10 @@
 /* STEMMER(php_func, c_func, constant, name) */
 STEMMER(porter,      porter,       PORTER,      "Original Porter")
 
+#if ENABLE_ARMENIAN || defined(STEMMER_FORCE)
+STEMMER(armenian, armenian, ARMENIAN, "Armenian")
+#endif
+
 #if ENABLE_DANISH || defined(STEMMER_FORCE)
 STEMMER(danish, danish, DANISH, "Danish")
 #endif

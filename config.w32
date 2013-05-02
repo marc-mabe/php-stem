@@ -7,6 +7,7 @@ if (PHP_STEM != "no") {
 	EXTENSION("stem", 	"stem.c \
 				api.c \
 				utilities.c \
+				armenian.c \
 				porter.c \
 				french.c \
 				spanish.c \
@@ -25,6 +26,7 @@ if (PHP_STEM != "no") {
 				turkish.c \
 				finnish.c");
 
+  AC_DEFINE("ENABLE_ARMENIAN", 1, "Armenian support");
   AC_DEFINE("ENABLE_DANISH", 1, "Danish support");
   AC_DEFINE("ENABLE_DUTCH", 1, "Dutch support");
   AC_DEFINE("ENABLE_ENGLISH", 1, "English support");
