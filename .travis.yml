@@ -1,21 +1,17 @@
 language: php
 
 php:
-    - 5.3.3
+    - 5.2
     - 5.3
     - 5.4
     - 5.5
-
-env:
-    - NO_INTERACTION=1
-    - REPORT_EXIT_STATUS=1
 
 before_install:
     - phpize
     - ./configure --enable-stem
 
 script:
-    - make
+    - export NO_INTERACTION=1
     - make test
 
 notifications:
