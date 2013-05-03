@@ -7,7 +7,7 @@ French stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_FRENCH, "abandonnez", "abandon");
 runQuickTest(STEM_FRENCH, "température", "températur");

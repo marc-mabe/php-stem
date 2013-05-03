@@ -7,7 +7,7 @@ Basque stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("fulltests.php");
+require("runfulltest.inc");
 
 runTest(STEM_BASQUE, "basque.txt");
 

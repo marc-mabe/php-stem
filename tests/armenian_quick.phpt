@@ -7,7 +7,7 @@ Armenian stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_ARMENIAN, "ɑχoɾˈʒɑk", "ɑχoɾˈʒɑk");
 runQuickTest(STEM_ARMENIAN, "mɑʁɑdɑˈnos", "mɑʁɑdɑˈnos");

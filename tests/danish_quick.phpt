@@ -7,7 +7,7 @@ Danish stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_DANISH, "abarimbjergene", "abarimbjerg");
 runQuickTest(STEM_DANISH, "beskyldningerne", "beskyldning");

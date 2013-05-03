@@ -7,7 +7,7 @@ German stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_GERMAN, "abenteuerspielplätzen", "abenteuerspielplatz");
 runQuickTest(STEM_GERMAN, "eingefleischten", "eingefleischt");

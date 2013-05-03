@@ -7,7 +7,7 @@ Catalan stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_CATALAN, "finestra", "finestr");
 runQuickTest(STEM_CATALAN, "menjar", "menj");

@@ -7,7 +7,7 @@ Spanish stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_SPANISH, "acercaron", "acerc");
 runQuickTest(STEM_SPANISH, "chapoteaderos", "chapoteader");

@@ -7,7 +7,7 @@ Original Porter stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_PORTER, "abbreviated", "abbrevi");
 runQuickTest(STEM_PORTER, "bohemians", "bohemian");

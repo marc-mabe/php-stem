@@ -7,7 +7,7 @@ Turkish stemming algorithm (extensive)
 --FILE--
 <?php
 
-require("fulltests.php");
+require("runfulltest.inc");
 
 runTest(STEM_TURKISH, "turkish.txt");
 

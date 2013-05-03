@@ -7,7 +7,7 @@ Swedish stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_SWEDISH, "alkoholister", "alkoholist");
 runQuickTest(STEM_SWEDISH, "binnikemasken", "binnikemask");

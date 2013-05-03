@@ -7,7 +7,7 @@ Czech stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_CZECH, "podstatné", "podstatn");
 runQuickTest(STEM_CZECH, "jméno", "jmén");

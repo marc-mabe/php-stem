@@ -7,7 +7,7 @@ Dutch stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_DUTCH, "aangekondigde", "aangekondigd");
 runQuickTest(STEM_DUTCH, "aantrekkelijkheid", "aantrek");

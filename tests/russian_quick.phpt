@@ -7,7 +7,7 @@ Russian stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_RUSSIAN, "аксельбантами", "аксельбант");
 runQuickTest(STEM_RUSSIAN, "восхищаться", "восхища");

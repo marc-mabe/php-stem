@@ -7,7 +7,7 @@ Portuguese stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_PORTUGUESE, "abandonasse", "abandon");
 runQuickTest(STEM_PORTUGUESE, "campeonatos", "campeonat");

@@ -7,7 +7,7 @@ Modified English Porter stemming algorithm (quick)
 --FILE--
 <?php
 
-require("tests.php");
+require("runquicktest.inc");
 
 runQuickTest(STEM_ENGLISH, "abbreviation", "abbrevi");
 runQuickTest(STEM_ENGLISH, "cangrejales", "cangrejal");
