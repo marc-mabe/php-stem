@@ -4,9 +4,11 @@ dnl config.m4 for extension stem
 PHP_ARG_ENABLE(stem, whether to enable stem support,
   [  --enable-stem          Enable stem support], no)
 PHP_ARG_ENABLE(stem-armenian, whether to compile Armenian stemmer,
-  [  --enable-stem-armenian     STEM: Whether to compile Armenian stemmer], yes, no)
+  [  --enable-stem-armenian   STEM: Whether to compile Armenian stemmer], yes, no)
 PHP_ARG_ENABLE(stem-basque, whether to compile Basque stemmer,
   [  --enable-stem-basque     STEM: Whether to compile Basque stemmer], yes, no)
+PHP_ARG_ENABLE(stem-catalan, whether to compile Catalan stemmer,
+  [  --enable-stem-catalan    STEM: Whether to compile Catalan stemmer], yes, no)
 PHP_ARG_ENABLE(stem-danish, whether to compile Danish stemmer,
   [  --enable-stem-danish     STEM: Whether to compile Danish stemmer], yes, no)
 PHP_ARG_ENABLE(stem-dutch, whether to compile Dutch stemmer,
@@ -20,7 +22,7 @@ PHP_ARG_ENABLE(stem-finnish, whether to compile Finnish stemmer,
 PHP_ARG_ENABLE(stem-german, whether to compile German stemmer,
   [  --enable-stem-german     STEM: Whether to compile German stemmer], yes, no)
 PHP_ARG_ENABLE(stem-german2, whether to compile German2 stemmer,
-  [  --enable-stem-german2     STEM: Whether to compile German2 stemmer], yes, no)
+  [  --enable-stem-german2    STEM: Whether to compile German2 stemmer], yes, no)
 PHP_ARG_ENABLE(stem-hungarian, whether to compile Hungarian stemmer,
   [  --enable-stem-hungarian  STEM: Whether to compile Hungarian stemmer], yes, no)
 PHP_ARG_ENABLE(stem-italian, whether to compile Italian stemmer,
@@ -53,6 +55,13 @@ if test "$PHP_STEM_BASQUE" = "yes"; then
     extra_lang="$extra_lang basque.c"
   else
     AC_DEFINE(ENABLE_BASQUE, 0, [ ])
+  fi
+
+if test "$PHP_STEM_CATALAN" = "yes"; then
+    AC_DEFINE(ENABLE_CATALAN, 1, [ ])
+    extra_lang="$extra_lang catalan.c"
+  else
+    AC_DEFINE(ENABLE_CATALAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_DANISH" = "yes"; then

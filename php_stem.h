@@ -69,6 +69,8 @@ PHP_FUNCTION(stem_enabled);
 #define STEM_TURKISH         18
 #define STEM_GERMAN2         19
 #define STEM_ARMENIAN        20
+#define STEM_BASQUE          21
+#define STEM_CATALAN         22
 
 #define STEMMER(php_func, c_func, constant, name) \
 	PHP_FUNCTION(stem_ ## php_func);
@@ -79,6 +81,14 @@ PHP_FUNCTION(stem_enabled);
 
 #if ENABLE_ARMENIAN
 #include "armenian.h"
+#endif
+
+#if ENABLE_BASQUE
+#include "basque.h"
+#endif
+
+#if ENABLE_CATALAN
+#include "catalan.h"
 #endif
 
 #if ENABLE_DANISH

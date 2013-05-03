@@ -32,6 +32,10 @@ STEMMER(armenian, armenian, ARMENIAN, "Armenian")
 STEMMER(basque, basque, BASQUE, "Basque")
 #endif
 
+#if ENABLE_CATALAN || defined(STEMMER_FORCE)
+STEMMER(catalan, catalan, CATALAN, "Catalan")
+#endif
+
 #if ENABLE_DANISH || defined(STEMMER_FORCE)
 STEMMER(danish, danish, DANISH, "Danish")
 #endif
