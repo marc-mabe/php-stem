@@ -8,6 +8,7 @@ if (PHP_STEM != "no") {
 				api.c \
 				utilities.c \
 				armenian.c \
+				basque.c \
 				porter.c \
 				french.c \
 				spanish.c \
@@ -27,6 +28,7 @@ if (PHP_STEM != "no") {
 				finnish.c");
 
   AC_DEFINE("ENABLE_ARMENIAN", 1, "Armenian support");
+  AC_DEFINE("ENABLE_BASQUE", 1, "Basque support");
   AC_DEFINE("ENABLE_DANISH", 1, "Danish support");
   AC_DEFINE("ENABLE_DUTCH", 1, "Dutch support");
   AC_DEFINE("ENABLE_ENGLISH", 1, "English support");

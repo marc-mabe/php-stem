@@ -28,6 +28,10 @@ STEMMER(porter,      porter,       PORTER,      "Original Porter")
 STEMMER(armenian, armenian, ARMENIAN, "Armenian")
 #endif
 
+#if ENABLE_BASQUE || defined(STEMMER_FORCE)
+STEMMER(basque, basque, BASQUE, "Basque")
+#endif
+
 #if ENABLE_DANISH || defined(STEMMER_FORCE)
 STEMMER(danish, danish, DANISH, "Danish")
 #endif
