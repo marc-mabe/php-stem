@@ -1,7 +1,7 @@
 --TEST--
 German stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_GERMAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("german", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ German stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_GERMAN, "abenteuerspielplätzen", "abenteuerspielplatz");
-runQuickTest(STEM_GERMAN, "eingefleischten", "eingefleischt");
-runQuickTest(STEM_GERMAN, "kümmerlichen", "kumm");
-runQuickTest(STEM_GERMAN, "weltverantwortung", "weltverantwort");
+runQuickTest("german", "abenteuerspielplätzen", "abenteuerspielplatz");
+runQuickTest("german", "eingefleischten", "eingefleischt");
+runQuickTest("german", "kümmerlichen", "kumm");
+runQuickTest("german", "weltverantwortung", "weltverantwort");
 
 ?>
 --EXPECT--

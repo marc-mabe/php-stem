@@ -45,39 +45,30 @@ extern zend_module_entry stem_module_entry;
 #include "porter.h"
 
 PHP_FUNCTION(stem);
-PHP_FUNCTION(stem_porter);
-PHP_FUNCTION(stem_enabled);
+PHP_FUNCTION(stem_algos);
 
-#define STEM_DEFAULT         0
-#define STEM_PORTER          1
-#define STEM_ENGLISH         2
-#define STEM_FRENCH          3
-#define STEM_SPANISH         4
-#define STEM_DUTCH           5
-#define STEM_DANISH          6
-#define STEM_GERMAN          7
-#define STEM_ITALIAN         8
-#define STEM_NORWEGIAN       9
-#define STEM_PORTUGUESE      10
-#define STEM_RUSSIAN         11
-#define STEM_SWEDISH         12
-#define STEM_FINNISH         13
-#define STEM_RUSSIAN         14
-#define STEM_HUNGARIAN       15
-#define STEM_ROMANIAN        16
-#define STEM_TURKISH         17
-#define STEM_TURKISH         18
-#define STEM_GERMAN2         19
-#define STEM_ARMENIAN        20
-#define STEM_BASQUE          21
-#define STEM_CATALAN         22
-#define STEM_IRISH           23
-#define STEM_CZECH           24
-
-#define STEMMER(php_func, c_func, constant, name) \
-	PHP_FUNCTION(stem_ ## php_func);
-#include "stemmers.def"
-#undef STEMMER
+#define STEM_PORTER          "porter"
+#define STEM_ENGLISH         "english"
+#define STEM_FRENCH          "french"
+#define STEM_SPANISH         "spanish"
+#define STEM_DUTCH           "dutch"
+#define STEM_DANISH          "danish"
+#define STEM_GERMAN          "german"
+#define STEM_ITALIAN         "italian"
+#define STEM_NORWEGIAN       "norwegian"
+#define STEM_PORTUGUESE      "portuguese"
+#define STEM_RUSSIAN         "russian"
+#define STEM_SWEDISH         "swedish"
+#define STEM_FINNISH         "finnish"
+#define STEM_HUNGARIAN       "hungarian"
+#define STEM_ROMANIAN        "romanian"
+#define STEM_TURKISH         "turkish"
+#define STEM_GERMAN2         "german2"
+#define STEM_ARMENIAN        "armenian"
+#define STEM_BASQUE          "basque"
+#define STEM_CATALAN         "catalan"
+#define STEM_IRISH           "irish"
+#define STEM_CZECH           "czech"
 
 #include "porter.h"
 

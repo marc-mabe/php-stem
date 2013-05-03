@@ -1,7 +1,7 @@
 --TEST--
 Italian stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_ITALIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("italian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Italian stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_ITALIAN, "italian.txt");
+runTest("italian", "italian.txt");
 
 ?>
 --EXPECT--

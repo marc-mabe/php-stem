@@ -1,7 +1,7 @@
 --TEST--
 Hungarian stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_HUNGARIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("hungarian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Hungarian stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_HUNGARIAN, "hungarian.txt");
+runTest("hungarian", "hungarian.txt");
 
 ?>
 --EXPECT--

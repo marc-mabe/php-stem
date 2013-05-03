@@ -22,88 +22,88 @@
 /* $Id$ */
 
 /* STEMMER(php_func, c_func, constant, name) */
-STEMMER(porter,      porter,       PORTER,      "Original Porter")
+STEMMER(porter,      porter,       PORTER,      "porter")
 
-#if ENABLE_ARMENIAN || defined(STEMMER_FORCE)
-STEMMER(armenian, armenian, ARMENIAN, "Armenian")
+#if ENABLE_ARMENIAN
+STEMMER(armenian, armenian, ARMENIAN, "armenian")
 #endif
 
-#if ENABLE_BASQUE || defined(STEMMER_FORCE)
-STEMMER(basque, basque, BASQUE, "Basque")
+#if ENABLE_BASQUE
+STEMMER(basque, basque, BASQUE, "basque")
 #endif
 
-#if ENABLE_CATALAN || defined(STEMMER_FORCE)
-STEMMER(catalan, catalan, CATALAN, "Catalan")
+#if ENABLE_CATALAN
+STEMMER(catalan, catalan, CATALAN, "catalan")
 #endif
 
-#if ENABLE_CZECH || defined(STEMMER_FORCE)
-STEMMER(czech, czech, CZECH, "Czech")
+#if ENABLE_CZECH
+STEMMER(czech, czech, CZECH, "czech")
 #endif
 
-#if ENABLE_DANISH || defined(STEMMER_FORCE)
-STEMMER(danish, danish, DANISH, "Danish")
+#if ENABLE_DANISH
+STEMMER(danish, danish, DANISH, "danish")
 #endif
 
-#if ENABLE_DUTCH || defined(STEMMER_FORCE)
-STEMMER(dutch, dutch, DUTCH, "Dutch")
+#if ENABLE_DUTCH
+STEMMER(dutch, dutch, DUTCH, "dutch")
 #endif
 
-#if ENABLE_ENGLISH || defined(STEMMER_FORCE)
-STEMMER(english, english, ENGLISH, "English")
+#if ENABLE_ENGLISH
+STEMMER(english, english, ENGLISH, "english")
 #endif
 
-#if ENABLE_FINNISH || defined(STEMMER_FORCE)
-STEMMER(finnish, finnish, FINNISH, "Finnish")
+#if ENABLE_FINNISH
+STEMMER(finnish, finnish, FINNISH, "finnish")
 #endif
 
-#if ENABLE_FRENCH || defined(STEMMER_FORCE)
-STEMMER(french, french, FRENCH, "French")
+#if ENABLE_FRENCH
+STEMMER(french, french, FRENCH, "french")
 #endif
 
-#if ENABLE_GERMAN || defined(STEMMER_FORCE)
-STEMMER(german, german, GERMAN, "German")
+#if ENABLE_GERMAN
+STEMMER(german, german, GERMAN, "german")
 #endif
 
-#if ENABLE_GERMAN2 || defined(STEMMER_FORCE)
-STEMMER(german2, german2, GERMAN2, "German2")
+#if ENABLE_GERMAN2
+STEMMER(german2, german2, GERMAN2, "german2")
 #endif
 
-#if ENABLE_HUNGARIAN || defined(STEMMER_FORCE)
-STEMMER(hungarian, hungarian, HUNGARIAN, "Hungarian")
+#if ENABLE_HUNGARIAN
+STEMMER(hungarian, hungarian, HUNGARIAN, "hungarian")
 #endif
 
-#if ENABLE_IRISH || defined(STEMMER_FORCE)
-STEMMER(irish, irish, IRISH, "Irish")
+#if ENABLE_IRISH
+STEMMER(irish, irish, IRISH, "irish")
 #endif
 
-#if ENABLE_ITALIAN || defined(STEMMER_FORCE)
-STEMMER(italian, italian, ITALIAN, "Italian")
+#if ENABLE_ITALIAN
+STEMMER(italian, italian, ITALIAN, "italian")
 #endif
 
 #if ENABLE_NORWEGIAN || defined(STEMMER_FORCE)
-STEMMER(norwegian, norwegian, NORWEGIAN, "Norwegian")
+STEMMER(norwegian, norwegian, NORWEGIAN, "norwegian")
 #endif
 
 #if ENABLE_PORTUGUESE || defined(STEMMER_FORCE)
-STEMMER(portuguese, portuguese, PORTUGUESE, "Portuguese")
+STEMMER(portuguese, portuguese, PORTUGUESE, "portuguese")
 #endif
 
 #if ENABLE_ROMANIAN || defined(STEMMER_FORCE)
-STEMMER(romanian, romanian, ROMANIAN, "Romanian")
+STEMMER(romanian, romanian, ROMANIAN, "romanian")
 #endif
 
 #if ENABLE_RUSSIAN || defined(STEMMER_FORCE)
-STEMMER(russian, russian, RUSSIAN, "Russian")
+STEMMER(russian, russian, RUSSIAN, "russian")
 #endif
 
 #if ENABLE_SPANISH || defined(STEMMER_FORCE)
-STEMMER(spanish, spanish, SPANISH, "Spanish")
+STEMMER(spanish, spanish, SPANISH, "spanish")
 #endif
 
 #if ENABLE_SWEDISH || defined(STEMMER_FORCE)
-STEMMER(swedish, swedish, SWEDISH, "Swedish")
+STEMMER(swedish, swedish, SWEDISH, "swedish")
 #endif
 
 #if ENABLE_TURKISH || defined(STEMMER_FORCE)
-STEMMER(turkish, turkish, TURKISH, "Turkish")
+STEMMER(turkish, turkish, TURKISH, "turkish")
 #endif

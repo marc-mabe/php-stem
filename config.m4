@@ -2,49 +2,49 @@ dnl $Id$
 dnl config.m4 for extension stem
 
 PHP_ARG_ENABLE(stem, whether to enable stem support,
-  [  --enable-stem          Enable stem support], no)
-PHP_ARG_ENABLE(stem-armenian, whether to compile Armenian stemmer,
-  [  --enable-stem-armenian   STEM: Whether to compile Armenian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-basque, whether to compile Basque stemmer,
-  [  --enable-stem-basque     STEM: Whether to compile Basque stemmer], yes, no)
-PHP_ARG_ENABLE(stem-catalan, whether to compile Catalan stemmer,
-  [  --enable-stem-catalan    STEM: Whether to compile Catalan stemmer], yes, no)
-PHP_ARG_ENABLE(stem-czech, whether to compile Czech stemmer,
-  [  --enable-stem-czech      STEM: Whether to compile Czech stemmer], yes, no)
-PHP_ARG_ENABLE(stem-danish, whether to compile Danish stemmer,
-  [  --enable-stem-danish     STEM: Whether to compile Danish stemmer], yes, no)
-PHP_ARG_ENABLE(stem-dutch, whether to compile Dutch stemmer,
-  [  --enable-stem-dutch      STEM: Whether to compile Dutch stemmer], yes, no)
-PHP_ARG_ENABLE(stem-english, whether to compile English (non Porter) stemmer,
-  [  --enable-stem-english    STEM: Whether to compile English (non Porter) stemmer], yes, no)
-PHP_ARG_ENABLE(stem-french, whether to compile French stemmer,
-  [  --enable-stem-french     STEM: Whether to compile French stemmer], yes, no)
-PHP_ARG_ENABLE(stem-finnish, whether to compile Finnish stemmer,
-  [  --enable-stem-finnish    STEM: Whether to compile Finnish stemmer], yes, no)
-PHP_ARG_ENABLE(stem-german, whether to compile German stemmer,
-  [  --enable-stem-german     STEM: Whether to compile German stemmer], yes, no)
-PHP_ARG_ENABLE(stem-german2, whether to compile German2 stemmer,
-  [  --enable-stem-german2    STEM: Whether to compile German2 stemmer], yes, no)
-PHP_ARG_ENABLE(stem-hungarian, whether to compile Hungarian stemmer,
-  [  --enable-stem-hungarian  STEM: Whether to compile Hungarian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-irish, whether to compile Irish stemmer,
-  [  --enable-stem-irish      STEM: Whether to compile Irish stemmer], yes, no)
-PHP_ARG_ENABLE(stem-italian, whether to compile Italian stemmer,
-  [  --enable-stem-italian    STEM: Whether to compile Italian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-norwegian, whether to compile Norwegian stemmer,
-  [  --enable-stem-norwegian  STEM: Whether to compile Norwegian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-portuguese, whether to compile Portuguese stemmer,
-  [  --enable-stem-portuguese STEM: Whether to compile Portuguese stemmer], yes, no)
-PHP_ARG_ENABLE(stem-romanian, whether to compile Romanian stemmer,
-  [  --enable-stem-romanian   STEM: Whether to compile Romanian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-russian, whether to compile Russian stemmer,
-  [  --enable-stem-russian    STEM: Whether to compile Russian stemmer], yes, no)
-PHP_ARG_ENABLE(stem-spanish, whether to compile Spanish stemmer,
-  [  --enable-stem-spanish    STEM: Whether to compile Spanish stemmer], yes, no)
-PHP_ARG_ENABLE(stem-swedish, whether to compile Swedish stemmer,
-  [  --enable-stem-swedish    STEM: Whether to compile Swedish stemmer], yes, no)
-PHP_ARG_ENABLE(stem-turkish, whether to compile Turkish  stemmer,
-  [  --enable-stem-turkish    STEM: Whether to compile Turkish stemmer], yes, no)
+  [  --enable-stem            Enable stem support], no)
+PHP_ARG_ENABLE(stem-armenian, whether to compile Armenian stemming algorithm,
+  [  --enable-stem-armenian   Whether to compile Armenian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-basque, whether to compile Basque stemming algorithm,
+  [  --enable-stem-basque     Whether to compile Basque stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-catalan, whether to compile Catalan stemming algorithm,
+  [  --enable-stem-catalan    Whether to compile Catalan stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-czech, whether to compile Czech stemming algorithm,
+  [  --enable-stem-czech      Whether to compile Czech stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-danish, whether to compile Danish stemming algorithm,
+  [  --enable-stem-danish     Whether to compile Danish stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-dutch, whether to compile Dutch stemming algorithm,
+  [  --enable-stem-dutch      Whether to compile Dutch stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-english, whether to compile English (non Porter) stemming algorithm,
+  [  --enable-stem-english    Whether to compile English (non Porter) stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-french, whether to compile French stemming algorithm,
+  [  --enable-stem-french     Whether to compile French stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-finnish, whether to compile Finnish stemming algorithm,
+  [  --enable-stem-finnish    Whether to compile Finnish stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-german, whether to compile German stemming algorithm,
+  [  --enable-stem-german     Whether to compile German stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-german2, whether to compile German2 stemming algorithm,
+  [  --enable-stem-german2    Whether to compile German2 stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-hungarian, whether to compile Hungarian stemming algorithm,
+  [  --enable-stem-hungarian  Whether to compile Hungarian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-irish, whether to compile Irish stemming algorithm,
+  [  --enable-stem-irish      Whether to compile Irish stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-italian, whether to compile Italian stemming algorithm,
+  [  --enable-stem-italian    Whether to compile Italian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-norwegian, whether to compile Norwegian stemming algorithm,
+  [  --enable-stem-norwegian  Whether to compile Norwegian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-portuguese, whether to compile Portuguese stemming algorithm,
+  [  --enable-stem-portuguese Whether to compile Portuguese stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-romanian, whether to compile Romanian stemming algorithm,
+  [  --enable-stem-romanian   Whether to compile Romanian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-russian, whether to compile Russian stemming algorithm,
+  [  --enable-stem-russian    Whether to compile Russian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-spanish, whether to compile Spanish stemming algorithm,
+  [  --enable-stem-spanish    Whether to compile Spanish stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-swedish, whether to compile Swedish stemming algorithm,
+  [  --enable-stem-swedish    Whether to compile Swedish stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-turkish, whether to compile Turkish  stemming algorithm,
+  [  --enable-stem-turkish    Whether to compile Turkish stemming algorithm], yes, no)
 
 
 if test "$PHP_STEM_ARMENIAN" = "yes"; then

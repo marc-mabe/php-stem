@@ -1,7 +1,7 @@
 --TEST--
 Danish stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_DANISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("danish", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Danish stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_DANISH, "danish.txt");
+runTest("danish", "danish.txt");
 
 ?>
 --EXPECT--

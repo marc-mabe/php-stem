@@ -1,7 +1,7 @@
 --TEST--
 Swedish stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_SWEDISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("swedish", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Swedish stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_SWEDISH, "swedish.txt");
+runTest("swedish", "swedish.txt");
 
 ?>
 --EXPECT--

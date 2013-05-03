@@ -1,7 +1,7 @@
 --TEST--
 German stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_GERMAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("german", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ German stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_GERMAN, "german.txt");
+runTest("german", "german.txt");
 
 ?>
 --EXPECT--

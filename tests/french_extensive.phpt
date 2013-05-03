@@ -1,7 +1,7 @@
 --TEST--
 French stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_FRENCH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("french", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ French stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_FRENCH, "french.txt");
+runTest("french", "french.txt");
 
 ?>
 --EXPECT--

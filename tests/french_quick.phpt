@@ -1,7 +1,7 @@
 --TEST--
 French stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_FRENCH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("french", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ French stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_FRENCH, "abandonnez", "abandon");
-runQuickTest(STEM_FRENCH, "température", "températur");
-runQuickTest(STEM_FRENCH, "virtuose", "virtuos");
-runQuickTest(STEM_FRENCH, "yakounines", "yakounin");
+runQuickTest("french", "abandonnez", "abandon");
+runQuickTest("french", "température", "températur");
+runQuickTest("french", "virtuose", "virtuos");
+runQuickTest("french", "yakounines", "yakounin");
 
 ?>
 --EXPECT--

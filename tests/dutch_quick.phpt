@@ -1,7 +1,7 @@
 --TEST--
 Dutch stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_DUTCH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("dutch", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Dutch stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_DUTCH, "aangekondigde", "aangekondigd");
-runQuickTest(STEM_DUTCH, "aantrekkelijkheid", "aantrek");
-runQuickTest(STEM_DUTCH, "bösendorferstrasse", "bosendorferstras");
-runQuickTest(STEM_DUTCH, "zwitserse", "zwitser");
+runQuickTest("dutch", "aangekondigde", "aangekondigd");
+runQuickTest("dutch", "aantrekkelijkheid", "aantrek");
+runQuickTest("dutch", "bösendorferstrasse", "bosendorferstras");
+runQuickTest("dutch", "zwitserse", "zwitser");
 
 ?>
 --EXPECT--

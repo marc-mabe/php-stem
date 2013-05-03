@@ -1,7 +1,7 @@
 --TEST--
 Portuguese stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_PORTUGUESE)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("portuguese", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Portuguese stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_PORTUGUESE, "abandonasse", "abandon");
-runQuickTest(STEM_PORTUGUESE, "campeonatos", "campeonat");
-runQuickTest(STEM_PORTUGUESE, "destituição", "destituiçã");
-runQuickTest(STEM_PORTUGUESE, "infiltrações", "infiltr");
+runQuickTest("portuguese", "abandonasse", "abandon");
+runQuickTest("portuguese", "campeonatos", "campeonat");
+runQuickTest("portuguese", "destituição", "destituiçã");
+runQuickTest("portuguese", "infiltrações", "infiltr");
 
 ?>
 --EXPECT--

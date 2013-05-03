@@ -1,7 +1,7 @@
 --TEST--
 Norwegian stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_NORWEGIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("norwegian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Norwegian stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_NORWEGIAN, "allmennaksjeselskaper", "allmennaksjeselskap");
-runQuickTest(STEM_NORWEGIAN, "datterselskaper", "datterselskap");
-runQuickTest(STEM_NORWEGIAN, "driftsselskapet", "driftsselskap");
-runQuickTest(STEM_NORWEGIAN, "håpløsheten", "håpløs");
+runQuickTest("norwegian", "allmennaksjeselskaper", "allmennaksjeselskap");
+runQuickTest("norwegian", "datterselskaper", "datterselskap");
+runQuickTest("norwegian", "driftsselskapet", "driftsselskap");
+runQuickTest("norwegian", "håpløsheten", "håpløs");
 
 ?>
 --EXPECT--

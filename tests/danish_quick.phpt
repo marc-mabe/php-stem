@@ -1,7 +1,7 @@
 --TEST--
 Danish stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_DANISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("danish", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Danish stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_DANISH, "abarimbjergene", "abarimbjerg");
-runQuickTest(STEM_DANISH, "beskyldningerne", "beskyldning");
-runQuickTest(STEM_DANISH, "fredstilbudet", "fredstilbud");
-runQuickTest(STEM_DANISH, "ørkesløse", "ørkesløs");
+runQuickTest("danish", "abarimbjergene", "abarimbjerg");
+runQuickTest("danish", "beskyldningerne", "beskyldning");
+runQuickTest("danish", "fredstilbudet", "fredstilbud");
+runQuickTest("danish", "ørkesløse", "ørkesløs");
 
 ?>
 --EXPECT--

@@ -1,7 +1,7 @@
 --TEST--
 Italian stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_ITALIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("italian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Italian stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_ITALIAN, "azionisti", "azion");
-runQuickTest(STEM_ITALIAN, "cipiglio", "cipigl");
-runQuickTest(STEM_ITALIAN, "distrigarsi", "distrig");
-runQuickTest(STEM_ITALIAN, "valentina", "valentin");
+runQuickTest("italian", "azionisti", "azion");
+runQuickTest("italian", "cipiglio", "cipigl");
+runQuickTest("italian", "distrigarsi", "distrig");
+runQuickTest("italian", "valentina", "valentin");
 
 ?>
 --EXPECT--

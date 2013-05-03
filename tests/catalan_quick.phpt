@@ -1,7 +1,7 @@
 --TEST--
 Catalan stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_CATALAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("catalan", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,16 +9,16 @@ Catalan stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_CATALAN, "finestra", "finestr");
-runQuickTest(STEM_CATALAN, "menjar", "menj");
-runQuickTest(STEM_CATALAN, "matí", "mat");
-runQuickTest(STEM_CATALAN, "parlar", "parl");
-runQuickTest(STEM_CATALAN, "taula", "taul");
-runQuickTest(STEM_CATALAN, "llevar", "llev");
-runQuickTest(STEM_CATALAN, "traure", "traur");
-runQuickTest(STEM_CATALAN, "cercar", "cerc");
-runQuickTest(STEM_CATALAN, "colgar", "colg");
-runQuickTest(STEM_CATALAN, "muller", "mull");
+runQuickTest("catalan", "finestra", "finestr");
+runQuickTest("catalan", "menjar", "menj");
+runQuickTest("catalan", "matí", "mat");
+runQuickTest("catalan", "parlar", "parl");
+runQuickTest("catalan", "taula", "taul");
+runQuickTest("catalan", "llevar", "llev");
+runQuickTest("catalan", "traure", "traur");
+runQuickTest("catalan", "cercar", "cerc");
+runQuickTest("catalan", "colgar", "colg");
+runQuickTest("catalan", "muller", "mull");
 
 ?>
 --EXPECT--

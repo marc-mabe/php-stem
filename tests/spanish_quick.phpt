@@ -1,7 +1,7 @@
 --TEST--
 Spanish stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_SPANISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("spanish", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Spanish stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_SPANISH, "acercaron", "acerc");
-runQuickTest(STEM_SPANISH, "chapoteaderos", "chapoteader");
-runQuickTest(STEM_SPANISH, "lloraba", "llor");
-runQuickTest(STEM_SPANISH, "pugilística", "pugilist");
+runQuickTest("spanish", "acercaron", "acerc");
+runQuickTest("spanish", "chapoteaderos", "chapoteader");
+runQuickTest("spanish", "lloraba", "llor");
+runQuickTest("spanish", "pugilística", "pugilist");
 
 ?>
 --EXPECT--

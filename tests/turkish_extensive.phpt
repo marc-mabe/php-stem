@@ -1,7 +1,7 @@
 --TEST--
 Turkish stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_TURKISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("turkish", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Turkish stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_TURKISH, "turkish.txt");
+runTest("turkish", "turkish.txt");
 
 ?>
 --EXPECT--

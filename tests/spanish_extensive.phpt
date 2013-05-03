@@ -1,7 +1,7 @@
 --TEST--
 Spanish stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_SPANISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("spanish", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Spanish stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_SPANISH, "spanish.txt");
+runTest("spanish", "spanish.txt");
 
 ?>
 --EXPECT--

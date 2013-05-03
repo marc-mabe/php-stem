@@ -1,7 +1,7 @@
 --TEST--
 Swedish stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_SWEDISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("swedish", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Swedish stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_SWEDISH, "alkoholister", "alkoholist");
-runQuickTest(STEM_SWEDISH, "binnikemasken", "binnikemask");
-runQuickTest(STEM_SWEDISH, "erfordrades", "erfordr");
-runQuickTest(STEM_SWEDISH, "konstiga", "konst");
+runQuickTest("swedish", "alkoholister", "alkoholist");
+runQuickTest("swedish", "binnikemasken", "binnikemask");
+runQuickTest("swedish", "erfordrades", "erfordr");
+runQuickTest("swedish", "konstiga", "konst");
 
 ?>
 --EXPECT--

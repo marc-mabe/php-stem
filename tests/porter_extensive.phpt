@@ -1,7 +1,7 @@
 --TEST--
 Original Porter stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem")) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("porter", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Original Porter stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_PORTER, "porter.txt");
+runTest("porter", "porter.txt");
 
 ?>
 --EXPECT--

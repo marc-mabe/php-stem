@@ -1,7 +1,7 @@
 --TEST--
 Romanian stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_ROMANIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("romanian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Romanian stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_ROMANIAN, "romanian.txt");
+runTest("romanian", "romanian.txt");
 
 ?>
 --EXPECT--

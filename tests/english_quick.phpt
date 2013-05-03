@@ -1,7 +1,7 @@
 --TEST--
 Modified English Porter stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_ENGLISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("english", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Modified English Porter stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_ENGLISH, "abbreviation", "abbrevi");
-runQuickTest(STEM_ENGLISH, "cangrejales", "cangrejal");
-runQuickTest(STEM_ENGLISH, "devised", "devis");
-runQuickTest(STEM_ENGLISH, "zu", "zu");
+runQuickTest("english", "abbreviation", "abbrevi");
+runQuickTest("english", "cangrejales", "cangrejal");
+runQuickTest("english", "devised", "devis");
+runQuickTest("english", "zu", "zu");
 
 ?>
 --EXPECT--

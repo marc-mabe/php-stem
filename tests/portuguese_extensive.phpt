@@ -1,7 +1,7 @@
 --TEST--
 Portuguese stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_PORTUGUESE)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("portuguese", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Portuguese stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_PORTUGUESE, "portuguese.txt");
+runTest("portuguese", "portuguese.txt");
 
 ?>
 --EXPECT--

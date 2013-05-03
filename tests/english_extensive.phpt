@@ -1,7 +1,7 @@
 --TEST--
 Modified English Porter stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_ENGLISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("english", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Modified English Porter stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_ENGLISH, "english.txt");
+runTest("english", "english.txt");
 
 ?>
 --EXPECT--

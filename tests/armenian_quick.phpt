@@ -1,7 +1,7 @@
 --TEST--
 Armenian stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_ARMENIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("armenian", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,16 +9,16 @@ Armenian stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_ARMENIAN, "ɑχoɾˈʒɑk", "ɑχoɾˈʒɑk");
-runQuickTest(STEM_ARMENIAN, "mɑʁɑdɑˈnos", "mɑʁɑdɑˈnos");
-runQuickTest(STEM_ARMENIAN, "giˈni", "giˈni");
-runQuickTest(STEM_ARMENIAN, "vɑˈhɑgən", "vɑˈhɑgən");
-runQuickTest(STEM_ARMENIAN, "ˈdɑʃtə", "ˈdɑʃtə");
-runQuickTest(STEM_ARMENIAN, "մի՛թէ", "մի՛թէ");
-runQuickTest(STEM_ARMENIAN, "մի՛գուցե", "մի՛գուցե");
-runQuickTest(STEM_ARMENIAN, "ո՛րեւէ", "ո՛րեւէ");
-runQuickTest(STEM_ARMENIAN, "վե՛ցերորդ", "վե՛ցերոր");
-runQuickTest(STEM_ARMENIAN, "տա՛սներորդ", "տա՛սներոր");
+runQuickTest("armenian", "ɑχoɾˈʒɑk", "ɑχoɾˈʒɑk");
+runQuickTest("armenian", "mɑʁɑdɑˈnos", "mɑʁɑdɑˈnos");
+runQuickTest("armenian", "giˈni", "giˈni");
+runQuickTest("armenian", "vɑˈhɑgən", "vɑˈhɑgən");
+runQuickTest("armenian", "ˈdɑʃtə", "ˈdɑʃtə");
+runQuickTest("armenian", "մի՛թէ", "մի՛թէ");
+runQuickTest("armenian", "մի՛գուցե", "մի՛գուցե");
+runQuickTest("armenian", "ո՛րեւէ", "ո՛րեւէ");
+runQuickTest("armenian", "վե՛ցերորդ", "վե՛ցերոր");
+runQuickTest("armenian", "տա՛սներորդ", "տա՛սներոր");
 
 ?>
 --EXPECT--

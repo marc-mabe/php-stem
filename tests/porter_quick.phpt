@@ -1,7 +1,7 @@
 --TEST--
 Original Porter stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem")) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("porter", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Original Porter stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_PORTER, "abbreviated", "abbrevi");
-runQuickTest(STEM_PORTER, "bohemians", "bohemian");
-runQuickTest(STEM_PORTER, "gunpowder", "gunpowd");
-runQuickTest(STEM_PORTER, "xi", "xi");
+runQuickTest("porter", "abbreviated", "abbrevi");
+runQuickTest("porter", "bohemians", "bohemian");
+runQuickTest("porter", "gunpowder", "gunpowd");
+runQuickTest("porter", "xi", "xi");
 
 ?>
 --EXPECT--

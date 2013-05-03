@@ -1,7 +1,7 @@
 --TEST--
 Finnish stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_FINNISH)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("finnish", stem_algos())) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Finnish stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_FINNISH, "finnish.txt");
+runTest("finnish", "finnish.txt");
 
 ?>
 --EXPECT--

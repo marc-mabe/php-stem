@@ -1,7 +1,7 @@
 --TEST--
 Russian stemming algorithm (quick)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_RUSSIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("russian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,10 +9,10 @@ Russian stemming algorithm (quick)
 
 require("runquicktest.inc");
 
-runQuickTest(STEM_RUSSIAN, "аксельбантами", "аксельбант");
-runQuickTest(STEM_RUSSIAN, "восхищаться", "восхища");
-runQuickTest(STEM_RUSSIAN, "выставит", "выстав");
-runQuickTest(STEM_RUSSIAN, "декораций", "декорац");
+runQuickTest("russian", "аксельбантами", "аксельбант");
+runQuickTest("russian", "восхищаться", "восхища");
+runQuickTest("russian", "выставит", "выстав");
+runQuickTest("russian", "декораций", "декорац");
 
 ?>
 --EXPECT--

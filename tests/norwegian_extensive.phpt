@@ -1,7 +1,7 @@
 --TEST--
 Norwegian stemming algorithm (extensive)
 --SKIPIF--
-<?php if (!extension_loaded("stem") || !stem_enabled(STEM_NORWEGIAN)) print "skip"; ?>
+<?php if (!extension_loaded("stem") || !in_array("norwegian", stem_algos()) print "skip"; ?>
 --POST--
 --GET--
 --FILE--
@@ -9,7 +9,7 @@ Norwegian stemming algorithm (extensive)
 
 require("runfulltest.inc");
 
-runTest(STEM_NORWEGIAN, "norwegian.txt");
+runTest("norwegian", "norwegian.txt");
 
 ?>
 --EXPECT--
