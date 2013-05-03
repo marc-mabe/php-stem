@@ -45,6 +45,7 @@ if (PHP_STEM != "no") {
   AC_DEFINE("ENABLE_IRISH", 1, "Irish support");
   AC_DEFINE("ENABLE_ITALIAN", 1, "Italian support");
   AC_DEFINE("ENABLE_NORWEGIAN", 1, "Norwegian support");
+  AC_DEFINE("ENABLE_PORTER", 1, "Original Porter support");
   AC_DEFINE("ENABLE_PORTUGUESE", 1, "Portuguese support");
   AC_DEFINE("ENABLE_ROMANIAN", 1, "Romanian support");
   AC_DEFINE("ENABLE_RUSSIAN", 1, "Russian support");

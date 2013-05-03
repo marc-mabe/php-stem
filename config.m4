@@ -33,6 +33,8 @@ PHP_ARG_ENABLE(stem-italian, whether to compile Italian stemming algorithm,
   [  --enable-stem-italian    Whether to compile Italian stemming algorithm], yes, no)
 PHP_ARG_ENABLE(stem-norwegian, whether to compile Norwegian stemming algorithm,
   [  --enable-stem-norwegian  Whether to compile Norwegian stemming algorithm], yes, no)
+PHP_ARG_ENABLE(stem-porter, whether to compile the original porter stemming algorithm,
+  [  --enable-stem-porter     Whether to compile the original porter stemming algorithm], yes, no)
 PHP_ARG_ENABLE(stem-portuguese, whether to compile Portuguese stemming algorithm,
   [  --enable-stem-portuguese Whether to compile Portuguese stemming algorithm], yes, no)
 PHP_ARG_ENABLE(stem-romanian, whether to compile Romanian stemming algorithm,

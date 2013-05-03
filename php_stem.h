@@ -47,30 +47,9 @@ extern zend_module_entry stem_module_entry;
 PHP_FUNCTION(stem);
 PHP_FUNCTION(stem_algos);
 
-#define STEM_PORTER          "porter"
-#define STEM_ENGLISH         "english"
-#define STEM_FRENCH          "french"
-#define STEM_SPANISH         "spanish"
-#define STEM_DUTCH           "dutch"
-#define STEM_DANISH          "danish"
-#define STEM_GERMAN          "german"
-#define STEM_ITALIAN         "italian"
-#define STEM_NORWEGIAN       "norwegian"
-#define STEM_PORTUGUESE      "portuguese"
-#define STEM_RUSSIAN         "russian"
-#define STEM_SWEDISH         "swedish"
-#define STEM_FINNISH         "finnish"
-#define STEM_HUNGARIAN       "hungarian"
-#define STEM_ROMANIAN        "romanian"
-#define STEM_TURKISH         "turkish"
-#define STEM_GERMAN2         "german2"
-#define STEM_ARMENIAN        "armenian"
-#define STEM_BASQUE          "basque"
-#define STEM_CATALAN         "catalan"
-#define STEM_IRISH           "irish"
-#define STEM_CZECH           "czech"
-
+#if ENABLE_PORTER
 #include "porter.h"
+#endif
 
 #if ENABLE_ARMENIAN
 #include "armenian.h"
