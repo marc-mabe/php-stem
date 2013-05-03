@@ -64,20 +64,14 @@ ZEND_GET_MODULE(stem)
 PHP_MINFO_FUNCTION(stem)
 {
 	php_info_print_table_start();
-	php_info_print_table_header(2, "stem support", "enabled");
-	php_info_print_table_row(2, "version", PHP_STEM_VERSION);
-#ifdef COMPILE_DL_STEM
-	php_info_print_table_colspan_header(2, "compiled as dynamic module");
-#else
-	php_info_print_table_colspan_header(2, "compiled as static module");
-#endif
-	php_info_print_table_colspan_header(2, "Languages Supported");
-
+	php_info_print_table_row(2, "Stem support", "enabled");
+	php_info_print_table_row(2, "Version", PHP_STEM_VERSION);
+	php_info_print_table_row(2, "Supported Algorithms",
 #define STEMMER(php_func, c_func, constant, name) \
-	php_info_print_table_row(2, # name, "enabled");
+        name " "
 #include "stemmers.def"
 #undef STEMMER
-
+	);
 	php_info_print_table_end();
 }
 /* }}} */
