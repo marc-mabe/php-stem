@@ -45,8 +45,8 @@ zend_module_entry stem_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"stem",
 	stem_functions,
-	PHP_MINIT(stem),
-	PHP_MSHUTDOWN(stem),
+	NULL,
+	NULL,
 	NULL,
 	NULL,
 	PHP_MINFO(stem),
@@ -58,22 +58,6 @@ zend_module_entry stem_module_entry = {
 #ifdef COMPILE_DL_STEM
 ZEND_GET_MODULE(stem)
 #endif
-
-/* {{{ PHP_MINIT_FUNCTION
- */
-PHP_MINIT_FUNCTION(stem)
-{
-	return SUCCESS;
-}
-/* }}} */
-
-/* {{{ PHP_MSHUTDOWN_FUNCTION
- */
-PHP_MSHUTDOWN_FUNCTION(stem)
-{
-	return SUCCESS;
-}
-/* }}} */
 
 /* {{{ PHP_MINFO_FUNCTION
  */
