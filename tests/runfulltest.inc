@@ -29,7 +29,7 @@ function runTest($algo, $file)
         list($input, $expected) = $line;
         $input    = trim($input);
         $expected = trim($expected);
-        $stem     = stem($input, $algo);
+        $stem     = stem($algo, $input);
         if ($stem != $expected) {
             echo 'L' . ($i + 1) . ': "' . $input . '" => "' . $stem . '", expected "' . $expected . '"' . PHP_EOL;
             ++$bad;

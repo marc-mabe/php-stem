@@ -93,7 +93,7 @@ PHP_FUNCTION(stem)
         int algo_len;
 	short int algo_found = 0;
 
-        if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "ss", &word, &word_len, &algo, &algo_len) == FAILURE) {
+        if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "ss", &algo, &algo_len, &word, &word_len) == FAILURE) {
                 return;
         }
 

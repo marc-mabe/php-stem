@@ -9,9 +9,9 @@ Basic functionality of stem()
 
 $algo = stem_algos();
 $algo = $algo[0];
-var_dump(stem("test", $algo));
+var_dump(stem($algo, "test"));
 var_dump(stem("test"));
-var_dump(stem("test", "unknown ALGO"));
+var_dump(stem("unknown ALGO", "test"));
 
 ?>
 ===Done===
