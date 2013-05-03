@@ -10,6 +10,7 @@ if (PHP_STEM != "no") {
 				armenian.c \
 				basque.c \
 				catalan.c \
+				czech.c \
 				porter.c \
 				french.c \
 				spanish.c \
@@ -19,6 +20,7 @@ if (PHP_STEM != "no") {
 				german.c \
 				german2.c \
 				hungarian.c \
+				irish.c \
 				italian.c \
 				norwegian.c \
 				portuguese.c \
@@ -31,6 +33,7 @@ if (PHP_STEM != "no") {
   AC_DEFINE("ENABLE_ARMENIAN", 1, "Armenian support");
   AC_DEFINE("ENABLE_BASQUE", 1, "Basque support");
   AC_DEFINE("ENABLE_CATALAN", 1, "Catalan support");
+  AC_DEFINE("ENABLE_CZECH", 1, "Czech support");
   AC_DEFINE("ENABLE_DANISH", 1, "Danish support");
   AC_DEFINE("ENABLE_DUTCH", 1, "Dutch support");
   AC_DEFINE("ENABLE_ENGLISH", 1, "English support");
@@ -39,6 +42,7 @@ if (PHP_STEM != "no") {
   AC_DEFINE("ENABLE_GERMAN", 1, "German support");
   AC_DEFINE("ENABLE_GERMAN2", 1, "German2 support");
   AC_DEFINE("ENABLE_HUNGARIAN", 1, "Hungarian support");
+  AC_DEFINE("ENABLE_IRISH", 1, "Irish support");
   AC_DEFINE("ENABLE_ITALIAN", 1, "Italian support");
   AC_DEFINE("ENABLE_NORWEGIAN", 1, "Norwegian support");
   AC_DEFINE("ENABLE_PORTUGUESE", 1, "Portuguese support");

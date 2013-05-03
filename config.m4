@@ -9,6 +9,8 @@ PHP_ARG_ENABLE(stem-basque, whether to compile Basque stemmer,
   [  --enable-stem-basque     STEM: Whether to compile Basque stemmer], yes, no)
 PHP_ARG_ENABLE(stem-catalan, whether to compile Catalan stemmer,
   [  --enable-stem-catalan    STEM: Whether to compile Catalan stemmer], yes, no)
+PHP_ARG_ENABLE(stem-czech, whether to compile Czech stemmer,
+  [  --enable-stem-czech      STEM: Whether to compile Czech stemmer], yes, no)
 PHP_ARG_ENABLE(stem-danish, whether to compile Danish stemmer,
   [  --enable-stem-danish     STEM: Whether to compile Danish stemmer], yes, no)
 PHP_ARG_ENABLE(stem-dutch, whether to compile Dutch stemmer,
@@ -25,6 +27,8 @@ PHP_ARG_ENABLE(stem-german2, whether to compile German2 stemmer,
   [  --enable-stem-german2    STEM: Whether to compile German2 stemmer], yes, no)
 PHP_ARG_ENABLE(stem-hungarian, whether to compile Hungarian stemmer,
   [  --enable-stem-hungarian  STEM: Whether to compile Hungarian stemmer], yes, no)
+PHP_ARG_ENABLE(stem-irish, whether to compile Irish stemmer,
+  [  --enable-stem-irish      STEM: Whether to compile Irish stemmer], yes, no)
 PHP_ARG_ENABLE(stem-italian, whether to compile Italian stemmer,
   [  --enable-stem-italian    STEM: Whether to compile Italian stemmer], yes, no)
 PHP_ARG_ENABLE(stem-norwegian, whether to compile Norwegian stemmer,
@@ -62,6 +66,13 @@ if test "$PHP_STEM_CATALAN" = "yes"; then
     extra_lang="$extra_lang catalan.c"
   else
     AC_DEFINE(ENABLE_CATALAN, 0, [ ])
+  fi
+
+if test "$PHP_STEM_CZECH" = "yes"; then
+    AC_DEFINE(ENABLE_CZECH, 1, [ ])
+    extra_lang="$extra_lang czech.c"
+  else
+    AC_DEFINE(ENABLE_CZECH, 0, [ ])
   fi
 
 if test "$PHP_STEM_DANISH" = "yes"; then
@@ -118,6 +129,13 @@ if test "$PHP_STEM_HUNGARIAN" = "yes"; then
     extra_lang="$extra_lang hungarian.c"
   else
     AC_DEFINE(ENABLE_HUNGARIAN, 0, [ ])
+  fi
+
+if test "$PHP_STEM_IRISH" = "yes"; then
+    AC_DEFINE(ENABLE_IRISH, 1, [ ])
+    extra_lang="$extra_lang irish.c"
+  else
+    AC_DEFINE(ENABLE_IRISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_ITALIAN" = "yes"; then

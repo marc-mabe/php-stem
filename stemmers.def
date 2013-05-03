@@ -36,6 +36,10 @@ STEMMER(basque, basque, BASQUE, "Basque")
 STEMMER(catalan, catalan, CATALAN, "Catalan")
 #endif
 
+#if ENABLE_CZECH || defined(STEMMER_FORCE)
+STEMMER(czech, czech, CZECH, "Czech")
+#endif
+
 #if ENABLE_DANISH || defined(STEMMER_FORCE)
 STEMMER(danish, danish, DANISH, "Danish")
 #endif
@@ -66,6 +70,10 @@ STEMMER(german2, german2, GERMAN2, "German2")
 
 #if ENABLE_HUNGARIAN || defined(STEMMER_FORCE)
 STEMMER(hungarian, hungarian, HUNGARIAN, "Hungarian")
+#endif
+
+#if ENABLE_IRISH || defined(STEMMER_FORCE)
+STEMMER(irish, irish, IRISH, "Irish")
 #endif
 
 #if ENABLE_ITALIAN || defined(STEMMER_FORCE)
