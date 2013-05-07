@@ -51,151 +51,158 @@ PHP_ARG_ENABLE(stem-turkish, whether to compile Turkish  stemming algorithm,
 
 if test "$PHP_STEM_ARMENIAN" = "yes"; then
     AC_DEFINE(ENABLE_ARMENIAN, 1, [ ])
-    extra_lang="$extra_lang armenian.c"
+    extra_lang="$extra_lang snowball_algorithms/armenian.c"
   else
     AC_DEFINE(ENABLE_ARMENIAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_BASQUE" = "yes"; then
     AC_DEFINE(ENABLE_BASQUE, 1, [ ])
-    extra_lang="$extra_lang basque.c"
+    extra_lang="$extra_lang snowball_algorithms/basque.c"
   else
     AC_DEFINE(ENABLE_BASQUE, 0, [ ])
   fi
 
 if test "$PHP_STEM_CATALAN" = "yes"; then
     AC_DEFINE(ENABLE_CATALAN, 1, [ ])
-    extra_lang="$extra_lang catalan.c"
+    extra_lang="$extra_lang snowball_algorithms/catalan.c"
   else
     AC_DEFINE(ENABLE_CATALAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_CZECH" = "yes"; then
     AC_DEFINE(ENABLE_CZECH, 1, [ ])
-    extra_lang="$extra_lang czech.c"
+    extra_lang="$extra_lang snowball_algorithms/czech.c"
   else
     AC_DEFINE(ENABLE_CZECH, 0, [ ])
   fi
 
 if test "$PHP_STEM_DANISH" = "yes"; then
     AC_DEFINE(ENABLE_DANISH, 1, [ ])
-    extra_lang="$extra_lang danish.c"
+    extra_lang="$extra_lang snowball_algorithms/danish.c"
   else
     AC_DEFINE(ENABLE_DANISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_DUTCH" = "yes"; then
     AC_DEFINE(ENABLE_DUTCH, 1, [ ])
-    extra_lang="$extra_lang dutch.c"
+    extra_lang="$extra_lang snowball_algorithms/dutch.c"
   else
     AC_DEFINE(ENABLE_DUTCH, 0, [ ])
   fi
 
 if test "$PHP_STEM_ENGLISH" = "yes"; then
     AC_DEFINE(ENABLE_ENGLISH, 1, [ ])
-    extra_lang="$extra_lang english.c"
+    extra_lang="$extra_lang snowball_algorithms/english.c"
   else
     AC_DEFINE(ENABLE_ENGLISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_FRENCH" = "yes"; then
     AC_DEFINE(ENABLE_FRENCH, 1, [ ])
-    extra_lang="$extra_lang french.c"
+    extra_lang="$extra_lang snowball_algorithms/french.c"
   else
     AC_DEFINE(ENABLE_FRENCH, 0, [ ])
   fi
 
 if test "$PHP_STEM_FINNISH" = "yes"; then
     AC_DEFINE(ENABLE_FINNISH, 1, [ ])
-    extra_lang="$extra_lang finnish.c"
+    extra_lang="$extra_lang snowball_algorithms/finnish.c"
   else
     AC_DEFINE(ENABLE_FINNISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_GERMAN" = "yes"; then
     AC_DEFINE(ENABLE_GERMAN, 1, [ ])
-    extra_lang="$extra_lang german.c"
+    extra_lang="$extra_lang snowball_algorithms/german.c"
   else
     AC_DEFINE(ENABLE_GERMAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_GERMAN2" = "yes"; then
     AC_DEFINE(ENABLE_GERMAN2, 1, [ ])
-    extra_lang="$extra_lang german2.c"
+    extra_lang="$extra_lang snowball_algorithms/german2.c"
   else
     AC_DEFINE(ENABLE_GERMAN2, 0, [ ])
   fi
 
 if test "$PHP_STEM_HUNGARIAN" = "yes"; then
     AC_DEFINE(ENABLE_HUNGARIAN, 1, [ ])
-    extra_lang="$extra_lang hungarian.c"
+    extra_lang="$extra_lang snowball_algorithms/hungarian.c"
   else
     AC_DEFINE(ENABLE_HUNGARIAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_IRISH" = "yes"; then
     AC_DEFINE(ENABLE_IRISH, 1, [ ])
-    extra_lang="$extra_lang irish.c"
+    extra_lang="$extra_lang snowball_algorithms/irish.c"
   else
     AC_DEFINE(ENABLE_IRISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_ITALIAN" = "yes"; then
     AC_DEFINE(ENABLE_ITALIAN, 1, [ ])
-    extra_lang="$extra_lang italian.c"
+    extra_lang="$extra_lang snowball_algorithms/italian.c"
   else
     AC_DEFINE(ENABLE_ITALIAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_NORWEGIAN" = "yes"; then
     AC_DEFINE(ENABLE_NORWEGIAN, 1, [ ])
-    extra_lang="$extra_lang norwegian.c"
+    extra_lang="$extra_lang snowball_algorithms/norwegian.c"
   else
     AC_DEFINE(ENABLE_NORWEGIAN, 0, [ ])
   fi
 
+if test "$PHP_STEM_PORTER" = "yes"; then
+    AC_DEFINE(ENABLE_PORTER, 1, [ ])
+    extra_lang="$extra_lang snowball_algorithms/porter.c"
+  else
+    AC_DEFINE(ENABLE_PORTER, 0, [ ])
+  fi
+
 if test "$PHP_STEM_PORTUGUESE" = "yes"; then
     AC_DEFINE(ENABLE_PORTUGUESE, 1, [ ])
-    extra_lang="$extra_lang portuguese.c"
+    extra_lang="$extra_lang snowball_algorithms/portuguese.c"
   else
     AC_DEFINE(ENABLE_PORTUGUESE, 0, [ ])
   fi
 
 if test "$PHP_STEM_ROMANIAN" = "yes"; then
     AC_DEFINE(ENABLE_ROMANIAN, 1, [ ])
-    extra_lang="$extra_lang romanian.c"
+    extra_lang="$extra_lang snowball_algorithms/romanian.c"
   else
     AC_DEFINE(ENABLE_ROMANIAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_RUSSIAN" = "yes"; then
     AC_DEFINE(ENABLE_RUSSIAN, 1, [ ])
-    extra_lang="$extra_lang russian.c"
+    extra_lang="$extra_lang snowball_algorithms/russian.c"
   else
     AC_DEFINE(ENABLE_RUSSIAN, 0, [ ])
   fi
 
 if test "$PHP_STEM_SPANISH" = "yes"; then
     AC_DEFINE(ENABLE_SPANISH, 1, [ ])
-    extra_lang="$extra_lang spanish.c"
+    extra_lang="$extra_lang snowball_algorithms/spanish.c"
   else
     AC_DEFINE(ENABLE_SPANISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_SWEDISH" = "yes"; then
     AC_DEFINE(ENABLE_SWEDISH, 1, [ ])
-    extra_lang="$extra_lang swedish.c"
+    extra_lang="$extra_lang snowball_algorithms/swedish.c"
   else
     AC_DEFINE(ENABLE_SWEDISH, 0, [ ])
   fi
 
 if test "$PHP_STEM_TURKISH" = "yes"; then
     AC_DEFINE(ENABLE_TURKISH, 1, [ ])
-    extra_lang="$extra_lang turkish.c"
+    extra_lang="$extra_lang snowball_algorithms/turkish.c"
   else
     AC_DEFINE(ENABLE_TURKISH, 0, [ ])
   fi
 
 if test "$PHP_STEM" != "no"; then
-    PHP_NEW_EXTENSION(stem, stem.c api.c utilities.c porter.c $extra_lang, $ext_shared)
+    PHP_NEW_EXTENSION(stem, stem.c snowball_runtime/api.c snowball_runtime/utilities.c $extra_lang, $ext_shared)
 fi

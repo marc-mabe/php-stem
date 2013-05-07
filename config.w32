@@ -5,30 +5,30 @@ ARG_WITH("stem", "stem support", "no");
 
 if (PHP_STEM != "no") {
 	EXTENSION("stem", 	"stem.c \
-				api.c \
-				utilities.c \
-				armenian.c \
-				basque.c \
-				catalan.c \
-				czech.c \
-				porter.c \
-				french.c \
-				spanish.c \
-				danish.c \
-				dutch.c \
-				english.c \
-				german.c \
-				german2.c \
-				hungarian.c \
-				irish.c \
-				italian.c \
-				norwegian.c \
-				portuguese.c \
-				romanian.c \
-				russian.c \
-				swedish.c \
-				turkish.c \
-				finnish.c");
+				snowball_runtime/api.c \
+				snowball_runtime/utilities.c \
+				snowball_algorithms/armenian.c \
+				snowball_algorithms/basque.c \
+				snowball_algorithms/catalan.c \
+				snowball_algorithms/czech.c \
+				snowball_algorithms/porter.c \
+				snowball_algorithms/french.c \
+				snowball_algorithms/spanish.c \
+				snowball_algorithms/danish.c \
+				snowball_algorithms/dutch.c \
+				snowball_algorithms/english.c \
+				snowball_algorithms/german.c \
+				snowball_algorithms/german2.c \
+				snowball_algorithms/hungarian.c \
+				snowball_algorithms/irish.c \
+				snowball_algorithms/italian.c \
+				snowball_algorithms/norwegian.c \
+				snowball_algorithms/portuguese.c \
+				snowball_algorithms/romanian.c \
+				snowball_algorithms/russian.c \
+				snowball_algorithms/swedish.c \
+				snowball_algorithms/turkish.c \
+				snowball_algorithms/finnish.c");
 
   AC_DEFINE("ENABLE_ARMENIAN", 1, "Armenian support");
   AC_DEFINE("ENABLE_BASQUE", 1, "Basque support");

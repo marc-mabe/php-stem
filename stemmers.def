@@ -22,7 +22,10 @@
 /* $Id$ */
 
 /* STEMMER(php_func, c_func, constant, name) */
+
+#if ENABLE_PORTER
 STEMMER(porter,      porter,       PORTER,      "porter")
+#endif
 
 #if ENABLE_ARMENIAN
 STEMMER(armenian, armenian, ARMENIAN, "armenian")

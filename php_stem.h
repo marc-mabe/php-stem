@@ -41,98 +41,97 @@ extern zend_module_entry stem_module_entry;
 
 /* Snowball headers... */
 
-#include "api.h"
-#include "porter.h"
+#include "snowball_runtime/api.h"
 
 PHP_FUNCTION(stem);
 PHP_FUNCTION(stem_algos);
 
 #if ENABLE_PORTER
-#include "porter.h"
+#include "snowball_algorithms/porter.h"
 #endif
 
 #if ENABLE_ARMENIAN
-#include "armenian.h"
+#include "snowball_algorithms/armenian.h"
 #endif
 
 #if ENABLE_BASQUE
-#include "basque.h"
+#include "snowball_algorithms/basque.h"
 #endif
 
 #if ENABLE_CATALAN
-#include "catalan.h"
+#include "snowball_algorithms/catalan.h"
 #endif
 
 #if ENABLE_CZECH
-#include "czech.h"
+#include "snowball_algorithms/czech.h"
 #endif
 
 #if ENABLE_DANISH
-#include "danish.h"
+#include "snowball_algorithms/danish.h"
 #endif
 
 #if ENABLE_DUTCH
-#include "dutch.h"
+#include "snowball_algorithms/dutch.h"
 #endif
 
 #if ENABLE_ENGLISH
-#include "english.h"
+#include "snowball_algorithms/english.h"
 #endif
 
 #if ENABLE_FINNISH
-#include "finnish.h"
+#include "snowball_algorithms/finnish.h"
 #endif
 
 #if ENABLE_FRENCH
-#include "french.h"
+#include "snowball_algorithms/french.h"
 #endif
 
 #if ENABLE_GERMAN
-#include "german.h"
+#include "snowball_algorithms/german.h"
 #endif
 
 #if ENABLE_GERMAN2
-#include "german2.h"
+#include "snowball_algorithms/german2.h"
 #endif
 
 #if ENABLE_HUNGARIAN
-#include "hungarian.h"
+#include "snowball_algorithms/hungarian.h"
 #endif
 
 #if ENABLE_IRISH
-#include "irish.h"
+#include "snowball_algorithms/irish.h"
 #endif
 
 #if ENABLE_ITALIAN
-#include "italian.h"
+#include "snowball_algorithms/italian.h"
 #endif
 
 #if ENABLE_NORWEGIAN
-#include "norwegian.h"
+#include "snowball_algorithms/norwegian.h"
 #endif
 
 #if ENABLE_PORTUGUESE
-#include "portuguese.h"
+#include "snowball_algorithms/portuguese.h"
 #endif
 
 #if ENABLE_ROMANIAN
-#include "romanian.h"
+#include "snowball_algorithms/romanian.h"
 #endif
 
 #if ENABLE_RUSSIAN
-#include "russian.h"
+#include "snowball_algorithms/russian.h"
 #endif
 
 #if ENABLE_SPANISH
-#include "spanish.h"
+#include "snowball_algorithms/spanish.h"
 #endif
 
 #if ENABLE_SWEDISH
-#include "swedish.h"
+#include "snowball_algorithms/swedish.h"
 #endif
 
 #if ENABLE_TURKISH
-#include "turkish.h"
+#include "snowball_algorithms/turkish.h"
 #endif
 
 PHP_MINIT_FUNCTION(stem);

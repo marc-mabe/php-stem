@@ -31,5 +31,7 @@
 /tests/*.out
 /tests/*.php
 /tests/*.sh
-/*.lo
-/*.la
+/*/.libs/
+*.lo
+*.la
+*~
