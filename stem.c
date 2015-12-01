@@ -28,7 +28,9 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
+#include "ext/standard/php_string.h"
 #include "php_stem.h"
+
 
 /* {{{ stem_functions[]
 */
@@ -45,7 +47,7 @@ zend_module_entry stem_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"stem",
 	stem_functions,
-	NULL,
+	PHP_MINIT(stem),
 	NULL,
 	NULL,
 	NULL,
@@ -76,6 +78,20 @@ PHP_MINFO_FUNCTION(stem)
 }
 /* }}} */
 
+/* {{{ PHP_MINIT_FUNCTION
+ */
+PHP_MINIT_FUNCTION(stem)
+{
+	long stemmer_id = 0;
+
+#define STEMMER(php_func, c_func, constant, name) \
+	REGISTER_LONG_CONSTANT("STEM_" # constant, stemmer_id++, CONST_CS|CONST_PERSISTENT);
+#include "stemmers.def"
+#undef STEMMER
+}
+
+/* }}} */
+
 /* {{{ string stem(string word, string algo)
    word is a string to be stemmed, algo is the stemming algorithm to be used.
    Returns false on Snowball error or the stemmed word on success.
@@ -86,20 +102,20 @@ PHP_FUNCTION(stem)
         struct SN_env* (*create_env)(void);
         void (*close_env)(struct SN_env*);
         int (*stem)(struct SN_env*);
+	long stemmer_id = 0;
         
-        char * word;
-        char * algo;
-        int word_len;
-        int algo_len;
+        zend_string* word;
+        long algo_id;
+
 	short int algo_found = 0;
 
-        if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "ss", &algo, &algo_len, &word, &word_len) == FAILURE) {
+        if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "Sl", &word, &algo_id) == FAILURE) {
                 return;
         }
 
         /* Empty string */
-        if (word_len <= 0) {
-                RETURN_STRINGL(word, word_len, 1);
+        if (word->len <= 0) {
+                RETURN_STRINGL(word->val, word->len);
         }
 
 #ifdef PHP_WIN32
@@ -114,10 +130,11 @@ PHP_FUNCTION(stem)
 	close_env = x ## _close_env;
 #endif
 #define STEMMER(php_func, c_func, constant, name) \
-        if (strcmp(name, algo) == 0) { \
+        if (stemmer_id == algo_id) { \
                 INIT_FUNCS(c_func) \
 		algo_found = 1; \
-        }
+        } \
+	stemmer_id++;
 #include "stemmers.def"
 #undef STEMMER
 #undef INIT_FUNCS
@@ -129,12 +146,12 @@ PHP_FUNCTION(stem)
         }
 
         z = create_env();
-        SN_set_current(z, word_len, word);
-        php_strtolower(z->p, word_len);
+        SN_set_current(z, word->len, word->val);
+        php_strtolower(z->p, word->len);
         stem(z);
         z->p[z->l]= '\0';
 
-        RETVAL_STRINGL(z->p, z->l, 1);
+        RETVAL_STRINGL(z->p, z->l);
         close_env(z);
 }
 /* }}} */
@@ -145,7 +162,7 @@ PHP_FUNCTION(stem_algos)
 {
         array_init(return_value);
 #       define STEMMER(php_func, c_func, constant, name) \
-                add_next_index_stringl(return_value, name, sizeof(name)-1, 1);
+                add_next_index_stringl(return_value, name, sizeof(name)-1);
 #               include "stemmers.def"
 #       undef STEMMER
 }
